@@ -1,0 +1,283 @@
+@extends('frontend.layouts.master')
+
+@section('title', 'اتصل بنا | سلطان كلين لخدمات النظافة والتعقيم الشامل')
+
+@section('content')
+    <!-- ==========================================================================
+       PAGE HEADER BANNER
+       ========================================================================== -->
+    <section class="bg-brand-primary text-white py-5 text-center">
+        <div class="container py-3">
+            <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-3">
+                <i class="fa-solid fa-headset me-1"></i> خدمة عملاء 24/7
+            </span>
+            <h1 class="display-5 fw-heading text-white mb-2">اتصل بنا وطلب معاينة مجانية</h1>
+            <p class="lead text-white text-opacity-75 fs-6 max-w-700 mx-auto mb-3">
+                فريقنا الميداني جاهز للوصول إليك في أسرع وقت. تواصل معنا هاتفياً أو عبر الواتساب أو املأ النموذج وسنعاود الاتصال بك فوراً.
+            </p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0 small">
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-brand-secondary text-decoration-none">الرئيسية</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">اتصل بنا</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       CONTACT INFO CARDS
+       ========================================================================== -->
+    <section class="py-5 bg-white">
+        <div class="container py-3">
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 text-center h-100">
+                        <div class="card-icon-bubble bg-brand-light text-brand-primary mx-auto mb-3">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <h5 class="fw-bold text-brand-primary mb-2">اتصال هاتفي</h5>
+                        <p class="text-secondary small mb-3">متاحون على مدار الساعة</p>
+                        <a href="tel:+966582102525" class="btn btn-outline-brand rounded-pill w-100 py-2 fw-bold">
+                            0582102525
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 text-center h-100">
+                        <div class="card-icon-bubble bg-brand-light text-brand-accent mx-auto mb-3">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <h5 class="fw-bold text-brand-primary mb-2">محادثة واتساب</h5>
+                        <p class="text-secondary small mb-3">رد فوري وسريع للحجوزات</p>
+                        <a href="https://wa.me/966582102525?text={{ urlencode('مرحباً سلطان كلين، أود الاستفسار وطلب معاينة مع خصم 35%') }}" target="_blank" class="btn btn-brand-whatsapp rounded-pill w-100 py-2 fw-bold">
+                            تواصل واتساب
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 text-center h-100">
+                        <div class="card-icon-bubble bg-brand-light text-brand-primary mx-auto mb-3">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h5 class="fw-bold text-brand-primary mb-2">نطاق التغطية</h5>
+                        <p class="text-secondary small mb-3">كافة أحياء الرياض ومناطق المملكة</p>
+                        <span class="badge bg-brand-light text-brand-primary py-2 px-3 rounded-pill">تغطية شاملة 24/7</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="custom-card p-4 text-center h-100">
+                        <div class="card-icon-bubble bg-brand-light text-brand-primary mx-auto mb-3">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h5 class="fw-bold text-brand-primary mb-2">ساعات العمل</h5>
+                        <p class="text-secondary small mb-3">طوال أيام الأسبوع 24 ساعة</p>
+                        <span class="badge bg-brand-secondary text-white py-2 px-3 rounded-pill">خدمة طوارئ مستمرة</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Contact / Booking Form -->
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-2">🎉 عرض خاص</span>
+                    <h2 class="fw-heading display-6 text-brand-primary mb-3">احصل على معاينة مجانية وخصم 35% فوراً</h2>
+                    <p class="text-secondary lh-lg mb-4">
+                        املأ بياناتك ونوع الخدمة المطلوبة وسيتواصل معك فني سلطان كلين لتحديد موعد الزيارة وتقديم العرض النهائي مع تفعيل كود الخصم <strong>SULTAN35</strong>.
+                    </p>
+
+                    <div class="d-flex flex-column gap-3 mb-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
+                            <span class="fw-bold text-brand-primary">معاينة مجانية 100% بدون أي التزام</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
+                            <span class="fw-bold text-brand-primary">أحدث معدات البخار الألمانية Kärcher</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
+                            <span class="fw-bold text-brand-primary">ضمان ذهبي لإعادة التنظيف في حال عدم الرضا</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card border-0 custom-card p-4 p-md-5 bg-brand-light">
+                        <h3 class="fw-heading text-brand-primary mb-2 text-center">طلب معاينة فورية</h3>
+                        <p class="text-secondary small text-center mb-4">سيتم استلام طلبك ومتابعة الحجز معك فوراً</p>
+
+                        <form id="contactBookingForm" method="POST" action="{{ route('booking.store') }}">
+                            @csrf
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">الاسم الكريم <span class="text-danger">*</span></label>
+                                    <input type="text" name="name" class="form-control rounded-3 bg-white" placeholder="اسمك الكريم" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">رقم الجوال (واتساب) <span class="text-danger">*</span></label>
+                                    <input type="tel" name="phone" class="form-control rounded-3 bg-white" placeholder="05XXXXXXXX" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">الخدمة المطلوبة <span class="text-danger">*</span></label>
+                                    <select name="service_id" class="form-select rounded-3 bg-white" required>
+                                        <option value="" disabled selected>اختر الخدمة...</option>
+                                        @foreach($services as $srv)
+                                            <option value="{{ $srv->id }}">{{ $srv->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">المدينة / الحي <span class="text-danger">*</span></label>
+                                    <input type="text" name="city" class="form-control rounded-3 bg-white" placeholder="الرياض - حي النرجس" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold">تفاصيل أو ملاحظات إضافية (اختياري)</label>
+                                    <textarea name="notes" class="form-control rounded-3 bg-white" rows="3" placeholder="مساحة المكان، نوع الأثاث، أو الموعد المفضل..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" id="contactBookingSubmitBtn" class="btn btn-brand-whatsapp w-100 py-3 fw-bold fs-6 shadow-sm">
+                                        <i class="fa-brands fa-whatsapp me-1"></i> إرسال الطلب وحجز المعاينة
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       FAQ SECTION (DYNAMIC)
+       ========================================================================== -->
+    @if(!empty($faqs) && count($faqs) > 0)
+        <section class="py-5 bg-brand-light" id="faq">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
+                        <i class="fa-solid fa-circle-question me-1"></i> إجابات وافية
+                    </span>
+                    <h2 class="fw-heading display-6 text-brand-primary">الأسئلة الأكثر شيوعاً</h2>
+                    <p class="text-secondary">كل ما تود معرفته عن حجز الخدمات والمعاينة المجانية</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion">
+                            @foreach($faqs as $index => $faq)
+                                <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm">
+                                    <h2 class="accordion-header" id="heading{{ $faq->id }}">
+                                        <button class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }} fw-bold text-brand-primary" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse{{ $faq->id }}" aria-expanded="{{ $index === 0 ? 'true' : 'false' }}" aria-controls="collapse{{ $faq->id }}">
+                                            {{ $faq->question }}
+                                        </button>
+                                    </h2>
+                                    <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}" data-bs-parent="#faqAccordion" aria-labelledby="heading{{ $faq->id }}">
+                                        <div class="accordion-body text-secondary small lh-lg">
+                                            {{ $faq->answer }}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+@endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactBookingForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const submitBtn = document.getElementById('contactBookingSubmitBtn');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-1"></i> جاري الإرسال...';
+                    submitBtn.disabled = true;
+
+                    const formData = new FormData(contactForm);
+
+                    fetch("{{ route('booking.store') }}", {
+                        method: 'POST',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        },
+                        body: formData
+                    })
+                    .then(response => response.json().then(data => ({
+                        status: response.status,
+                        body: data
+                    })))
+                    .then(({ status, body }) => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+
+                        if (status === 200 && body.status === 'success') {
+                            if (typeof Swal !== 'undefined') {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'تم استلام طلبك بنجاح!',
+                                    text: body.message,
+                                    showCancelButton: true,
+                                    confirmButtonText: '<i class="fa-brands fa-whatsapp me-1"></i> متابعة الموعد عبر واتساب',
+                                    cancelButtonText: 'إغلاق',
+                                    confirmButtonColor: '#25D366',
+                                    cancelButtonColor: '#6c757d',
+                                }).then((result) => {
+                                    if (result.isConfirmed && body.whatsapp_url) {
+                                        window.open(body.whatsapp_url, '_blank');
+                                    }
+                                });
+                            } else {
+                                alert(body.message);
+                                if (body.whatsapp_url) {
+                                    window.open(body.whatsapp_url, '_blank');
+                                }
+                            }
+                            contactForm.reset();
+                        } else {
+                            let errorMsg = body.message || 'يرجى التأكد من صحة البيانات المدخلة.';
+                            if (body.errors) {
+                                errorMsg = Object.values(body.errors).flat().join('<br>');
+                            }
+                            if (typeof Swal !== 'undefined') {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'خطأ في الإرسال',
+                                    html: errorMsg,
+                                    confirmButtonText: 'حسناً',
+                                    confirmButtonColor: '#0c3b5e'
+                                });
+                            } else {
+                                alert(errorMsg);
+                            }
+                        }
+                    })
+                    .catch(err => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'عذراً',
+                                text: 'حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.',
+                                confirmButtonText: 'حسناً',
+                                confirmButtonColor: '#0c3b5e'
+                            });
+                        } else {
+                            alert('حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+@endpush

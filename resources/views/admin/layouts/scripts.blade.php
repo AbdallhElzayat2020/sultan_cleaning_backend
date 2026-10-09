@@ -1,0 +1,68 @@
+<script src="{{asset('assets/admin/assets/modules/jquery.min.js')}}"></script>
+<script src="{{asset('assets/admin/assets/modules/popper.js')}}"></script>
+<script src="{{asset('assets/admin/assets/modules/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/admin/assets/modules/nicescroll/jquery.nicescroll.min.js')}}"></script>
+<script src="{{asset('assets/admin/assets/js/stisla.js')}}"></script>
+
+<!-- JS Libraies -->
+<script src="{{asset('assets/admin/assets/modules/summernote/summernote-bs4.js')}}"></script>
+{{--DataTables --}}
+<script src="//cdn.datatables.net/2.3.8/js/dataTables.min.js"></script>
+
+<!-- Template JS File -->
+<script src="{{asset('assets/admin/assets/js/scripts.js')}}"></script>
+
+{{-- Upload Preview --}}
+<script src="{{asset('assets/admin/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js')}}"></script>
+
+@stack('js')
+
+{{-- Upload Preview --}}
+<script>
+    $.uploadPreview({
+        input_field: "#image-upload-avatar",   // Default: .image-upload
+        preview_box: "#image-preview-avatar",  // Default: .image-preview
+        label_field: "#image-upload-avatar",    // Default: .image-label
+        label_default: "Choose File",   // Default: Choose File
+        label_selected: "Change File",  // Default: Change File
+        no_label: false,                // Default: false
+        success_callback: null          // Default: null
+    });
+</script>
+
+{{--toastr--}}
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+{{--show errors --}}
+<script>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    toastr.error("{{$error}}");
+    @endforeach
+    @endif
+</script>
+
+{{-- Bootstrap Icon Picker  --}}
+<script src="{{asset('assets/admin/assets/js/bootstrap-iconpicker.bundle.min.js')}}"></script>
+
+{{--select 2 --}}
+<script src="{{asset('assets/admin/assets/modules/select2/dist/js/select2.full.min.js')}}"></script>
+
+{{-- sweetalert --}}
+<script src="{{asset('assets/admin/assets/modules/sweetalert/sweetalert.min.js')}}"></script>
+
+<script>
+    @if(session('success'))
+        toastr.success("{{ session('success') }}");
+    @endif
+    @if(session('error'))
+        toastr.error("{{ session('error') }}");
+    @endif
+    @if(session('info'))
+        toastr.info("{{ session('info') }}");
+    @endif
+    @if(session('warning'))
+        toastr.warning("{{ session('warning') }}");
+    @endif
+</script>
