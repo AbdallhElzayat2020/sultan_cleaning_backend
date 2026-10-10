@@ -63,6 +63,14 @@
                     </div>
                 </a>
             </li>
+
+            {{--  Settings Route  --}}
+            <li class="menu-header">النظام والإعدادات</li>
+            <li class="{{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.settings.index') }}">
+                    <i class="fas fa-cog"></i> <span>إعدادات الموقع</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>

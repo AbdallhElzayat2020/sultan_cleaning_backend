@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\Frontend\AboutController as FrontendAboutController;
@@ -70,6 +71,10 @@ Route::middleware(['auth'])->prefix('admin')->as('admin.')->group(function () {
     Route::get('bookings/{booking}', [AdminBookingController::class, 'show'])->name('bookings.show');
     Route::patch('bookings/{booking}/status', [AdminBookingController::class, 'updateStatus'])->name('bookings.update-status');
     Route::delete('bookings/{booking}', [AdminBookingController::class, 'destroy'])->name('bookings.destroy');
+
+    // General Site Settings
+    Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
+    Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
 });
 
 require __DIR__.'/auth.php';

@@ -1,25 +1,40 @@
+    @if(setting('top_bar_active', '1') == '1')
     <!-- ==========================================================================
        TOP ANNOUNCEMENT BAR
        ========================================================================== -->
     <div class="bg-brand-primary py-2 text-white border-bottom border-white border-opacity-10 small">
         <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
-            <div class="d-flex align-items-center gap-2">
-                <span class="badge bg-brand-accent rounded-pill px-3 py-1 fw-bold">🎉 عرض حصري</span>
-                <span>خصم خاص <strong>35%</strong> على جميع خدمات التنظيف والتعقيم
-                    الشامل!</span>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                @if(setting('top_bar_badge'))
+                    <span class="badge bg-brand-accent rounded-pill px-3 py-1 fw-bold">{{ setting('top_bar_badge') }}</span>
+                @endif
+                <span>
+                    @if(setting('top_bar_discount'))
+                        <strong>{{ setting('top_bar_discount') }}</strong>
+                    @endif
+                    {{ setting('top_bar_text', 'خصم خاص على جميع خدمات التنظيف والتعقيم الشامل!') }}
+                </span>
             </div>
             <div class="d-none d-md-flex align-items-center gap-4">
-                <a href="tel:+966582102525" class="text-white text-decoration-none fw-semibold">
-                    <i class="fa-solid fa-phone-volume text-brand-secondary me-1"></i>
-                    0582102525
-                </a>
-                <a href="https://wa.me/966582102525" target="_blank" class="text-white text-decoration-none fw-semibold">
-                    <i class="fa-brands fa-whatsapp text-brand-accent me-1"></i> خدمة
-                    24/7
-                </a>
+                @php
+                    $phone = setting('top_bar_phone', '0582102525');
+                    $whatsapp = setting('top_bar_whatsapp', '966582102525');
+                @endphp
+                @if($phone)
+                    <a href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}" class="text-white text-decoration-none fw-semibold">
+                        <i class="fa-solid fa-phone-volume text-brand-secondary me-1"></i>
+                        {{ $phone }}
+                    </a>
+                @endif
+                @if($whatsapp)
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}" target="_blank" class="text-white text-decoration-none fw-semibold">
+                        <i class="fa-brands fa-whatsapp text-brand-accent me-1"></i> خدمة 24/7
+                    </a>
+                @endif
             </div>
         </div>
     </div>
+    @endif
 
     <!-- ==========================================================================
        NAVBAR (BOOTSTRAP 5)
@@ -74,7 +89,7 @@
 
                 <!-- Single Action CTA in Navbar -->
                 <div class="d-flex align-items-center">
-                    <a href="tel:+966582102525"
+                    <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0582102525')) }}"
                         class="btn btn-brand-primary d-inline-flex align-items-center gap-2 px-4 py-2">
                         <i class="fa-solid fa-phone-volume"></i>
                         <span>اتصل بنا الآن</span>

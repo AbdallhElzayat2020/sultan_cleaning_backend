@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             FaqSeeder::class,
             PostSeeder::class,
             GallerySeeder::class,
+            SettingSeeder::class,
         ]);
         // User::factory(10)->create();
 
