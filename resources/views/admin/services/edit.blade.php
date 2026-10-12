@@ -90,7 +90,7 @@
                                 <!-- Discount Badge / Text -->
                                 <div class="form-group">
                                     <label for="discount">شارة أو نسبة الخصم (اختياري)</label>
-                                    <input type="text" name="discount" id="discount" class="form-control @error('discount') is-invalid @enderror" value="{{ old('discount', $service->discount) }}" placeholder="مثال: خصم 35% كود: SULTAN35 أو خصم خاص 25%">
+                                    <input type="text" name="discount" id="discount" class="form-control @error('discount') is-invalid @enderror" value="{{ old('discount', $service->discount) }}" placeholder="مثال: خصم خاص أو عرض حصري">
                                     <small class="form-text text-muted">اتركه فارغاً (null) إذا كانت هذه الخدمة بدون خصم أو عرض خاص.</small>
                                     @error('discount')
                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -143,6 +143,63 @@
                                     </div>
                                 </div>
 
+                                <!-- SEO Section Card -->
+                                <div class="card card-info border mb-4 mt-3" style="background-color: #fbfdfe;">
+                                    <div class="card-header py-2 d-flex justify-content-between align-items-center" style="background-color: #edf7fa; border-bottom: 1px solid #d4ebf2;">
+                                        <h5 class="mb-0 text-primary font-weight-bold" style="font-size: 1.05rem;">
+                                            <i class="fas fa-search text-info mr-2"></i> تحسين محركات البحث (SEO & Meta Tags)
+                                        </h5>
+                                        <span class="badge badge-light text-muted">اختياري - يتم التوليد تلقائياً إذا تُرك فارغاً</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Google Preview Snippet -->
+                                        <div class="alert alert-light border p-3 mb-4 rounded" style="background-color: #ffffff; border-color: #e2e8f0;">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="fab fa-google text-primary mr-2" style="font-size: 1.2rem;"></i>
+                                                <span class="font-weight-bold text-dark" style="font-size: 0.9rem;">معاينة النتيجة في بحث Google:</span>
+                                            </div>
+                                            <div style="font-family: Arial, sans-serif; max-width: 650px;" class="text-right" dir="rtl">
+                                                <div class="text-success small mb-1" style="font-size: 0.8rem; direction: ltr; text-align: right;">
+                                                    {{ url('/services') }}/<span id="seo-preview-slug">{{ old('slug', $service->slug) ?: 'service-slug' }}</span>
+                                                </div>
+                                                <div class="text-primary font-weight-bold" style="font-size: 1.15rem; line-height: 1.3;" id="seo-preview-title">
+                                                    {{ old('meta_title', $service->meta_title) ?: ($service->title . ' | ' . setting('site_name', 'سين ياء')) }}
+                                                </div>
+                                                <div class="text-secondary small mt-1" style="line-height: 1.4; color: #4d5156 !important;" id="seo-preview-desc">
+                                                    {{ old('meta_description', $service->meta_description) ?: ($service->short_description ?: 'الوصف التعريفي للخدمة الذي سيظهر في نتائج محركات البحث.') }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="meta_title" class="font-weight-bold">عنوان السيو (Meta Title)</label>
+                                            <input type="text" name="meta_title" id="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ old('meta_title', $service->meta_title) }}" placeholder="مثال: أفضل شركة تنظيف منازل وفلل بالرياض | سين ياء">
+                                            <small class="form-text text-muted">إذا تُرك فارغاً، سيتم اعتماد اسم الخدمة متبوعاً باسم الموقع تلقائياً.</small>
+                                            @error('meta_title')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="meta_description" class="font-weight-bold">وصف الميتا (Meta Description)</label>
+                                            <textarea name="meta_description" id="meta_description" rows="3" class="form-control @error('meta_description') is-invalid @enderror" placeholder="اكتب وصفاً جذاباً ومختصراً يظهر في محركات البحث (حوالي 120-160 حرفاً)...">{{ old('meta_description', $service->meta_description) }}</textarea>
+                                            <small class="form-text text-muted">إذا تُرك فارغاً، سيتم اعتماد الوصف المختصر للخدمة تلقائياً.</small>
+                                            @error('meta_description')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group mb-0">
+                                            <label for="meta_keywords" class="font-weight-bold">الكلمات المفتاحية (Meta Keywords)</label>
+                                            <input type="text" name="meta_keywords" id="meta_keywords" class="form-control @error('meta_keywords') is-invalid @enderror" value="{{ old('meta_keywords', $service->meta_keywords) }}" placeholder="مثال: تنظيف فلل, غسيل كنب, تعقيم منازل, شركة تنظيف بالرياض">
+                                            <small class="form-text text-muted">افصل بين كل كلمة أو جملة مفتاحية بفاصلة (,).</small>
+                                            @error('meta_keywords')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="form-group mb-0 text-right">
                                     <a href="{{ route('admin.services.index') }}" class="btn btn-secondary mr-2">إلغاء</a>
                                     <button type="submit" class="btn btn-primary px-4">
@@ -184,6 +241,27 @@
                 placeholder: 'اكتب تفاصيل الخدمة، المميزات، وطرق العمل هنا...'
             });
         }
+
+        // Live Google SEO Snippet Preview
+        function updateSeoPreview() {
+            var siteName = '{{ setting("site_name", "سين ياء") }}';
+            var title = $('#title').val();
+            var slug = $('#slug').val();
+            var metaTitle = $('#meta_title').val();
+            var metaDesc = $('#meta_description').val();
+            var shortDesc = $('#short_description').val();
+
+            var previewTitle = metaTitle ? metaTitle : (title ? (title + ' | ' + siteName) : 'اسم الخدمة | ' + siteName);
+            var previewSlug = slug ? slug : (title ? title.toLowerCase().replace(/[^a-z0-9\u0621-\u064A]+/g, '-') : 'service-slug');
+            var previewDesc = metaDesc ? metaDesc : (shortDesc ? shortDesc : 'الوصف التعريفي للخدمة الذي سيظهر في نتائج محركات البحث لمساعدة العملاء على العثور عليك بسرعة.');
+
+            $('#seo-preview-title').text(previewTitle);
+            $('#seo-preview-slug').text(previewSlug);
+            $('#seo-preview-desc').text(previewDesc);
+        }
+
+        $('#title, #slug, #meta_title, #meta_description, #short_description').on('input', updateSeoPreview);
+        updateSeoPreview();
     });
 </script>
 @endpush

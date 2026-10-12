@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('admin.dashboard') }}">سلطان كلين</a>
+            <a href="{{ route('admin.dashboard') }}">سين ياء</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('admin.dashboard') }}">سلطان</a>
+            <a href="{{ route('admin.dashboard') }}">سين</a>
         </div>
         <ul class="sidebar-menu">
             {{--  Dashboard Route  --}}
@@ -17,14 +17,14 @@
 
             {{--  Sections Route  --}}
             <li class="menu-header">أقسام الموقع (Sections)</li>
-            <li class="dropdown {{ request()->routeIs(['admin.why-choose-us.*', 'admin.services.*', 'admin.galleries.*', 'admin.testimonials.*', 'admin.faqs.*', 'admin.posts.*']) ? 'active' : '' }}">
+            <li class="dropdown {{ request()->routeIs(['admin.why-choose-us.*', 'admin.services.*', 'admin.galleries.*', 'admin.testimonials.*', 'admin.faqs.*', 'admin.posts.*', 'admin.pages.*']) ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
                     <i class="fas fa-layer-group"></i> <span>الأقسام</span>
                 </a>
                 <ul class="dropdown-menu">
                     {{--  Why Choose Us Section  --}}
                     <li class="{{ request()->routeIs('admin.why-choose-us.*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('admin.why-choose-us.index') }}">لماذا سلطان كلين؟</a>
+                        <a class="nav-link" href="{{ route('admin.why-choose-us.index') }}">لماذا سين ياء؟</a>
                     </li>
 
                     {{--  Services Section  --}}
@@ -51,7 +51,19 @@
                     <li class="{{ request()->routeIs('admin.posts.*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.posts.index') }}">المدونة والمقالات</a>
                     </li>
+
+                    {{--  Pages CMS Section  --}}
+                    <li class="{{ request()->routeIs('admin.pages.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.pages.index') }}">إدارة الصفحات (Pages)</a>
+                    </li>
                 </ul>
+            </li>
+
+            {{--  Pages Direct Route  --}}
+            <li class="{{ request()->routeIs('admin.pages.*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.pages.index') }}">
+                    <i class="fas fa-file-alt"></i> <span>الصفحات الثابتة (CMS)</span>
+                </a>
             </li>
 
             {{--  Bookings Route  --}}

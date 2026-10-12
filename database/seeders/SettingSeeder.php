@@ -17,8 +17,8 @@ class SettingSeeder extends Seeder
             'top_bar_badge' => '🎉 عرض حصري',
             'top_bar_discount' => '35%',
             'top_bar_text' => 'خصم خاص على جميع خدمات التنظيف والتعقيم الشامل!',
-            'top_bar_phone' => '0582102525',
-            'top_bar_whatsapp' => '966582102525',
+            'top_bar_phone' => '0531109831',
+            'top_bar_whatsapp' => '966531109831',
         ];
 
         foreach ($settings as $key => $value) {

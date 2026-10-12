@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Service extends Model
 {
@@ -19,6 +20,9 @@ class Service extends Model
         'discount',
         'short_description',
         'description',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
         'status',
         'order',
     ];
@@ -27,6 +31,44 @@ class Service extends Model
         'status' => 'boolean',
         'order' => 'integer',
     ];
+
+    /**
+     * Get smart SEO title with fallback.
+     */
+    public function getSeoTitleAttribute(): string
+    {
+        return ! empty($this->meta_title)
+            ? $this->meta_title
+            : $this->title.' | '.setting('site_name', 'سين ياء');
+    }
+
+    /**
+     * Get smart SEO description with fallback.
+     */
+    public function getSeoDescriptionAttribute(): string
+    {
+        if (! empty($this->meta_description)) {
+            return $this->meta_description;
+        }
+
+        if (! empty($this->short_description)) {
+            return $this->short_description;
+        }
+
+        return Str::limit(strip_tags($this->description ?? ''), 160);
+    }
+
+    /**
+     * Get smart SEO keywords with fallback.
+     */
+    public function getSeoKeywordsAttribute(): string
+    {
+        if (! empty($this->meta_keywords)) {
+            return $this->meta_keywords;
+        }
+
+        return $this->title.', تنظيف بالرياض, شركة تنظيف, تعقيم منازل, '.setting('site_name', 'سين ياء');
+    }
 
     /**
      * Get the route key for the model (can use slug or id).
@@ -45,6 +87,6 @@ class Service extends Model
             return asset('uploads/services/'.$this->image);
         }
 
-        return asset('images/villa.jpg');
+        return asset('images/hero.jpg');
     }
 }

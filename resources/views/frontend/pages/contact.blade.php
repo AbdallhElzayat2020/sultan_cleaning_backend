@@ -1,24 +1,28 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'اتصل بنا | سلطان كلين لخدمات النظافة والتعقيم الشامل')
+@section('title', setting('seo_contact_title', 'اتصل بنا واحجز خدمتك الآن | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة'))
+@section('meta_description', setting('seo_contact_description', 'تواصل مع فريق شركة ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض. احجز موعدك فورياً عبر الهاتف أو الواتساب على مدار 24 ساعة.'))
+@section('meta_keywords', setting('seo_contact_keywords', 'اتصل بنا, حجز موعد تنظيف, رقم شركة تنظيف بالرياض, واتساب شركة نظافة, ' . setting('site_name', 'سين ياء')))
+@section('og_title', setting('seo_contact_title', 'اتصل بنا واحجز خدمتك الآن | شركة ' . setting('site_name', 'سين ياء')))
+@section('og_description', setting('seo_contact_description', 'تواصل معنا مباشرة عبر الهاتف أو الواتساب لحجز أفضل خدمات النظافة والتعقيم بالرياض.'))
 
 @section('content')
     <!-- ==========================================================================
        PAGE HEADER BANNER
        ========================================================================== -->
-    <section class="bg-brand-primary text-white py-5 text-center">
+    <section class="page-header-banner py-5 text-center">
         <div class="container py-3">
-            <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-3">
-                <i class="fa-solid fa-headset me-1"></i> خدمة عملاء 24/7
+            <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
+                <i class="fa-solid fa-headset me-1 text-brand-secondary"></i> خدمة عملاء 24/7
             </span>
-            <h1 class="display-5 fw-heading text-white mb-2">اتصل بنا وطلب معاينة مجانية</h1>
-            <p class="lead text-white text-opacity-75 fs-6 max-w-700 mx-auto mb-3">
+            <h1 class="display-5 fw-heading text-brand-primary mb-2">اتصل بنا وحجز خدمة تنظيف</h1>
+            <p class="lead text-secondary fs-6 max-w-700 mx-auto mb-3">
                 فريقنا الميداني جاهز للوصول إليك في أسرع وقت. تواصل معنا هاتفياً أو عبر الواتساب أو املأ النموذج وسنعاود الاتصال بك فوراً.
             </p>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0 small">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-brand-secondary text-decoration-none">الرئيسية</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">اتصل بنا</li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-brand-primary text-decoration-none">الرئيسية</a></li>
+                    <li class="breadcrumb-item active text-brand-secondary" aria-current="page">اتصل بنا</li>
                 </ol>
             </nav>
         </div>
@@ -37,8 +41,8 @@
                         </div>
                         <h5 class="fw-bold text-brand-primary mb-2">اتصال هاتفي</h5>
                         <p class="text-secondary small mb-3">متاحون على مدار الساعة</p>
-                        <a href="tel:+966582102525" class="btn btn-outline-brand rounded-pill w-100 py-2 fw-bold">
-                            0582102525
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-outline-brand rounded-pill w-100 py-2 fw-bold">
+                            {{ setting('top_bar_phone', '0531109831') }}
                         </a>
                     </div>
                 </div>
@@ -50,8 +54,8 @@
                         </div>
                         <h5 class="fw-bold text-brand-primary mb-2">محادثة واتساب</h5>
                         <p class="text-secondary small mb-3">رد فوري وسريع للحجوزات</p>
-                        <a href="https://wa.me/966582102525?text={{ urlencode('مرحباً سلطان كلين، أود الاستفسار وطلب معاينة مع خصم 35%') }}" target="_blank" class="btn btn-brand-whatsapp rounded-pill w-100 py-2 fw-bold">
-                            تواصل واتساب
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وحجز خدمة تنظيف') }}" target="_blank" class="btn btn-primary rounded-pill w-100 py-2 fw-bold">
+                            تواصل واتساب ({{ setting('top_bar_phone', '0531109831') }})
                         </a>
                     </div>
                 </div>
@@ -82,16 +86,16 @@
             <!-- Main Contact / Booking Form -->
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-2">🎉 عرض خاص</span>
-                    <h2 class="fw-heading display-6 text-brand-primary mb-3">احصل على معاينة مجانية وخصم 35% فوراً</h2>
+                    <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-2">✨ تواصل مباشر</span>
+                    <h2 class="fw-heading display-6 text-brand-primary mb-3">احجز خدمتك واستمتع بنظافة فائقة</h2>
                     <p class="text-secondary lh-lg mb-4">
-                        املأ بياناتك ونوع الخدمة المطلوبة وسيتواصل معك فني سلطان كلين لتحديد موعد الزيارة وتقديم العرض النهائي مع تفعيل كود الخصم <strong>SULTAN35</strong>.
+                        املأ بياناتك ونوع الخدمة المطلوبة وسيتواصل معك فني شركة سين ياء لتحديد موعد الزيارة وتأكيد الحجز فوراً.
                     </p>
 
                     <div class="d-flex flex-column gap-3 mb-4">
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span class="fw-bold text-brand-primary">معاينة مجانية 100% بدون أي التزام</span>
+                            <span class="fw-bold text-brand-primary">تقييم وحجز فوري بدون أي تعقيد</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
@@ -106,7 +110,7 @@
 
                 <div class="col-lg-6">
                     <div class="card border-0 custom-card p-4 p-md-5 bg-brand-light">
-                        <h3 class="fw-heading text-brand-primary mb-2 text-center">طلب معاينة فورية</h3>
+                        <h3 class="fw-heading text-brand-primary mb-2 text-center">طلب حجز خدمة</h3>
                         <p class="text-secondary small text-center mb-4">سيتم استلام طلبك ومتابعة الحجز معك فوراً</p>
 
                         <form id="contactBookingForm" method="POST" action="{{ route('booking.store') }}">
@@ -138,8 +142,8 @@
                                     <textarea name="notes" class="form-control rounded-3 bg-white" rows="3" placeholder="مساحة المكان، نوع الأثاث، أو الموعد المفضل..."></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" id="contactBookingSubmitBtn" class="btn btn-brand-whatsapp w-100 py-3 fw-bold fs-6 shadow-sm">
-                                        <i class="fa-brands fa-whatsapp me-1"></i> إرسال الطلب وحجز المعاينة
+                                    <button type="submit" id="contactBookingSubmitBtn" class="btn btn-primary w-100 py-3 fw-bold fs-6 shadow">
+                                        <i class="fa-brands fa-whatsapp me-1"></i> إرسال الطلب وتأكيد الحجز
                                     </button>
                                 </div>
                             </div>
@@ -157,11 +161,11 @@
         <section class="py-5 bg-brand-light" id="faq">
             <div class="container py-4">
                 <div class="text-center mb-5">
-                    <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
+                    <span class="badge bg-white text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2 shadow-sm">
                         <i class="fa-solid fa-circle-question me-1"></i> إجابات وافية
                     </span>
                     <h2 class="fw-heading display-6 text-brand-primary">الأسئلة الأكثر شيوعاً</h2>
-                    <p class="text-secondary">كل ما تود معرفته عن حجز الخدمات والمعاينة المجانية</p>
+                    <p class="text-secondary">كل ما تود معرفته عن حجز الخدمات وتفاصيل تنفيذ العمل</p>
                 </div>
 
                 <div class="row justify-content-center">

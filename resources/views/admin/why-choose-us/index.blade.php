@@ -1,13 +1,13 @@
 @extends('admin.layouts.master')
-@section('title', 'لماذا سلطان كلين؟')
+@section('title', 'لماذا سين ياء؟')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>لماذا سلطان كلين؟ (Why Choose Us)</h1>
+            <h1>لماذا سين ياء؟ (Why Choose Us)</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">لوحة التحكم</a></div>
-                <div class="breadcrumb-item">لماذا سلطان كلين؟</div>
+                <div class="breadcrumb-item">لماذا سين ياء؟</div>
             </div>
         </div>
 

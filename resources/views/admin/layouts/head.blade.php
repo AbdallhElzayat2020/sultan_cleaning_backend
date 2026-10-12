@@ -5,8 +5,10 @@
         @yield('dashboard_title', 'Listing App')
     </title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+
     <!-- General CSS Files -->
     @include('admin.layouts.styles')
-
-
 </head>

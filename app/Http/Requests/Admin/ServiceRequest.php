@@ -32,6 +32,9 @@ class ServiceRequest extends FormRequest
             'discount' => ['nullable', 'string', 'max:255'],
             'short_description' => ['required', 'string'],
             'description' => ['nullable', 'string'],
+            'meta_title' => ['nullable', 'string', 'max:255'],
+            'meta_description' => ['nullable', 'string', 'max:1000'],
+            'meta_keywords' => ['nullable', 'string', 'max:1000'],
             'status' => ['required', 'boolean'],
             'order' => ['nullable', 'integer', 'min:0'],
         ];
@@ -52,6 +55,9 @@ class ServiceRequest extends FormRequest
             'discount' => 'شارة / نسبة الخصم',
             'short_description' => 'الوصف المختصر',
             'description' => 'التفاصيل الكاملة',
+            'meta_title' => 'عنوان السيو (Meta Title)',
+            'meta_description' => 'وصف السيو (Meta Description)',
+            'meta_keywords' => 'الكلمات المفتاحية (Meta Keywords)',
             'status' => 'الحالة',
             'order' => 'الترتيب',
         ];

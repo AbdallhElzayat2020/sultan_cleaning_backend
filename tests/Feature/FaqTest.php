@@ -5,8 +5,8 @@ use App\Models\User;
 
 test('frontend home page displays active faqs', function () {
     $activeFaq = Faq::factory()->create([
-        'question' => 'هل تقدمون خدمة المعاينة المجانية؟',
-        'answer' => 'نعم، المعاينة مجانية بالكامل لجميع عملائنا في الرياض.',
+        'question' => 'كيف يمكنني حجز موعد لخدمات التنظيف؟',
+        'answer' => 'يمكنك الحجز بسهولة عبر نموذج الموقع أو التواصل المباشر عبر الواتساب.',
         'status' => true,
     ]);
 
@@ -19,8 +19,8 @@ test('frontend home page displays active faqs', function () {
     $response = $this->get(route('home'));
 
     $response->assertOk();
-    $response->assertSee('هل تقدمون خدمة المعاينة المجانية؟');
-    $response->assertSee('المعاينة مجانية بالكامل');
+    $response->assertSee('كيف يمكنني حجز موعد لخدمات التنظيف؟');
+    $response->assertSee('يمكنك الحجز بسهولة عبر نموذج الموقع');
     $response->assertDontSee('سؤال غير مفعل ومخفي');
 });
 

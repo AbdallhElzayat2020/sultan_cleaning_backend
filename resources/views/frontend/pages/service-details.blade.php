@@ -1,29 +1,61 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'تفاصيل الخدمة | سلطان كلين - ' . $service->title)
+@section('title', $service->seo_title)
+@section('meta_description', $service->seo_description)
+@section('meta_keywords', $service->seo_keywords)
+@section('og_title', $service->seo_title)
+@section('og_description', $service->seo_description)
+@section('og_image', $service->image_url)
+@section('og_type', 'service')
+
+@section('schema_org')
+@php
+    $serviceSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Service',
+        'serviceType' => $service->title,
+        'name' => $service->title,
+        'description' => $service->seo_description,
+        'image' => $service->image_url,
+        'provider' => [
+            '@type' => 'HomeAndConstructionBusiness',
+            'name' => setting('site_name', 'سين ياء لخدمات النظافة والتعقيم'),
+            'telephone' => setting('top_bar_phone', '0531109831'),
+            'url' => url('/'),
+        ],
+        'areaServed' => [
+            '@type' => 'City',
+            'name' => 'الرياض',
+        ],
+    ];
+@endphp
+<script type="application/ld+json">
+{!! json_encode($serviceSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+@endsection
 
 @section('content')
     <!-- ==========================================================================
                PAGE HEADER BANNER
                ========================================================================== -->
-    <section class="bg-brand-primary text-white py-5 text-center">
+    <section class="page-header-banner py-5 text-center">
         <div class="container py-3">
             @if($service->discount)
-                <span class="badge bg-brand-accent rounded-pill px-3 py-2 fw-bold mb-2">
-                    <i class="fa-solid fa-sparkles me-1"></i> {{ $service->discount }}
+                <span class="badge bg-white text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2 shadow-sm">
+                    <i class="fa-solid fa-sparkles me-1 text-brand-secondary"></i> {{ $service->discount }}
                 </span>
             @endif
-            <h1 class="display-5 fw-heading text-white mb-2">{{ $service->title }}</h1>
-            <p class="lead text-white text-opacity-75 fs-6 max-w-700 mx-auto mb-3">
+            <h1 class="display-5 fw-heading text-brand-primary mb-2">{{ $service->title }}</h1>
+            <p class="lead text-secondary fs-6 max-w-700 mx-auto mb-3">
                 {{ $service->short_description }}
             </p>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0 small">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}"
-                            class="text-brand-secondary text-decoration-none">الرئيسية</a></li>
+                            class="text-brand-primary text-decoration-none">الرئيسية</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('services.index') }}"
-                            class="text-brand-secondary text-decoration-none">خدماتنا</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">{{ $service->title }}</li>
+                            class="text-brand-primary text-decoration-none">خدماتنا</a></li>
+                    <li class="breadcrumb-item active text-brand-secondary" aria-current="page">{{ $service->title }}</li>
                 </ol>
             </nav>
         </div>
@@ -60,16 +92,15 @@
 
                     <!-- Direct CTAs on Page -->
                     <div class="card border-0 bg-brand-light rounded-4 p-4 text-center shadow-sm">
-                        <h4 class="fw-heading text-brand-primary mb-2">هل ترغب بحجز موعد معاينة مجانية لـ
-                            {{ $service->title }}؟</h4>
+                        <h4 class="fw-heading text-brand-primary mb-2">هل ترغب بحجز خدمة {{ $service->title }}؟</h4>
                         <p class="text-secondary small mb-3">تواصل معنا فوراً للحصول على أفضل جودة وضمان ملكي شامل</p>
                         <div class="d-flex justify-content-center flex-wrap gap-3">
-                            <a href="https://wa.me/966582102525?text={{ urlencode('مرحباً سلطان كلين، أود حجز موعد معاينة لخدمة: ' . $service->title . ($service->discount ? ' مع ' . $service->discount : '')) }}"
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة: ' . $service->title) }}"
                                 target="_blank" class="btn btn-brand-whatsapp px-4">
                                 <i class="fa-brands fa-whatsapp me-1"></i> حجز عبر واتساب
                             </a>
-                            <a href="tel:+966582102525" class="btn btn-brand-primary px-4">
-                                <i class="fa-solid fa-phone me-1"></i> اتصال مباشر الآن
+                            <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-brand-primary px-4">
+                                <i class="fa-solid fa-phone me-1"></i> اتصال مباشر الآن ({{ setting('top_bar_phone', '0531109831') }})
                             </a>
                         </div>
                     </div>
@@ -100,7 +131,7 @@
 
                     <!-- Quick Booking Sidebar Form -->
                     <div class="card border-0 custom-card p-4 mb-4 bg-brand-light">
-                        <h5 class="fw-heading text-brand-primary mb-1">طلب معاينة وخصم 35%</h5>
+                        <h5 class="fw-heading text-brand-primary mb-1">طلب حجز خدمة فورية</h5>
                         <p class="text-secondary small mb-3">املأ النموذج وسنتواصل معك فوراً</p>
 
                         <form id="sidebarBookingForm" method="POST" action="{{ route('booking.store') }}">
@@ -137,8 +168,8 @@
                                     placeholder="مساحة المكان أو تفاصيل إضافية"></textarea>
                             </div>
                             <button type="submit" id="sidebarBookingSubmitBtn"
-                                class="btn btn-brand-whatsapp w-100 py-2 fw-bold">
-                                <i class="fa-brands fa-whatsapp me-1"></i> إرسال وتطبيق الخصم
+                                class="btn btn-primary w-100 py-2 fw-bold">
+                                <i class="fa-brands fa-whatsapp me-1"></i> إرسال الطلب وتأكيد الحجز
                             </button>
                         </form>
                     </div>
@@ -151,8 +182,8 @@
                         </div>
                         <h5 class="fw-bold text-white mb-2">هل تحتاج استشارة سريعة؟</h5>
                         <p class="text-white-50 small mb-3">فريق خدمة العملاء جاهز للإجابة على جميع استفساراتك 24/7</p>
-                        <a href="tel:+966582102525" class="btn btn-brand-secondary w-100 mb-2">
-                            <i class="fa-solid fa-phone me-1"></i> 0582102525
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-brand-secondary w-100 mb-2">
+                            <i class="fa-solid fa-phone me-1"></i> {{ setting('top_bar_phone', '0531109831') }}
                         </a>
                     </div>
                 </div>

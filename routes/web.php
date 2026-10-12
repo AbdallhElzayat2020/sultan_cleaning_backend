@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\PageController as AdminPageController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\Frontend\BookingController as FrontendBookingController
 use App\Http\Controllers\Frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\Frontend\GalleryController as FrontendGalleryController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\Frontend\PageController as FrontendPageController;
 use App\Http\Controllers\Frontend\PostController as FrontendPostController;
 use App\Http\Controllers\Frontend\ServiceController as FrontendServiceController;
 use App\Http\Controllers\ProfileController;
@@ -30,8 +32,16 @@ Route::get('/about', [FrontendAboutController::class, 'index'])->name('about');
 Route::get('/contact', [FrontendContactController::class, 'index'])->name('contact');
 Route::post('/booking', [FrontendBookingController::class, 'store'])->name('booking.store');
 
+// Custom Dynamic Pages Routes
+Route::get('/pages/{slug}', [FrontendPageController::class, 'show'])->name('pages.show');
+Route::get('/privacy-policy', [FrontendPageController::class, 'privacyPolicy'])->name('privacy-policy');
+
+// Landpage Route - Landing Page Only (No Dashboard)
+Route::get('/landpage', [FrontendHomeController::class, 'landpage'])->name('landpage');
+Route::get('/landing', [FrontendHomeController::class, 'landpage'])->name('landing');
 // Admin Dashboard Route
 Route::get('/dashboard', [AdminHomeController::class, 'index'])->middleware(['auth'])->name('dashboard');
+
 Route::get('/admin/dashboard', [AdminHomeController::class, 'index'])->middleware(['auth'])->name('admin.dashboard');
 Route::get('/admin', function () {
     return redirect()->route('admin.dashboard');
@@ -65,6 +75,9 @@ Route::middleware(['auth'])->prefix('admin')->as('admin.')->group(function () {
 
     // Blog Posts Section
     Route::resource('posts', PostController::class);
+
+    // Custom Pages Management Section
+    Route::resource('pages', AdminPageController::class);
 
     // Bookings & Quotes Section
     Route::get('bookings', [AdminBookingController::class, 'index'])->name('bookings.index');

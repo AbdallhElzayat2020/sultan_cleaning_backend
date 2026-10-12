@@ -1,12 +1,17 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'Home Page')
+@section('title', 'الرئيسية | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض')
+@section('meta_description', 'شركة ' . setting('site_name', 'سين ياء') . ' الرائدة في خدمات النظافة والتعقيم الشامل بالرياض والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.')
+@section('meta_keywords', 'شركة تنظيف بالرياض, تنظيف منازل بالرياض, تنظيف فلل بالرياض, غسيل كنب بالبخار, جلي رخام بالرياض, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء'))
+@section('og_title', setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض')
+@section('og_description', 'أفضل خدمات التنظيف المتكاملة للفلل والمنازل والشركات بالبخار وأحدث أجهزة التعقيم مع شركة ' . setting('site_name', 'سين ياء') . '.')
+@section('og_image', asset('images/hero.jpg'))
 
 @section('content')
     <!-- ==========================================================================
-                                                   HERO SECTION (CLEAN & UNCLUTTERED)
-                                                   ========================================================================== -->
-    <section class="hero-wrapper py-5">
+                                                       HERO SECTION (CLEAN & UNCLUTTERED)
+                                                       ========================================================================== -->
+    <section class="hero hero-wrapper py-5">
         <div class="container py-4">
             <div class="row align-items-center g-5">
                 <!-- Content Side -->
@@ -23,23 +28,23 @@
                         شامل <span class="text-brand-secondary">لمنزلك ومكتبك</span>
                     </h1>
 
-                    <p class="lead text-secondary mb-4 fs-6 lh-lg" style="max-width: 580px">
+                    <p class="lead mb-4 fs-6 lh-lg" style="max-width: 580px">
                         نقدم لك تجربة تنظيف متكاملة بأحدث أجهزة البخار والمواد المعتمدة
-                        والآمنة 100%. بريق يدوم، تعقيم عميق، ومعاينة مجانية بضمان الرضا
+                        والآمنة 100%. بريق يدوم، تعقيم عميق، وجودة استثنائية بضمان الرضا
                         الذهبي.
                     </p>
 
                     <!-- Clean Hero Action Buttons -->
                     <div class="d-flex flex-wrap gap-3 mb-4">
-                        <a href="https://wa.me/966582102525"
-                            class="btn btn-brand-primary btn-lg d-inline-flex align-items-center gap-2 px-4 shadow">
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}"
+                            class="btn btn-primary btn-lg d-inline-flex align-items-center gap-2 px-4 shadow">
                             <i class="fa-brands fa-whatsapp"></i>
                             <span> تواصل معنا </span>
                         </a>
-                        <a href="tel:+966582102525"
-                            class="btn btn-outline-brand btn-lg d-inline-flex align-items-center gap-2 px-4">
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}"
+                            class="btn btn-hero-call btn-lg d-inline-flex align-items-center gap-2 px-4">
                             <i class="fa-solid fa-phone-volume"></i>
-                            <span>0582102525</span>
+                            <span>{{ setting('top_bar_phone', '0531109831') }}</span>
                         </a>
                     </div>
                 </div>
@@ -48,7 +53,7 @@
                 <div class="col-lg-5">
                     <div class="hero-img-box position-relative">
                         <img src="{{ asset('assets/frontend/images/hero.jpg') }}"
-                            alt="خدمات تنظيف احترافية في سلطان كلين" />
+                            alt="خدمات تنظيف احترافية في شركة سين ياء" />
                     </div>
                 </div>
             </div>
@@ -58,13 +63,14 @@
 
 
     <!-- ==========================================================================
-                                                   FEATURES / WHY CHOOSE US
-                                                   ========================================================================== -->
-    <section class="py-5 bg-brand-light" id="features">
+                                                       FEATURES / WHY CHOOSE US
+                                                       ========================================================================== -->
+    <section class="py-5 why-us bg-white" id="features">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5">
-                <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
-                    <i class="fa-solid fa-award me-1"></i> لماذا سلطان كلين؟
+                <span
+                    class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2">
+                    <i class="fa-solid fa-award me-1"></i> لماذا نحن ؟
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary">
                     معايير ملكية في النظافة والتعقيم
@@ -98,11 +104,11 @@
     </section>
 
     <!-- ==========================================================================
-            SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
-            ========================================================================== -->
+                SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
+                ========================================================================== -->
 
     @if (!empty($services) && count($services) > 0)
-        <section class="py-5" id="services">
+        <section class="services py-5" id="services">
             <div class="container py-4">
                 <div class="text-center mb-5">
                     <h2 class="fw-heading display-6 text-brand-primary mb-2">خدماتنا</h2>
@@ -113,9 +119,11 @@
                 <div class="row g-4">
                     @forelse($services ?? [] as $service)
                         <div class="col-md-6 col-lg-4">
-                            <div class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
-                                @if($service->discount)
-                                    <span class="badge bg-brand-accent position-absolute top-0 end-0 m-3 px-2 py-1 small rounded-pill shadow-sm">
+                            <div
+                                class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
+                                @if ($service->discount)
+                                    <span
+                                        class="badge bg-brand-accent position-absolute top-0 end-0 m-3 px-2 py-1 small rounded-pill shadow-sm">
                                         <i class="fa-solid fa-percent me-1"></i> {{ $service->discount }}
                                     </span>
                                 @endif
@@ -143,105 +151,62 @@
 
                 <div class="text-center mt-5">
                     <a href="{{ route('services.index') }}" class="btn btn-brand-primary btn-lg px-5">
-                        <i class="fa-solid fa-list-check me-2"></i> عرض كافة الخدمات مع طلب
-                        المعاينة
+                        <i class="fa-solid fa-list-check me-2"></i> عرض كافة الخدمات وحجز الخدمة
                     </a>
                 </div>
             </div>
         </section>
     @endif
 
-    <!-- ==========================================================================
-                                                   BEFORE & AFTER COMPARISON SLIDER
-                                                   ========================================================================== -->
-    <section class="py-5 bg-brand-light" id="before-after">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
-                    <i class="fa-solid fa-images me-1"></i> شاهد الفرق بنفسك
-                </span>
-                <h2 class="fw-heading display-6 text-brand-primary">
-                    نتائج حقيقية تتحدث عن دقة عملنا
-                </h2>
-                <p class="text-secondary">
-                    اسحب المقبض يميناً ويساراً لمشاهدة التحول المذهل قبل وبعد المعالجة
-                    والتنظيف الاحترافي.
-                </p>
-            </div>
 
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="ba-slider border-4 border-white">
-                        <div class="ba-after position-absolute">
-                            <img src="{{ asset('assets/frontend/images/sofa.jpg') }}" alt="بعد التنظيف" />
-                            <span class="badge bg-brand-accent position-absolute top-0 start-0 m-3 px-3 py-2 fs-6">بعد
-                                التنظيف ✨</span>
-                        </div>
-                        <div class="ba-before position-absolute">
-                            <img src="{{ asset('assets/frontend/images/sofa.jpg') }}" alt="قبل التنظيف"
-                                style="filter: brightness(0.65) saturate(0.6) sepia(0.3)" />
-                            <span class="badge bg-danger position-absolute top-0 end-0 m-3 px-3 py-2 fs-6">قبل التنظيف
-                                ❌</span>
-                        </div>
-                        <div class="ba-handle">
-                            <div class="ba-handle-btn">
-                                <i class="fa-solid fa-left-right"></i>
-                            </div>
-                        </div>
-                        <input type="range" min="0" max="100" value="50" aria-label="تحريك قبل وبعد" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ==========================================================================
-                                                   QUOTE & INSPECTION REQUEST (BOOTSTRAP FORM)
-                                                   ========================================================================== -->
-    <section class="py-5 bg-brand-primary text-white">
+                                                       QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
+                                                       ========================================================================== -->
+    <section class="py-5 quote-section" id="quote">
         <div class="container py-4">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
-                    <span class="badge bg-white bg-opacity-20 text-brand-secondary rounded-pill px-3 py-2 fw-bold mb-3">
-                        <i class="fa-solid fa-calculator me-1"></i> طلب معاينة وخصم فوري
+                    <span
+                        class="badge bg-white text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-3 shadow-sm">
+                        <i class="fa-solid fa-calendar-check me-1"></i> طلب وحجز فوري
                     </span>
-                    <h2 class="fw-heading display-6 mb-3 text-white">
-                        احصل على معاينة مجانية وخصم 35% الآن
+                    <h2 class="fw-heading display-6 mb-3 text-brand-primary">
+                        احصل على خدمة تنظيف متكاملة الآن
                     </h2>
-                    <p class="text-white-50 mb-4">
-                        املأ بياناتك وسيقوم فريقنا بالتواصل معك لتحديد موعد المعاينة
-                        وتطبيق خصم الـ 35% بدون أي شروط معقدة.
+                    <p class="text-secondary mb-4">
+                        املأ بياناتك وسيقوم فريقنا بالتواصل معك لتأكيد الموعد وتنسيق تفاصيل الخدمة بأسرع وقت.
                     </p>
 
                     <div class="d-flex flex-column gap-3 mb-4">
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span>معاينة وتقدير فوري بدون أي التزام مسبق</span>
+                            <span class="fw-semibold">تقييم وتنسيق فوري بدون أي التزام مسبق</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span>ضمان على جودة التنظيف</span>
+                            <span class="fw-semibold">ضمان على جودة التنظيف</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span>دعم مباشر عبر الواتساب والهاتف على مدار الساعة</span>
+                            <span class="fw-semibold">دعم مباشر عبر الواتساب والهاتف على مدار الساعة</span>
                         </div>
                     </div>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="tel:+966582102525" class="btn btn-brand-secondary">
-                            <i class="fa-solid fa-phone me-1"></i> اتصل هاتفياً: 0582102525
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-outline-brand">
+                            <i class="fa-solid fa-phone me-1"></i> اتصل هاتفياً: {{ setting('top_bar_phone', '0531109831') }}
                         </a>
-                        <a href="https://wa.me/966582102525" target="_blank" class="btn btn-brand-whatsapp">
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}" target="_blank" class="btn btn-primary">
                             <i class="fa-brands fa-whatsapp me-1"></i> محادثة واتساب فورية
                         </a>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="card border-0 rounded-4 p-4 text-dark shadow-lg bg-white">
+                    <div class="card quote-card border-0 rounded-4 p-4 text-dark shadow-lg bg-white">
                         <h4 class="fw-heading text-brand-primary mb-1 text-center">
-                            طلب معاينة وحجز الخدمة
+                            حجز الخدمة والتواصل السريع
                         </h4>
                         <p class="text-secondary small text-center mb-3">
                             سيتم تجهيز طلبك وتوجيهه مباشرة لخدمة العملاء عبر واتساب
@@ -282,9 +247,9 @@
                                     <textarea name="notes" class="form-control rounded-3" rows="2" placeholder="أي تفاصيل تود توضيحها..."></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-brand-whatsapp w-100 py-3 fw-bold fs-6"
+                                    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold fs-6"
                                         id="submitBookingBtn">
-                                        <i class="fa-brands fa-whatsapp me-1"></i> إرسال الطلب
+                                        <i class="fa-brands fa-whatsapp me-1"></i> إرسال الطلب وتأكيد الحجز
                                     </button>
                                 </div>
                             </div>
@@ -296,17 +261,19 @@
     </section>
 
     <!-- ==========================================================================
-                                                   REVIEWS (TESTIMONIALS)
-                                                   ========================================================================== -->
-    <section class="py-5 bg-brand-light position-relative overflow-hidden" id="reviews">
+                                                       REVIEWS (TESTIMONIALS)
+                                                       ========================================================================== -->
+    <section class="py-5 bg-white reviews position-relative overflow-hidden" id="reviews">
         <div class="container py-4">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start">
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start">
                 <div>
-                    <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
+                    <span
+                        class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2">
                         <i class="fa-solid fa-comments me-1"></i> آراء وتجارب العملاء
                     </span>
                     <h2 class="fw-heading display-6 text-brand-primary mb-1">
-                        ماذا يقول عملاؤنا عن سلطان كلين؟
+                        ماذا يقول عملاؤنا عن شركة سين ياء؟
                     </h2>
                     <p class="text-secondary mb-0">
                         ثقة عملائنا هي سر نجاحنا وتميزنا المستمر في كافة أحياء الرياض والمملكة.
@@ -328,33 +295,39 @@
                 <div class="swiper-wrapper">
                     @forelse($testimonials as $testimonial)
                         <div class="swiper-slide h-auto">
-                            <div class="custom-card p-4 h-100 d-flex flex-column position-relative shadow-sm rounded-4 bg-white border">
+                            <div
+                                class="custom-card p-4 h-100 d-flex flex-column position-relative shadow-sm rounded-4 bg-white border">
                                 <!-- Quote Watermark -->
-                                <div class="position-absolute top-0 end-0 p-3 text-brand-primary pe-none" style="font-size: 2.5rem; line-height: 1; opacity: 0.12;">
+                                <div class="position-absolute top-0 end-0 p-3 text-brand-primary pe-none"
+                                    style="font-size: 2.5rem; line-height: 1; opacity: 0.12;">
                                     <i class="fa-solid fa-quote-left"></i>
                                 </div>
 
                                 <!-- Star Ratings -->
                                 <div class="text-warning mb-3 d-flex align-items-center gap-1">
-                                    @for($i = 1; $i <= 5; $i++)
-                                        @if($i <= $testimonial->rating)
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        @if ($i <= $testimonial->rating)
                                             <i class="fa-solid fa-star"></i>
                                         @else
                                             <i class="fa-regular fa-star text-muted"></i>
                                         @endif
                                     @endfor
-                                    <span class="text-muted small ms-1 font-weight-bold">({{ $testimonial->rating }}.0)</span>
+                                    <span
+                                        class="text-muted small ms-1 font-weight-bold">({{ $testimonial->rating }}.0)</span>
                                 </div>
 
                                 <!-- Review Body -->
-                                <p class="text-secondary small fst-italic flex-grow-1 mb-4 position-relative" style="line-height: 1.7;">
+                                <p class="text-secondary small fst-italic flex-grow-1 mb-4 position-relative"
+                                    style="line-height: 1.7;">
                                     "{{ $testimonial->review }}"
                                 </p>
 
                                 <!-- Customer Info -->
                                 <div class="d-flex align-items-center gap-3 pt-3 border-top border-brand mt-auto">
-                                    @if($testimonial->avatar)
-                                        <img src="{{ asset($testimonial->avatar) }}" alt="{{ $testimonial->name }}" class="rounded-circle shadow-sm border" style="width: 44px; height: 44px; object-fit: cover;">
+                                    @if ($testimonial->avatar)
+                                        <img src="{{ asset($testimonial->avatar) }}" alt="{{ $testimonial->name }}"
+                                            class="rounded-circle shadow-sm border"
+                                            style="width: 44px; height: 44px; object-fit: cover;">
                                     @else
                                         <div class="rounded-circle bg-brand-primary text-white d-flex align-items-center justify-content-center fw-bold shadow-sm"
                                             style="width: 44px; height: 44px; font-size: 1.1rem; flex-shrink: 0;">
@@ -363,7 +336,8 @@
                                     @endif
                                     <div>
                                         <h6 class="mb-0 fw-bold text-brand-primary">{{ $testimonial->name }}</h6>
-                                        <small class="text-muted"><i class="fa-solid fa-location-dot me-1 text-danger"></i>{{ $testimonial->city ?? 'الرياض' }}</small>
+                                        <small class="text-muted"><i
+                                                class="fa-solid fa-location-dot me-1 text-danger"></i>{{ $testimonial->city ?? 'الرياض' }}</small>
                                     </div>
                                 </div>
                             </div>
@@ -384,12 +358,13 @@
     </section>
 
     <!-- ==========================================================================
-                                                   FAQ SECTION (BOOTSTRAP ACCORDION)
-                                                   ========================================================================== -->
-    <section class="py-5" id="faq">
+                                                       FAQ SECTION (BOOTSTRAP ACCORDION)
+                                                       ========================================================================== -->
+    <section class="py-5 bg-brand-light faq" id="faq">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
+                <span
+                    class="badge bg-white text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2 shadow-sm">
                     <i class="fa-solid fa-circle-question me-1"></i> الأسئلة الشائعة
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary">
@@ -406,13 +381,17 @@
                         @forelse($faqs as $faq)
                             <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm">
                                 <h2 class="accordion-header" id="heading-faq-{{ $faq->id }}">
-                                    <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }} fw-bold text-brand-primary" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#faq-collapse-{{ $faq->id }}"
-                                        aria-expanded="{{ $loop->first ? 'true' : 'false' }}" aria-controls="faq-collapse-{{ $faq->id }}">
+                                    <button
+                                        class="accordion-button {{ $loop->first ? '' : 'collapsed' }} fw-bold text-brand-primary"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-collapse-{{ $faq->id }}"
+                                        aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                                        aria-controls="faq-collapse-{{ $faq->id }}">
                                         {{ $faq->question }}
                                     </button>
                                 </h2>
-                                <div id="faq-collapse-{{ $faq->id }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                                <div id="faq-collapse-{{ $faq->id }}"
+                                    class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
                                     aria-labelledby="heading-faq-{{ $faq->id }}" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body text-secondary small" style="line-height: 1.8;">
                                         {{ $faq->answer }}
@@ -431,15 +410,15 @@
     </section>
 
     <!-- ==========================================================================
-                                                   BLOG & TIPS SECTION (المدونة وأحدث المقالات)
-                                                   ========================================================================== -->
+                                                       BLOG & TIPS SECTION (المدونة وأحدث المقالات)
+                                                       ========================================================================== -->
     <section class="py-5 bg-white" id="blog">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3">
                 <div>
                     <span
                         class="badge bg-brand-light text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-2">
-                        <i class="fa-solid fa-newspaper text-brand-secondary me-1"></i> مدونة سلطان كلين
+                        <i class="fa-solid fa-newspaper text-brand-secondary me-1"></i> مدونة شركة سين ياء
                     </span>
                     <h2 class="fw-heading display-6 text-brand-primary mb-1">نصائح وإرشادات النظافة الشاملة</h2>
                     <p class="text-secondary mb-0">مقالات ومعلومات حصرية تساعدك في الحفاظ على بريق منزلك وصحة عائلتك
@@ -457,20 +436,25 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="blog-card h-100 d-flex flex-column">
                             <div class="blog-img-wrapper position-relative overflow-hidden" style="height: 220px;">
-                                <img src="{{ $post->image_url }}" alt="{{ $post->title }}" class="w-100 h-100 object-fit-cover">
+                                <img src="{{ $post->image_url }}" alt="{{ $post->title }}"
+                                    class="w-100 h-100 object-fit-cover">
                                 <span class="blog-badge bg-brand-primary text-white">
-                                    <i class="{{ $post->category_icon ?? 'fa-solid fa-lightbulb' }} me-1"></i> {{ $post->category }}
+                                    <i class="{{ $post->category_icon ?? 'fa-solid fa-lightbulb' }} me-1"></i>
+                                    {{ $post->category }}
                                 </span>
                             </div>
                             <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
                                 <div>
                                     <div class="d-flex align-items-center gap-3 text-muted small mb-3">
-                                        <span><i class="fa-regular fa-calendar me-1"></i> {{ $post->published_at ? $post->published_at->format('d M Y') : $post->created_at->format('d M Y') }}</span>
+                                        <span><i class="fa-regular fa-calendar me-1"></i>
+                                            {{ $post->published_at ? $post->published_at->format('d M Y') : $post->created_at->format('d M Y') }}</span>
                                         <span>•</span>
-                                        <span><i class="fa-regular fa-clock me-1"></i> {{ $post->reading_time ?? '5 دقائق قراءة' }}</span>
+                                        <span><i class="fa-regular fa-clock me-1"></i>
+                                            {{ $post->reading_time ?? '5 دقائق قراءة' }}</span>
                                     </div>
                                     <h3 class="blog-title mb-3" style="font-size: 1.15rem; line-height: 1.5;">
-                                        <a href="{{ route('blog.show', $post->slug) }}" class="text-decoration-none text-brand-primary fw-bold">
+                                        <a href="{{ route('blog.show', $post->slug) }}"
+                                            class="text-decoration-none text-brand-primary fw-bold">
                                             {{ $post->title }}
                                         </a>
                                     </h3>
@@ -478,13 +462,15 @@
                                         {{ Str::limit($post->short_description ?: strip_tags($post->content), 120) }}
                                     </p>
                                 </div>
-                                <div class="pt-3 border-top border-brand d-flex justify-content-between align-items-center mt-auto">
+                                <div
+                                    class="pt-3 border-top border-brand d-flex justify-content-between align-items-center mt-auto">
                                     <a href="{{ route('blog.show', $post->slug) }}"
                                         class="fw-bold text-brand-primary text-decoration-none small d-inline-flex align-items-center gap-1">
                                         <span>اقرأ المقال كاملاً</span>
                                         <i class="fa-solid fa-arrow-left small"></i>
                                     </a>
-                                    <span class="badge bg-brand-light text-brand-primary small">{{ $post->category }}</span>
+                                    <span
+                                        class="badge bg-brand-light text-brand-primary small">{{ $post->category }}</span>
                                 </div>
                             </div>
                         </div>
@@ -517,6 +503,7 @@
             cursor: pointer;
             transition: all 0.25s ease-in-out;
         }
+
         .swiper-btn:hover {
             background: #0c3b5e;
             color: #ffffff;
@@ -524,20 +511,25 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(12, 59, 94, 0.2);
         }
+
         .testimonials-slider {
             padding-bottom: 3rem !important;
         }
+
         .testimonials-slider .swiper-slide {
             height: auto;
             display: flex;
         }
+
         .testimonials-slider .custom-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .testimonials-slider .custom-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
         }
+
         .testimonials-slider .swiper-pagination-bullet {
             width: 10px;
             height: 10px;
@@ -545,6 +537,7 @@
             opacity: 0.7;
             transition: all 0.3s ease;
         }
+
         .testimonials-slider .swiper-pagination-bullet-active {
             width: 28px;
             border-radius: 6px;

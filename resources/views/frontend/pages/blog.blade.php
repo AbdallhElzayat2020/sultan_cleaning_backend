@@ -1,24 +1,28 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'المدونة والنصائح | سلطان كلين لخدمات النظافة والتعقيم الشامل')
+@section('title', setting('seo_blog_title', 'المدونة ونصائح التنظيف والتعقيم المنزلي | ' . setting('site_name', 'سين ياء')))
+@section('meta_description', setting('seo_blog_description', 'مقالات ونصائح تهمك حول أفضل طرق تنظيف المنازل، إزالة البقع الصعبة من الكنب والسجاد، وأساليب التعقيم الحديثة مقدمة من خبراء شركة ' . setting('site_name', 'سين ياء') . '.'))
+@section('meta_keywords', setting('seo_blog_keywords', 'مدونة النظافة, نصائح تنظيف المنازل, إزالة بقع الكنب, تنظيف السجاد بالبخار, تعقيم الفلل, ' . setting('site_name', 'سين ياء')))
+@section('og_title', setting('seo_blog_title', 'المدونة ونصائح النظافة الاحترافية | ' . setting('site_name', 'سين ياء')))
+@section('og_description', setting('seo_blog_description', 'أحدث المقالات والإرشادات المتخصصة في نظافة وتطهير المنازل والمفروشات.'))
 
 @section('content')
     <!-- ==========================================================================
        PAGE HEADER BANNER
        ========================================================================== -->
-    <section class="bg-brand-primary text-white py-5 text-center">
+    <section class="page-header-banner py-5 text-center">
         <div class="container py-3">
-            <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-3">
-                <i class="fa-solid fa-newspaper me-1"></i> دليلك الشامل للنظافة والتعقيم
+            <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
+                <i class="fa-solid fa-newspaper me-1 text-brand-secondary"></i> دليلك الشامل للنظافة والتعقيم
             </span>
-            <h1 class="display-5 fw-heading text-white mb-2">مدونة سلطان كلين</h1>
-            <p class="lead text-white text-opacity-75 fs-6 max-w-700 mx-auto mb-3">
+            <h1 class="display-5 fw-heading text-brand-primary mb-2">مدونة شركة سين ياء</h1>
+            <p class="lead text-secondary fs-6 max-w-700 mx-auto mb-3">
                 أحدث النصائح والحيل والحلول الاحترافية للحفاظ على نظافة وبريق منزلك ومكتبك وصحة عائلتك.
             </p>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0 small">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-brand-secondary text-decoration-none">الرئيسية</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">المدونة</li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-brand-primary text-decoration-none">الرئيسية</a></li>
+                    <li class="breadcrumb-item active text-brand-secondary" aria-current="page">المدونة</li>
                 </ol>
             </nav>
         </div>
@@ -153,19 +157,19 @@
     <!-- ==========================================================================
        GIANT CTA BANNER
        ========================================================================== -->
-    <section class="py-5 bg-brand-primary text-white text-center">
+    <section class="py-5 quote-section text-center">
         <div class="container py-3">
-            <span class="badge bg-brand-accent px-3 py-2 rounded-pill fw-bold mb-3">🔥 احجز الآن ووفر 35%</span>
-            <h2 class="display-6 fw-heading text-white mb-3">هل تحتاج خدمة تنظيف احترافية فورية؟</h2>
-            <p class="lead text-white text-opacity-75 max-w-700 mx-auto mb-4 fs-6">
-                فريقنا المجهز بأحدث أجهزة البخار جاهز للوصول إلى باب منزلك مع معاينة مجانية بضمان الجودة الملكي.
+            <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">جودة واحترافية متكاملة</span>
+            <h2 class="display-6 fw-heading text-brand-primary mb-3">هل تحتاج خدمة تنظيف احترافية فورية؟</h2>
+            <p class="lead text-secondary max-w-700 mx-auto mb-4 fs-6">
+                فريقنا المجهز بأحدث أجهزة البخار جاهز للوصول إلى باب منزلك بضمان الجودة الملكي والاحترافية.
             </p>
             <div class="d-flex justify-content-center flex-wrap gap-3">
-                <a href="tel:+966582102525" class="btn btn-light text-brand-primary btn-lg rounded-pill px-5 fw-bold shadow">
-                    <i class="fa-solid fa-phone-volume me-2 text-brand-secondary"></i> اتصل الآن: 0582102525
+                <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-outline-brand rounded-pill px-5 fw-bold shadow-sm">
+                    <i class="fa-solid fa-phone-volume me-2"></i> اتصل الآن: {{ setting('top_bar_phone', '0531109831') }}
                 </a>
-                <a href="https://wa.me/966582102525?text={{ urlencode('مرحباً سلطان كلين، قرأت مقالات المدونة وأرغب في طلب خدمة مع خصم 35%') }}"
-                    target="_blank" class="btn btn-brand-whatsapp btn-lg rounded-pill px-5 fw-bold shadow">
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، قرأت مقالات المدونة وأرغب في حجز خدمة تنظيف') }}"
+                    target="_blank" class="btn btn-primary rounded-pill px-5 fw-bold shadow">
                     <i class="fa-brands fa-whatsapp fs-5 me-2"></i> حجز سريع عبر واتساب
                 </a>
             </div>

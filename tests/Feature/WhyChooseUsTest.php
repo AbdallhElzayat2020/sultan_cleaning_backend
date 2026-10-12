@@ -37,7 +37,7 @@ test('admin can view why choose us index list', function () {
 
     $response->assertOk();
     $response->assertSee('جودة عالمية معتمدة');
-    $response->assertSee('لماذا سلطان كلين؟');
+    $response->assertSee('لماذا سين ياء؟');
 });
 
 test('admin can view why choose us create page', function () {

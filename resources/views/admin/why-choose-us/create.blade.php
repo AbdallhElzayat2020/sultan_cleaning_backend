@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'إضافة ميزة جديدة - لماذا سلطان كلين')
+@section('title', 'إضافة ميزة جديدة - لماذا سين ياء')
 
 @section('content')
     <section class="section">
@@ -10,7 +10,7 @@
             <h1>إضافة ميزة جديدة</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">لوحة التحكم</a></div>
-                <div class="breadcrumb-item"><a href="{{ route('admin.why-choose-us.index') }}">لماذا سلطان كلين؟</a></div>
+                <div class="breadcrumb-item"><a href="{{ route('admin.why-choose-us.index') }}">لماذا سين ياء؟</a></div>
                 <div class="breadcrumb-item">إضافة ميزة</div>
             </div>
         </div>

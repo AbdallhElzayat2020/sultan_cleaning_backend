@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="سياسة الخصوصية والشروط والأحكام لشركة سلطان كلين لخدمات النظافة والتعقيم الشامل بالمملكة العربية السعودية.">
-    <title>سياسة الخصوصية والشروط | سلطان كلين</title>
+        content="سياسة الخصوصية والشروط والأحكام لشركة سين ياء لخدمات النظافة والتعقيم الشامل بالمملكة العربية السعودية.">
+    <title>سياسة الخصوصية والشروط | سين ياء</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,14 +57,14 @@
     <div class="bg-brand-primary py-2 text-white border-bottom border-white border-opacity-10 small">
         <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
             <div class="d-flex align-items-center gap-2">
-                <span class="badge bg-brand-accent rounded-pill px-3 py-1 fw-bold">🎉 عرض حصري</span>
-                <span>خصم خاص <strong>35%</strong> على جميع خدمات التنظيف والتعقيم الشامل!</span>
+                <span class="badge bg-brand-accent rounded-pill px-3 py-1 fw-bold">✨ سين ياء</span>
+                <span>أفضل خدمات التنظيف والتعقيم الشامل بأعلى معايير الإتقان!</span>
             </div>
             <div class="d-none d-md-flex align-items-center gap-4">
-                <a href="tel:+966582102525" class="text-white text-decoration-none fw-semibold">
-                    <i class="fa-solid fa-phone-volume text-brand-secondary me-1"></i> 0582102525
+                <a href="tel:+966531109831" class="text-white text-decoration-none fw-semibold">
+                    <i class="fa-solid fa-phone-volume text-brand-secondary me-1"></i> 0531109831
                 </a>
-                <a href="https://wa.me/966582102525" target="_blank"
+                <a href="https://wa.me/966531109831" target="_blank"
                     class="text-white text-decoration-none fw-semibold">
                     <i class="fa-brands fa-whatsapp text-brand-accent me-1"></i> خدمة 24/7
                 </a>
@@ -81,7 +81,7 @@
             <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" href="index.html">
                 <div>
                     <div class="fw-heading fs-4 text-brand-primary lh-1">
-                        سلطان <span class="text-brand-secondary">كلين</span>
+                        سين <span class="text-brand-secondary">ياء</span>
                     </div>
                     <small class="text-muted fw-semibold" style="font-size: 0.72rem">لخدمات النظافة والتعقيم
                         الشامل</small>
@@ -125,7 +125,7 @@
 
                 <!-- Single Action CTA in Navbar -->
                 <div class="d-flex align-items-center">
-                    <a href="tel:+966582102525"
+                    <a href="tel:+966531109831"
                         class="btn btn-brand-primary d-inline-flex align-items-center gap-2 px-4 py-2">
                         <i class="fa-solid fa-phone-volume"></i>
                         <span>اتصل بنا الآن</span>
@@ -138,20 +138,21 @@
     <!-- ==========================================================================
        PAGE HEADER BANNER
        ========================================================================== -->
-    <section class="bg-brand-primary text-white py-5 text-center position-relative overflow-hidden">
-        <div class="container py-4 position-relative z-1">
-            <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-3">
-                <i class="fa-solid fa-shield-halved me-1"></i> التزامنا بالشفافية والأمان
+    <section class="page-header-banner py-5 text-center">
+        <div class="container py-4">
+            <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
+                <i class="fa-solid fa-shield-halved me-1 text-brand-secondary"></i> التزامنا بالشفافية والأمان
             </span>
-            <h1 class="display-5 fw-heading text-white mb-2">سياسة الخصوصية والشروط</h1>
-            <p class="lead text-white text-opacity-75 fs-6 max-w-700 mx-auto mb-3">
-                نلتزم في شركة سلطان كلين بحماية خصوصية بياناتك وتوفير بيئة تعامل آمنة وموثوقة تتوافق مع الأنظمة واللوائح المعتمدة بالمملكة.
+            <h1 class="display-5 fw-heading text-brand-primary mb-2">سياسة الخصوصية والشروط</h1>
+            <p class="lead text-secondary fs-6 max-w-700 mx-auto mb-3">
+                نلتزم في شركة سين ياء بحماية خصوصية بياناتك وتوفير بيئة تعامل آمنة وموثوقة تتوافق مع الأنظمة واللوائح
+                المعتمدة بالمملكة.
             </p>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0 small">
-                    <li class="breadcrumb-item"><a href="index.html"
-                            class="text-brand-secondary text-decoration-none">الرئيسية</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">سياسة الخصوصية</li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}"
+                            class="text-brand-primary text-decoration-none">الرئيسية</a></li>
+                    <li class="breadcrumb-item active text-brand-secondary" aria-current="page">سياسة الخصوصية</li>
                 </ol>
             </nav>
         </div>
@@ -172,7 +173,9 @@
                         </div>
                         <h2 class="fw-heading fs-4 text-brand-primary mb-3">1. التزامنا بحماية الخصوصية</h2>
                         <p class="text-secondary lh-lg mb-0">
-                            تعتبر خصوصية عملائنا الكرام وزوار موقعنا الإلكتروني أولوية قصوى لشركة <strong>سلطان كلين</strong>. توضح هذه الوثيقة ماهية البيانات التي نقوم بجمعها، كيفية استخدامها، وحمايتها عند طلب خدمات التنظيف والتعقيم المنزلي والتجاري.
+                            تعتبر خصوصية عملائنا الكرام وزوار موقعنا الإلكتروني أولوية قصوى لشركة <strong>سين
+                                ياء</strong>. توضح هذه الوثيقة ماهية البيانات التي نقوم بجمعها، كيفية استخدامها،
+                            وحمايتها عند طلب خدمات التنظيف والتعقيم المنزلي والتجاري.
                         </p>
                     </div>
 
@@ -182,11 +185,15 @@
                             <i class="fa-solid fa-database"></i>
                         </div>
                         <h2 class="fw-heading fs-4 text-brand-primary mb-3">2. المعلومات التي نجمعها</h2>
-                        <p class="text-secondary lh-lg mb-3">نقوم بجمع المعلومات اللازمة فقط لتنفيذ الخدمة بأعلى جودة وسرعة، وتشمل:</p>
+                        <p class="text-secondary lh-lg mb-3">نقوم بجمع المعلومات اللازمة فقط لتنفيذ الخدمة بأعلى جودة
+                            وسرعة، وتشمل:</p>
                         <ul class="text-secondary lh-lg mb-0 ps-3">
-                            <li class="mb-2"><strong>بيانات الاتصال:</strong> الاسم الكامل، رقم الهاتف الجوال، والبريد الإلكتروني عند تعبئة نموذج الحجز أو التواصل عبر واتساب.</li>
-                            <li class="mb-2"><strong>بيانات الموقع:</strong> المدينة والحي ونوع العقار (فيلا، شقة، قصر، مكتب) لتوجيه الطاقم الفني وتحديد الموعد.</li>
-                            <li class="mb-2"><strong>بيانات الخدمة:</strong> تفاصيل الخدمات المطلوبة والمساحات التقريبية لتقديم عرض السعر الدقيق.</li>
+                            <li class="mb-2"><strong>بيانات الاتصال:</strong> الاسم الكامل، رقم الهاتف الجوال،
+                                والبريد الإلكتروني عند تعبئة نموذج الحجز أو التواصل عبر واتساب.</li>
+                            <li class="mb-2"><strong>بيانات الموقع:</strong> المدينة والحي ونوع العقار (فيلا، شقة،
+                                قصر، مكتب) لتوجيه الطاقم الفني وتحديد الموعد.</li>
+                            <li class="mb-2"><strong>بيانات الخدمة:</strong> تفاصيل الخدمات المطلوبة والمساحات
+                                التقريبية لتقديم عرض السعر الدقيق.</li>
                         </ul>
                     </div>
 
@@ -198,9 +205,11 @@
                         <h2 class="fw-heading fs-4 text-brand-primary mb-3">3. كيف نستخدم معلوماتك؟</h2>
                         <p class="text-secondary lh-lg mb-3">تُستخدم المعلومات التي تقدمها للأغراض التالية فقط:</p>
                         <ul class="text-secondary lh-lg mb-0 ps-3">
-                            <li class="mb-2">تأكيد الحجوزات وتنسيق مواعيد المعاينة وتنفيذ الخدمة.</li>
-                            <li class="mb-2">التواصل المباشر مع العميل لإبلاغه بحالة الطلب ومتابعة مستوى الرضا بعد التنفيذ.</li>
-                            <li class="mb-2">إرسال العروض الترويجية والخصومات الحصرية الخاصة بسلطان كلين (يمكنك إلغاء الاشتراك في أي وقت).</li>
+                            <li class="mb-2">تأكيد الحجوزات وتنسيق مواعيد الخدمة وتنفيذها بأعلى معايير الإتقان.</li>
+                            <li class="mb-2">التواصل المباشر مع العميل لإبلاغه بحالة الطلب ومتابعة مستوى الرضا بعد
+                                التنفيذ.</li>
+                            <li class="mb-2">إرسال العروض الترويجية والخصومات الحصرية الخاصة بسين ياء (يمكنك إلغاء
+                                الاشتراك في أي وقت).</li>
                             <li class="mb-2">تحسين جودة الخدمات وتطوير تجربة المستخدم عبر الموقع.</li>
                         </ul>
                     </div>
@@ -212,7 +221,9 @@
                         </div>
                         <h2 class="fw-heading fs-4 text-brand-primary mb-3">4. أمان وسرية البيانات</h2>
                         <p class="text-secondary lh-lg mb-0">
-                            نلتزم بعدم بيع، تأجير، أو مشاركة بياناتك الشخصية مع أي طرف ثالث لأغراض تجارية إطلاقاً. تُحفظ كافة البيانات عبر قنوات اتصال مشفرة وآمنة، ولا يطلع عليها سوى الفريق المخول بتقديم الخدمة والتنسيق مع العميل.
+                            نلتزم بعدم بيع، تأجير، أو مشاركة بياناتك الشخصية مع أي طرف ثالث لأغراض تجارية إطلاقاً. تُحفظ
+                            كافة البيانات عبر قنوات اتصال مشفرة وآمنة، ولا يطلع عليها سوى الفريق المخول بتقديم الخدمة
+                            والتنسيق مع العميل.
                         </p>
                     </div>
 
@@ -223,12 +234,15 @@
                         </div>
                         <h2 class="fw-heading fs-4 text-brand-primary mb-3">5. شروط الخدمة والضمان الذهبي</h2>
                         <p class="text-secondary lh-lg mb-3">
-                            تخضع خدماتنا لمعايير الضمان الذهبي لشركة سلطان كلين:
+                            تخضع خدماتنا لمعايير الضمان الذهبي لشركة سين ياء:
                         </p>
                         <ul class="text-secondary lh-lg mb-0 ps-3">
-                            <li class="mb-2"><strong>ضمان الرضا 100%:</strong> في حال وجود أي ملاحظة على جودة التنظيف، يحق للعميل طلب إعادة تنظيف الجزئية مجاناً خلال 24 ساعة من انتهاء العمل.</li>
-                            <li class="mb-2"><strong>تعديل أو إلغاء الموعد:</strong> يمكن للعميل تعديل أو إلغاء موعد الخدمة مجاناً قبل 6 ساعات على الأقل من الوقت المحدد.</li>
-                            <li class="mb-2"><strong>سلامة المقتنيات:</strong> نتحمل كامل المسؤولية الفنية عن سلامة الأثاث والأرضيات وفق المواد المصرحة المستخدمة.</li>
+                            <li class="mb-2"><strong>ضمان الرضا 100%:</strong> في حال وجود أي ملاحظة على جودة
+                                التنظيف، يحق للعميل طلب إعادة تنظيف الجزئية مجاناً خلال 24 ساعة من انتهاء العمل.</li>
+                            <li class="mb-2"><strong>تعديل أو إلغاء الموعد:</strong> يمكن للعميل تعديل أو إلغاء موعد
+                                الخدمة مجاناً قبل 6 ساعات على الأقل من الوقت المحدد.</li>
+                            <li class="mb-2"><strong>سلامة المقتنيات:</strong> نتحمل كامل المسؤولية الفنية عن سلامة
+                                الأثاث والأرضيات وفق المواد المصرحة المستخدمة.</li>
                         </ul>
                     </div>
 
@@ -239,13 +253,15 @@
                         </div>
                         <h2 class="fw-heading fs-4 text-brand-primary mb-3">6. للاستفسارات والشكاوى</h2>
                         <p class="text-secondary lh-lg mb-3">
-                            إذا كان لديك أي استفسار أو طلب لتعديل أو حذف بياناتك المسجلة لدينا، يمكنك التواصل مباشرة مع إدارة خدمة العملاء:
+                            إذا كان لديك أي استفسار أو طلب لتعديل أو حذف بياناتك المسجلة لدينا، يمكنك التواصل مباشرة مع
+                            إدارة خدمة العملاء:
                         </p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="tel:+966582102525" class="btn btn-outline-brand rounded-pill px-4">
-                                <i class="fa-solid fa-phone me-2"></i> 0582102525
+                            <a href="tel:+966531109831" class="btn btn-outline-brand rounded-pill px-4">
+                                <i class="fa-solid fa-phone me-2"></i> 0531109831
                             </a>
-                            <a href="https://wa.me/966582102525" target="_blank" class="btn btn-brand-whatsapp rounded-pill px-4">
+                            <a href="https://wa.me/966531109831" target="_blank"
+                                class="btn btn-brand-whatsapp rounded-pill px-4">
                                 <i class="fa-brands fa-whatsapp me-2"></i> واتساب خدمة العملاء
                             </a>
                         </div>
@@ -263,13 +279,9 @@
         <div class="container">
             <div class="row g-4 mb-4">
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center gap-2 mb-3">
-                        <div class="rounded-3 bg-white text-brand-primary d-flex align-items-center justify-content-center"
-                            style="width: 40px; height: 40px; font-size: 1.2rem">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <span class="fw-heading fs-4 text-white">سلطان <span
-                                class="text-brand-secondary">كلين</span></span>
+                    <div class="site-logo mb-3 d-inline-block bg-white p-2 px-3 rounded-4 shadow-sm">
+                        <img src="{{ asset('assets/frontend/images/logo.png') }}"
+                            alt="{{ setting('site_name', 'سين ياء') }}" style="max-height: 48px; width: auto;">
                     </div>
                     <p class="text-white-50 small mb-3">
                         الرائدون في تقديم أرقى خدمات التنظيف المنزلي والمكتبي، تنظيف
@@ -284,7 +296,8 @@
                         <li><a href="services.html" class="text-white-50 text-decoration-none">خدماتنا</a></li>
                         <li><a href="gallery.html" class="text-white-50 text-decoration-none">معرض الأعمال</a></li>
                         <li><a href="about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li><a href="privacy-policy.html" class="text-brand-secondary text-decoration-none">سياسة الخصوصية</a></li>
+                        <li><a href="privacy-policy.html" class="text-brand-secondary text-decoration-none">سياسة
+                                الخصوصية</a></li>
                         <li><a href="contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
                     </ul>
                 </div>
@@ -292,10 +305,14 @@
                 <div class="col-6 col-lg-3">
                     <h5 class="fw-bold mb-3 text-white">أبرز الخدمات</h5>
                     <ul class="list-unstyled small text-white-50 d-flex flex-column gap-2">
-                        <li><a href="services.html" class="text-white-50 text-decoration-none">تنظيف الفلل والقصور</a></li>
-                        <li><a href="services.html" class="text-white-50 text-decoration-none">تنظيف الكنب بالبخار</a></li>
-                        <li><a href="services.html" class="text-white-50 text-decoration-none">غسيل السجاد والموكيت</a></li>
-                        <li><a href="services.html" class="text-white-50 text-decoration-none">جلي وتلميع الرخام</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">تنظيف الفلل والقصور</a>
+                        </li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">تنظيف الكنب بالبخار</a>
+                        </li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">غسيل السجاد
+                                والموكيت</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">جلي وتلميع الرخام</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -304,11 +321,11 @@
                     <div class="d-flex flex-column gap-2 small text-white-50">
                         <div>
                             <i class="fa-solid fa-phone text-brand-secondary me-2"></i>
-                            <a href="tel:+966582102525" class="text-white text-decoration-none fw-bold">0582102525</a>
+                            <a href="tel:+966531109831" class="text-white text-decoration-none fw-bold">0531109831</a>
                         </div>
                         <div>
                             <i class="fa-brands fa-whatsapp text-brand-accent me-2"></i>
-                            <a href="https://wa.me/966582102525" target="_blank"
+                            <a href="https://wa.me/966531109831" target="_blank"
                                 class="text-white text-decoration-none">واتساب خدمة العملاء</a>
                         </div>
                         <div>
@@ -321,7 +338,7 @@
 
             <div
                 class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center flex-wrap gap-2 small text-white-50">
-                <div>جميع الحقوق محفوظة © 2026 <strong>سلطان كلين</strong></div>
+                <div>جميع الحقوق محفوظة © 2026 <strong>سين ياء</strong></div>
                 <div>
                     تم التصميم والبرمجة بواسطة
                     <a href="#" class="text-brand-secondary">
@@ -334,11 +351,11 @@
 
     <!-- Sticky Mobile Bottom Bar -->
     <div class="mobile-bottom-bar d-flex d-md-none gap-2">
-        <a href="tel:+966582102525" class="btn btn-brand-primary">
+        <a href="tel:+966531109831" class="btn btn-brand-primary">
             <i class="fa-solid fa-phone"></i>
             <span>اتصال هاتفي</span>
         </a>
-        <a href="https://wa.me/966582102525?text=مرحباً%20سلطان%20كلين،%20أود%20طلب%20خدمة%20مع%20خصم%2035%"
+        <a href="https://wa.me/966531109831?text=مرحباً%20سين%20ياء،%20أود%20الاستفسار%20وحجز%20خدمة%20تنظيف"
             target="_blank" class="btn btn-brand-whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
             <span>واتساب فوري</span>
@@ -347,11 +364,11 @@
 
     <!-- Floating Actions (WhatsApp & Direct Call) -->
     <div class="floating-bar">
-        <a href="https://wa.me/966582102525?text=مرحباً%20سلطان%20كلين،%20أود%20طلب%20خدمة%20مع%20خصم%2035%"
+        <a href="https://wa.me/966531109831?text=مرحباً%20سين%20ياء،%20أود%20الاستفسار%20وحجز%20خدمة%20تنظيف"
             target="_blank" class="floating-circle-btn floating-whatsapp" title="تواصل عبر الواتساب">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="tel:+966582102525" class="floating-circle-btn floating-call" title="اتصال مباشر الآن">
+        <a href="tel:+966531109831" class="floating-circle-btn floating-call" title="اتصال مباشر الآن">
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>

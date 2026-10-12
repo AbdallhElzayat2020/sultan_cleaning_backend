@@ -43,4 +43,9 @@ class HomeController extends Controller
 
         return view('frontend.pages.home', compact('whyChooseUsList', 'services', 'testimonials', 'faqs', 'posts'));
     }
+
+    public function landpage(): View
+    {
+        return view('frontend.pages.landpage');
+    }
 }

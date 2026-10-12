@@ -1,3 +1,124 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Main Colors */
+  --primary: #287DA8;
+  --secondary: #29C6D1;
+  --accent-blue: #258DB8;
+  --cta: #35B85A;
+
+  /* Background Colors */
+  --background: #FFFFFF;
+  --background-light: #EAF8FC;
+  --background-soft: #D4F2F7;
+
+  /* Text Colors */
+  --text: #243746;
+  --text-muted: #64748B;
+
+  /* Borders */
+  --border: #D8EAF1;
+
+  /* Main Hero Gradient */
+  --hero-gradient: linear-gradient(
+    120deg,
+    #287DA8 0%,
+    #258DB8 55%,
+    #29C6D1 100%
+  );
+
+  /* Light Section Gradient */
+  --section-gradient: linear-gradient(
+    120deg,
+    #FFFFFF 0%,
+    #EAF8FC 55%,
+    #D4F2F7 100%
+  );
+}
+
+/* General Website */
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Header */
+header {
+  background-color: var(--background);
+}
+
+/* Hero Section */
+.hero {
+  background: var(--hero-gradient);
+  color: #FFFFFF;
+}
+
+/* Services Section */
+.services {
+  background: var(--section-gradient);
+}
+
+/* Other Sections */
+.about,
+.why-us {
+  background: #FFFFFF;
+}
+
+/* Main Headings */
+h1,
+h2,
+h3 {
+  color: var(--primary);
+}
+
+/* Hero Headings */
+.hero h1,
+.hero h2,
+.hero h3 {
+  color: #FFFFFF;
+}
+
+/* Primary Buttons */
+.btn-primary {
+  background: var(--cta);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #278D43;
+}
+
+/* Service Cards */
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(40, 125, 168, 0.07);
+}
+
+/* Icons */
+.service-icon {
+  color: var(--secondary);
+}
+
+/* Footer */
+footer {
+  background: #174E6B;
+  color: #FFFFFF;
+}
+
+/* Preserve Original Logo */
+.site-logo img {
+  width: auto;
+  max-width: 180px;
+  height: auto;
+}

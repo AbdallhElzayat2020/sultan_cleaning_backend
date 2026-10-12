@@ -16,11 +16,11 @@
        FLOATING ACTIONS (WHATSAPP & DIRECT CALL)
        ========================================================================== -->
     <div class="floating-bar">
-        <a href="https://wa.me/966582102525?text=مرحباً%20سلطان%20كلين،%20أود%20طلب%20خدمة%20مع%20خصم%2035%"
+        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وطلب حجز خدمة') }}"
             target="_blank" class="floating-circle-btn floating-whatsapp" title="تواصل عبر الواتساب">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="tel:+966582102525" class="floating-circle-btn floating-call" title="اتصال مباشر الآن">
+        <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="floating-circle-btn floating-call" title="اتصال مباشر الآن">
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
@@ -28,11 +28,11 @@
 
     <!-- Sticky Mobile Bottom Bar -->
     <div class="mobile-bottom-bar d-flex d-md-none gap-2">
-        <a href="tel:+966582102525" class="btn btn-brand-primary">
+        <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-brand-primary">
             <i class="fa-solid fa-phone"></i>
             <span>اتصال هاتفي</span>
         </a>
-        <a href="https://wa.me/966582102525?text=مرحباً%20سلطان%20كلين،%20أود%20طلب%20خدمة%20مع%20خصم%2035%"
+        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وطلب حجز خدمة') }}"
             target="_blank" class="btn btn-brand-whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
             <span>واتساب فوري</span>

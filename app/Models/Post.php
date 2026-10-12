@@ -5,6 +5,7 @@ namespace App\Models;
 use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -19,12 +20,61 @@ class Post extends Model
         'image',
         'short_description',
         'content',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
         'reading_time',
         'views',
         'status',
         'order',
         'published_at',
     ];
+
+    /**
+     * Get smart SEO title with fallback.
+     */
+    public function getSeoTitleAttribute(): string
+    {
+        return ! empty($this->meta_title)
+            ? $this->meta_title
+            : $this->title.' | '.setting('site_name', 'سين ياء');
+    }
+
+    /**
+     * Get smart SEO description with fallback.
+     */
+    public function getSeoDescriptionAttribute(): string
+    {
+        if (! empty($this->meta_description)) {
+            return $this->meta_description;
+        }
+
+        if (! empty($this->short_description)) {
+            return $this->short_description;
+        }
+
+        return Str::limit(strip_tags($this->content ?? ''), 160);
+    }
+
+    /**
+     * Get smart SEO keywords with fallback.
+     */
+    public function getSeoKeywordsAttribute(): string
+    {
+        if (! empty($this->meta_keywords)) {
+            return $this->meta_keywords;
+        }
+
+        $parts = array_filter([
+            $this->title,
+            $this->category,
+            'نصائح تنظيف',
+            'تعقيم بالرياض',
+            setting('site_name', 'سين ياء'),
+        ]);
+
+        return implode(', ', $parts);
+    }
 
     protected function casts(): array
     {

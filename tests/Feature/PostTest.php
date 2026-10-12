@@ -130,3 +130,43 @@ test('admin can delete a post', function () {
         'id' => $post->id,
     ]);
 });
+
+test('admin can store and update post with seo metadata', function () {
+    $user = User::factory()->create();
+
+    $storeData = [
+        'title' => 'أسرار تنظيف الكنب والمجالس من البقع المستعصية',
+        'slug' => 'sofa-cleaning-secrets',
+        'category' => 'نصائح التنظيف',
+        'category_icon' => 'fa-solid fa-couch',
+        'short_description' => 'دليل شامل لإزالة البقع المستعصية والحفاظ على قماش الكنب.',
+        'content' => '<p>محتوى المقال الكامل بالتفصيل.</p>',
+        'meta_title' => 'أفضل نصائح لتنظيف الكنب والمجالس | شركة سين ياء',
+        'meta_description' => 'تعرف على أفضل الطرق المنزلية والمهنية لتنظيف الكنب والمجالس وإزالة أصعب البقع بدون بهتان.',
+        'meta_keywords' => 'تنظيف كنب, غسيل مجالس, ازالة بقع الكنب, سين ياء',
+        'reading_time' => '5 دقائق',
+        'status' => '1',
+    ];
+
+    $response = $this->actingAs($user)->post(route('admin.posts.store'), $storeData);
+    $response->assertRedirect(route('admin.posts.index'));
+
+    $post = Post::where('slug', 'sofa-cleaning-secrets')->firstOrFail();
+    expect($post->meta_title)->toBe('أفضل نصائح لتنظيف الكنب والمجالس | شركة سين ياء')
+        ->and($post->seo_title)->toBe('أفضل نصائح لتنظيف الكنب والمجالس | شركة سين ياء')
+        ->and($post->seo_description)->toBe('تعرف على أفضل الطرق المنزلية والمهنية لتنظيف الكنب والمجالس وإزالة أصعب البقع بدون بهتان.')
+        ->and($post->seo_keywords)->toBe('تنظيف كنب, غسيل مجالس, ازالة بقع الكنب, سين ياء');
+
+    // Test fallback when meta fields are null
+    $postWithFallback = Post::factory()->create([
+        'title' => 'دليل تعقيم مياه الخزانات الدورية',
+        'short_description' => 'أهمية تعقيم خزانات المياه وكيفية الوقاية من البكتيريا.',
+        'meta_title' => null,
+        'meta_description' => null,
+        'meta_keywords' => null,
+    ]);
+
+    expect($postWithFallback->seo_title)->toContain('دليل تعقيم مياه الخزانات الدورية')
+        ->and($postWithFallback->seo_description)->toBe('أهمية تعقيم خزانات المياه وكيفية الوقاية من البكتيريا.')
+        ->and($postWithFallback->seo_keywords)->toContain('دليل تعقيم مياه الخزانات الدورية');
+});

@@ -29,7 +29,7 @@
                                 <!-- Question -->
                                 <div class="form-group">
                                     <label for="question">نص السؤال <span class="text-danger">*</span></label>
-                                    <input type="text" name="question" id="question" class="form-control @error('question') is-invalid @enderror" value="{{ old('question') }}" required placeholder="مثال: كيف يمكنني الاستفادة من خصم 35%؟">
+                                    <input type="text" name="question" id="question" class="form-control @error('question') is-invalid @enderror" value="{{ old('question') }}" required placeholder="مثال: كيف يمكنني حجز موعد لخدمات التنظيف؟">
                                     @error('question')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror

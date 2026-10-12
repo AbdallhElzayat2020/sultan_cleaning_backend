@@ -64,3 +64,36 @@ test('frontend header hides top announcement bar when disabled', function () {
     $response->assertOk();
     $response->assertDontSee('عرض مخفي لا يظهر');
 });
+
+test('admin can update core static pages seo settings', function () {
+    $user = User::factory()->create();
+
+    $payload = [
+        'seo_about_title' => 'عنوان تجريبي لصفحة من نحن',
+        'seo_about_description' => 'وصف تجريبي لصفحة من نحن في محركات البحث',
+        'seo_about_keywords' => 'كلمات, مفتاحية, من نحن',
+        'seo_services_title' => 'عنوان تجريبي لصفحة خدماتنا',
+        'seo_services_description' => 'وصف تجريبي لصفحة خدماتنا الفندقية',
+        'seo_services_keywords' => 'خدمات, تنظيف, تعقيم',
+        'seo_gallery_title' => 'عنوان تجريبي لمعرض الأعمال',
+        'seo_gallery_description' => 'وصف تجريبي لمعرض الصور وسابقة الأعمال',
+        'seo_gallery_keywords' => 'معرض, صور, قبل, بعد',
+        'seo_blog_title' => 'عنوان تجريبي للمدونة',
+        'seo_blog_description' => 'وصف تجريبي للمدونة ومقالات النظافة',
+        'seo_blog_keywords' => 'مدونة, مقالات, نصائح',
+        'seo_contact_title' => 'عنوان تجريبي لصفحة اتصل بنا',
+        'seo_contact_description' => 'وصف تجريبي لصفحة التواصل السريع',
+        'seo_contact_keywords' => 'اتصل بنا, هاتف, واتساب',
+    ];
+
+    $response = $this->actingAs($user)->put(route('admin.settings.update'), $payload);
+
+    $response->assertRedirect(route('admin.settings.index'));
+    $response->assertSessionHas('success');
+
+    expect(setting('seo_about_title'))->toBe('عنوان تجريبي لصفحة من نحن');
+    expect(setting('seo_services_title'))->toBe('عنوان تجريبي لصفحة خدماتنا');
+    expect(setting('seo_gallery_title'))->toBe('عنوان تجريبي لمعرض الأعمال');
+    expect(setting('seo_blog_title'))->toBe('عنوان تجريبي للمدونة');
+    expect(setting('seo_contact_title'))->toBe('عنوان تجريبي لصفحة اتصل بنا');
+});

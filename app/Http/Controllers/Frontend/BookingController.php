@@ -30,20 +30,21 @@ class BookingController extends Controller
 
         // Pre-build WhatsApp text for instant follow up
         $serviceName = $booking->service_name_display;
-        $cleanPhone = preg_replace('/[^0-9]/', '', $booking->phone);
-        $waMessage = "مرحباً سلطان كلين، أود تأكيد طلب المعاينة والحجز:\n"
+        $siteName = setting('site_name', 'سين ياء');
+        $whatsappNumber = preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966582102525'));
+        $waMessage = "مرحباً {$siteName}، أود تأكيد طلب الحجز:\n"
             ."- الاسم: {$booking->name}\n"
             ."- رقم الجوال: {$booking->phone}\n"
             ."- الخدمة المطلوبة: {$serviceName}\n"
             ."- المدينة/الحي: {$booking->city}"
             .($booking->notes ? "\n- ملاحظات: {$booking->notes}" : '');
 
-        $whatsappUrl = 'https://wa.me/966582102525?text='.urlencode($waMessage);
+        $whatsappUrl = "https://wa.me/{$whatsappNumber}?text=".urlencode($waMessage);
 
         if ($request->ajax() || $request->wantsJson()) {
             return response()->json([
                 'status' => 'success',
-                'message' => 'تم استلام طلبك بنجاح! سيقوم فريق خدمة العملاء بالتواصل معك في أقرب وقت لتأكيد المعاينة.',
+                'message' => 'تم استلام طلبك بنجاح! سيقوم فريق خدمة العملاء بالتواصل معك لتأكيد الموعد.',
                 'booking_id' => $booking->id,
                 'whatsapp_url' => $whatsappUrl,
             ]);
@@ -51,6 +52,6 @@ class BookingController extends Controller
 
         return redirect()
             ->back()
-            ->with('success', 'تم استلام طلب المعاينة بنجاح! سنتواصل معك قريباً.');
+            ->with('success', 'تم استلام طلب الحجز بنجاح! سنتواصل معك قريباً.');
     }
 }

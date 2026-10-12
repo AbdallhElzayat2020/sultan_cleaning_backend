@@ -56,7 +56,7 @@ test('admin can store a new service', function () {
         'title' => 'خدمة جلي وتلميع الرخام',
         'slug' => 'marble-polishing',
         'icon' => 'fa-solid fa-gem',
-        'discount' => 'خصم 35% كود: SULTAN35',
+        'discount' => 'عرض خاص لفترة محدودة',
         'short_description' => 'جلي وتلميع الرخام والجرانيت بأقراص الألماس الإيطالية.',
         'description' => '<p>تفاصيل خدمة جلي الرخام وإعادة لمعانه كأنه جديد تماماً.</p>',
         'status' => '1',
@@ -72,7 +72,7 @@ test('admin can store a new service', function () {
         'title' => 'خدمة جلي وتلميع الرخام',
         'slug' => 'marble-polishing',
         'icon' => 'fa-solid fa-gem',
-        'discount' => 'خصم 35% كود: SULTAN35',
+        'discount' => 'عرض خاص لفترة محدودة',
         'status' => 1,
     ]);
 });
@@ -125,4 +125,42 @@ test('admin can delete a service', function () {
     $this->assertDatabaseMissing('services', [
         'id' => $service->id,
     ]);
+});
+
+test('admin can store and update service with seo metadata', function () {
+    $user = User::factory()->create();
+
+    $storeData = [
+        'title' => 'خدمة مكافحة النمل الأبيض',
+        'slug' => 'termite-control',
+        'icon' => 'fa-solid fa-bug',
+        'short_description' => 'أفضل حلول مكافحة النمل الأبيض بضمان معتمد.',
+        'description' => '<p>محتوى تفصيلي لمكافحة الآفات والحشرات بضمان 10 سنوات.</p>',
+        'meta_title' => 'أفضل شركة مكافحة نمل أبيض بالرياض | سين ياء',
+        'meta_description' => 'تخلص نهائياً من النمل الأبيض مع شركة سين ياء بأحدث مبيدات وتقنيات الحقن.',
+        'meta_keywords' => 'مكافحة نمل ابيض, رش مبيدات, سين ياء',
+        'status' => '1',
+    ];
+
+    $response = $this->actingAs($user)->post(route('admin.services.store'), $storeData);
+    $response->assertRedirect(route('admin.services.index'));
+
+    $service = Service::where('slug', 'termite-control')->firstOrFail();
+    expect($service->meta_title)->toBe('أفضل شركة مكافحة نمل أبيض بالرياض | سين ياء')
+        ->and($service->seo_title)->toBe('أفضل شركة مكافحة نمل أبيض بالرياض | سين ياء')
+        ->and($service->seo_description)->toBe('تخلص نهائياً من النمل الأبيض مع شركة سين ياء بأحدث مبيدات وتقنيات الحقن.')
+        ->and($service->seo_keywords)->toBe('مكافحة نمل ابيض, رش مبيدات, سين ياء');
+
+    // Test fallback when meta fields are null
+    $serviceWithFallback = Service::factory()->create([
+        'title' => 'تنظيف واجهات المباني',
+        'short_description' => 'تنظيف الواجهات الزجاجية والحجرية للمباني العالية.',
+        'meta_title' => null,
+        'meta_description' => null,
+        'meta_keywords' => null,
+    ]);
+
+    expect($serviceWithFallback->seo_title)->toContain('تنظيف واجهات المباني')
+        ->and($serviceWithFallback->seo_description)->toBe('تنظيف الواجهات الزجاجية والحجرية للمباني العالية.')
+        ->and($serviceWithFallback->seo_keywords)->toContain('تنظيف واجهات المباني');
 });

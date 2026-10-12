@@ -1,42 +1,54 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'خدماتنا المتميزة | سلطان كلين - خصم 35%')
+@section('title', setting('seo_services_title', 'خدماتنا المتميزة في النظافة والتعقيم الشامل | ' . setting('site_name',
+    'سين ياء')))
+@section('meta_description', setting('seo_services_description', 'استكشف باقة خدمات شركة ' . setting('site_name', 'سين
+    ياء') . ' المتكاملة: تنظيف الفلل، الشقق، المفروشات، غسيل السجاد والكنب بالبخار، جلي الرخام وتلميع البلاط بأعلى جودة.'))
+@section('meta_keywords', setting('seo_services_keywords', 'خدمات تنظيف بالرياض, تنظيف فلل, غسيل كنب, جلي رخام, تنظيف
+    خزانات, تعقيم منازل, شركة ' . setting('site_name', 'سين ياء')))
+@section('og_title', setting('seo_services_title', 'خدمات النظافة والتعقيم الشامل | شركة ' . setting('site_name', 'سين
+    ياء')))
+@section('og_description', setting('seo_services_description', 'تعرف على أفضل باقات خدمات النظافة والتعقيم المعتمدة
+    بأحدث التقنيات وأفضل الأسعار.'))
 
 @section('content')
     <!-- ==========================================================================
-       PAGE HEADER BANNER
-       ========================================================================== -->
-    <section class="bg-brand-primary text-white py-5 text-center">
+           PAGE HEADER BANNER
+           ========================================================================== -->
+    <section class="page-header-banner py-5 text-center">
         <div class="container py-3">
-            <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-3">
-                <i class="fa-solid fa-sparkles me-1"></i> جودة فندقية وضمان ذهبي
+            <span
+                class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
+                <i class="fa-solid fa-sparkles me-1 text-brand-secondary"></i> جودة فندقية وضمان ذهبي
             </span>
-            <h1 class="display-5 fw-heading text-white mb-2">خدمات النظافة والتعقيم الشامل</h1>
-            <p class="lead text-white text-opacity-75 fs-6 max-w-700 mx-auto mb-3">
-                حلول متكاملة للمنازل، الفلل، والمؤسسات بأحدث المعدات الألمانية والإيطالية مع خصم 35% ومعاينة مجانية.
+            <h1 class="display-5 fw-heading text-brand-primary mb-2">خدمات النظافة والتعقيم الشامل</h1>
+            <p class="lead text-secondary fs-6 max-w-700 mx-auto mb-3">
+                حلول متكاملة للمنازل، الفلل، والمؤسسات بأحدث المعدات الألمانية والإيطالية وأعلى معايير الإتقان.
             </p>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0 small">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('home') }}" class="text-brand-secondary text-decoration-none">الرئيسية</a>
+                        <a href="{{ route('home') }}" class="text-brand-primary text-decoration-none">الرئيسية</a>
                     </li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">خدماتنا</li>
+                    <li class="breadcrumb-item active text-brand-secondary" aria-current="page">خدماتنا</li>
                 </ol>
             </nav>
         </div>
     </section>
 
     <!-- ==========================================================================
-       SERVICES SECTION (DYNAMIC CLEAN CARDS)
-       ========================================================================== -->
+           SERVICES SECTION (DYNAMIC CLEAN CARDS)
+           ========================================================================== -->
     <section class="py-5 bg-white" id="services-grid">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge bg-brand-light text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-2">
+                <span
+                    class="badge bg-brand-light text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-2">
                     <i class="fa-solid fa-layer-group text-brand-secondary me-1"></i> باقات خدماتنا
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary mb-2">خدماتنا المتخصصة</h2>
-                <p class="text-secondary max-w-700 mx-auto">اختر الخدمة المطلوبة واطلع على تفاصيلها الكاملة مع إمكانية الحجز الفوري بخصم 35%</p>
+                <p class="text-secondary max-w-700 mx-auto">اختر الخدمة المطلوبة واطلع على تفاصيلها الكاملة مع إمكانية الحجز
+                    الفوري المباشر</p>
                 <div class="mx-auto bg-brand-secondary rounded-pill" style="width: 50px; height: 3.5px;"></div>
             </div>
 
@@ -45,8 +57,9 @@
                 @forelse($services as $service)
                     <div class="col-md-6 col-lg-4">
                         <div class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
-                            @if($service->discount)
-                                <span class="badge bg-brand-accent position-absolute top-0 end-0 m-3 px-2 py-1 small rounded-pill shadow-sm">
+                            @if ($service->discount)
+                                <span
+                                    class="badge bg-brand-accent position-absolute top-0 end-0 m-3 px-2 py-1 small rounded-pill shadow-sm">
                                     <i class="fa-solid fa-percent me-1"></i> {{ $service->discount }}
                                 </span>
                             @endif
@@ -75,25 +88,26 @@
 
             <!-- Direct Fast Action Bar -->
             <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
-                <a href="https://wa.me/966582102525?text={{ urlencode('مرحباً سلطان كلين، أرغب في طلب معاينة مجانية لخدمات التنظيف مع خصم 35%') }}"
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وحجز خدمة تنظيف') }}"
                     target="_blank" class="btn btn-brand-whatsapp btn-lg rounded-pill px-5 py-3 shadow-sm">
-                    <i class="fa-brands fa-whatsapp fs-5 me-2"></i> اطلب معاينة مجانية عبر واتساب
+                    <i class="fa-brands fa-whatsapp fs-5 me-2"></i> تواصل عبر واتساب
                 </a>
-                <a href="tel:+966582102525" class="btn btn-outline-brand btn-lg rounded-pill px-5 py-3">
-                    <i class="fa-solid fa-phone-volume me-2"></i> اتصال مباشر: 0582102525
+                <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}"
+                    class="btn btn-outline-brand btn-lg rounded-pill px-5 py-3">
+                    <i class="fa-solid fa-phone-volume me-2"></i> اتصال مباشر: {{ setting('top_bar_phone', '0531109831') }}
                 </a>
             </div>
         </div>
     </section>
 
     <!-- ==========================================================================
-       WHY CHOOSE US / لماذا تختارنا
-       ========================================================================== -->
+           WHY CHOOSE US / لماذا تختارنا
+           ========================================================================== -->
     <section class="py-5 bg-brand-light" id="why-us">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5">
                 <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
-                    <i class="fa-solid fa-award me-1"></i> لماذا سلطان كلين؟
+                    <i class="fa-solid fa-award me-1"></i> لماذا شركة سين ياء؟
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary">
                     معايير ملكية في النظافة والتعقيم
@@ -157,8 +171,8 @@
     </section>
 
     <!-- ==========================================================================
-       CUSTOMER REVIEWS / آراء العملاء
-       ========================================================================== -->
+           CUSTOMER REVIEWS / آراء العملاء
+           ========================================================================== -->
     @if (!empty($testimonials) && count($testimonials) > 0)
         <section class="py-5 bg-white" id="reviews">
             <div class="container py-4">
@@ -172,14 +186,16 @@
                 </div>
 
                 <div class="row g-4">
-                    @foreach($testimonials->take(3) as $testimonial)
+                    @foreach ($testimonials->take(3) as $testimonial)
                         <div class="col-md-6 col-lg-4">
                             <div class="custom-card p-4 h-100 d-flex flex-column justify-content-between">
                                 <div>
                                     <div class="d-flex align-items-center justify-content-between mb-3">
                                         <div class="d-flex align-items-center gap-3">
-                                            @if($testimonial->avatar_url)
-                                                <img src="{{ $testimonial->avatar_url }}" alt="{{ $testimonial->name }}" class="rounded-circle object-fit-cover border" style="width: 48px; height: 48px;">
+                                            @if ($testimonial->avatar_url)
+                                                <img src="{{ $testimonial->avatar_url }}" alt="{{ $testimonial->name }}"
+                                                    class="rounded-circle object-fit-cover border"
+                                                    style="width: 48px; height: 48px;">
                                             @else
                                                 <div class="rounded-circle bg-brand-light text-brand-primary fw-bold d-flex align-items-center justify-content-center border"
                                                     style="width: 48px; height: 48px; font-size: 1.1rem;">
@@ -187,12 +203,14 @@
                                                 </div>
                                             @endif
                                             <div>
-                                                <h5 class="fw-bold mb-0 text-brand-primary fs-6">{{ $testimonial->name }}</h5>
-                                                <small class="text-muted">{{ $testimonial->title ?? 'عميل متميز' }}</small>
+                                                <h5 class="fw-bold mb-0 text-brand-primary fs-6">{{ $testimonial->name }}
+                                                </h5>
+                                                <small
+                                                    class="text-muted">{{ $testimonial->title ?? 'عميل متميز' }}</small>
                                             </div>
                                         </div>
                                         <div class="text-warning small">
-                                            @for($i = 0; $i < ($testimonial->rating ?? 5); $i++)
+                                            @for ($i = 0; $i < ($testimonial->rating ?? 5); $i++)
                                                 <i class="fa-solid fa-star"></i>
                                             @endfor
                                         </div>
@@ -210,8 +228,8 @@
     @endif
 
     <!-- ==========================================================================
-       FAQ SECTION / الأسئلة الشائعة
-       ========================================================================== -->
+           FAQ SECTION / الأسئلة الشائعة
+           ========================================================================== -->
     @if (!empty($faqs) && count($faqs) > 0)
         <section class="py-5 bg-brand-light" id="faq">
             <div class="container py-4">
@@ -220,21 +238,27 @@
                         <i class="fa-solid fa-circle-question me-1"></i> إجابات وافية
                     </span>
                     <h2 class="fw-heading display-6 text-brand-primary">الأسئلة الشائعة حول خدماتنا</h2>
-                    <p class="text-secondary">كل ما تود معرفته عن طريقة تقديم خدمات النظافة والضمان والمعاينة</p>
+                    <p class="text-secondary">كل ما تود معرفته عن طريقة تقديم خدمات النظافة والضمان والجودة</p>
                 </div>
 
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="accordion" id="faqAccordion">
-                            @foreach($faqs as $index => $faq)
+                            @foreach ($faqs as $index => $faq)
                                 <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm">
                                     <h2 class="accordion-header" id="heading{{ $faq->id }}">
-                                        <button class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }} fw-bold text-brand-primary" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse{{ $faq->id }}" aria-expanded="{{ $index === 0 ? 'true' : 'false' }}" aria-controls="collapse{{ $faq->id }}">
+                                        <button
+                                            class="accordion-button {{ $index !== 0 ? 'collapsed' : '' }} fw-bold text-brand-primary"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse{{ $faq->id }}"
+                                            aria-expanded="{{ $index === 0 ? 'true' : 'false' }}"
+                                            aria-controls="collapse{{ $faq->id }}">
                                             {{ $faq->question }}
                                         </button>
                                     </h2>
-                                    <div id="collapse{{ $faq->id }}" class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}" data-bs-parent="#faqAccordion" aria-labelledby="heading{{ $faq->id }}">
+                                    <div id="collapse{{ $faq->id }}"
+                                        class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}"
+                                        data-bs-parent="#faqAccordion" aria-labelledby="heading{{ $faq->id }}">
                                         <div class="accordion-body text-secondary small lh-lg">
                                             {{ $faq->answer }}
                                         </div>
@@ -249,21 +273,24 @@
     @endif
 
     <!-- ==========================================================================
-       GIANT CTA BANNER
-       ========================================================================== -->
-    <section class="py-5 bg-brand-primary text-white text-center">
+           GIANT CTA BANNER
+           ========================================================================== -->
+    <section class="py-5 quote-section text-center">
         <div class="container py-3">
-            <span class="badge bg-brand-accent px-3 py-2 rounded-pill fw-bold mb-3">🔥 اغتنم العرض الآن</span>
-            <h2 class="display-6 fw-heading text-white mb-3">احصل على خصم 35% ومعاينة مجانية لمنزلك أو مكتبك</h2>
-            <p class="lead text-white text-opacity-75 max-w-700 mx-auto mb-4 fs-6">
+            <span
+                class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">✨
+                خدمة عملاء سريعة ومباشرة</span>
+            <h2 class="display-6 fw-heading text-brand-primary mb-3">احجز خدمتك الآن لمنزلك أو مكتبك بأعلى جودة</h2>
+            <p class="lead text-secondary max-w-700 mx-auto mb-4 fs-6">
                 فريقنا المجهز بأحدث المعدات جاهز للوصول إليك في أسرع وقت. تواصل معنا الآن هاتفياً أو عبر الواتساب!
             </p>
             <div class="d-flex justify-content-center flex-wrap gap-3">
-                <a href="tel:+966582102525" class="btn btn-light text-brand-primary btn-lg rounded-pill px-5 fw-bold shadow">
-                    <i class="fa-solid fa-phone-volume me-2 text-brand-secondary"></i> اتصل الآن: 0582102525
+                <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}"
+                    class="btn btn-outline-brand rounded-pill px-5 fw-bold shadow-sm">
+                    <i class="fa-solid fa-phone-volume me-2"></i> اتصل الآن: {{ setting('top_bar_phone', '0531109831') }}
                 </a>
-                <a href="https://wa.me/966582102525?text={{ urlencode('مرحباً سلطان كلين، أود طلب خدمة تنظيف مع خصم 35%') }}"
-                    target="_blank" class="btn btn-brand-whatsapp btn-lg rounded-pill px-5 fw-bold shadow">
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وحجز خدمة تنظيف') }}"
+                    target="_blank" class="btn btn-primary rounded-pill px-5 fw-bold shadow">
                     <i class="fa-brands fa-whatsapp fs-5 me-2"></i> حجز سريع عبر واتساب
                 </a>
             </div>
