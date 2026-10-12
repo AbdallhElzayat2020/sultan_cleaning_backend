@@ -262,4 +262,257 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 13. Interactive SVG Floor Plan Handler
+    const floorplanSvg = document.getElementById("homeFloorPlanSvg");
+    if (floorplanSvg) {
+        const floorplanRoomsData = {
+            kitchen: {
+                title: "المطبخ العصري والأجهزة",
+                badge: "إزالة الدهون والتعقيم الفائق",
+                icon: "fa-solid fa-utensils",
+                tagline: "تنظيف عميق وإذابة أصعب الدهون والزيوت لبيئة طبخ صحية وآمنة 100% مع تعقيم شامل لجميع الأسطح.",
+                tasks: [
+                    "إذابة الدهون المستعصية من الشفاطات والبوتاجازات والأفران",
+                    "تنظيف وتطهير خزائن ودواليب المطبخ من الداخل والخارج",
+                    "تعقيم وتلميع الأحواض وخلاطات المياه بمواد طبية مضادة للبكتيريا",
+                    "جلي وتطهير سيراميك الأرضيات والجدران وإزالة التراكمات الدهنية",
+                    "تنظيف وتلميع الثلاجة والميكروويف والأجهزة الكهربائية"
+                ],
+                duration: "45 - 60 دقيقة",
+                products: "منظفات كارتشر الألمانية • معقمات معتمدة خالية من الروائح",
+                waMessage: "مرحباً سين ياء، أود الاستفسار وحجز خدمة تنظيف وتعقيم المطبخ العصري والأجهزة"
+            },
+            living: {
+                title: "صالة المعيشة والمجلس",
+                badge: "نظافة فندقية للمفروشات والرخام",
+                icon: "fa-solid fa-couch",
+                tagline: "استعادة رونق أثاثك ومفروشاتك بأحدث تقنيات الغسيل بالبخار الجاف وحماية الأنسجة.",
+                tasks: [
+                    "غسيل الكنب والمجالس وأطقم الجلوس بالبخار مع إزالة البقع العميقة",
+                    "غسيل وتطهير السجاد والموكيت في مكانه وتجفيفه السريع",
+                    "جلي وتلميع وتريستلة الأرضيات الرخامية والبلاط بأقراص الماس",
+                    "تلميع النوافذ والواجهات الزجاجية والشاشات والتحف الفنية",
+                    "تعطير فندقي ملكي يدوم طويلاً بمستخلصات طبيعية منعشة"
+                ],
+                duration: "60 - 90 دقيقة",
+                products: "أجهزة بخار إيطالية بضغط 8 بار • شامبوهات أقمشة معتمدة",
+                waMessage: "مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم صالة المعيشة والمجلس بالبخار"
+            },
+            bathroom: {
+                title: "الحمام الرئيسي وغرف الاستحمام",
+                badge: "مكافحة الجراثيم 99.9%",
+                icon: "fa-solid fa-bath",
+                tagline: "تطهير وقائي شامل وإزالة الترسبات الجيرية والتكلسات المزعجة واستعادة بريق السيراميك.",
+                tasks: [
+                    "إزالة التكلسات والأملاح والاصفرار من كبائن الشاور والبانيو",
+                    "تطهير وتلميع المرايا والزجاج بفلاتر مانعة للبخار والضباب",
+                    "تعقيم عميق للمراحيض والأحواض بدرجات حرارة عالية تقضي على البكتيريا",
+                    "تسليك وتعقيم فتحات التصريف ومكافحة مسببات الروائح الكريهة",
+                    "تلميع الإكسسوارات المعدنية وحنفيات الكروم والاستانلس ستيل"
+                ],
+                duration: "40 - 50 دقيقة",
+                products: "أحماض تنظيف آمنة متوازنة • معقمات هيدروجينية معتمدة",
+                waMessage: "مرحباً سين ياء، أود حجز خدمة تعقيم وتنظيف الحمام الرئيسي وإزالة التكلسات"
+            },
+            bedroom: {
+                title: "غرفة النوم الرئيسية",
+                badge: "راحة صحية ونوم عميق",
+                icon: "fa-solid fa-bed",
+                tagline: "بيئة نوم خالية تماماً من مسببات الحساسية وعث الغبار بأعلى معايير النقاء والعناية.",
+                tasks: [
+                    "تعقيم المراتب بالبخار الساخن 160°C للقضاء على عث الغبار والبكتيريا",
+                    "تنظيف وغسيل الستائر في مكانها بدون فك بأجهزة الشفط والبخار الجاف",
+                    "تلميع وتنظيف خزائن الملابس والأسطح الخشبية بزيوت شمعية واقية",
+                    "تنظيف دقيق لخلف وتحت الأسرّة وإزالة تراكمات الأتربة الدقيقة",
+                    "تعقيم الأجواء بتقنية الرذاذ البارد وتعطير اللافندر المهدئ للأعصاب"
+                ],
+                duration: "45 - 60 دقيقة",
+                products: "بخار جاف بدون رطوبة زائدة • زيوت شمعية طبيعية للأخشاب",
+                waMessage: "مرحباً سين ياء، أود حجز خدمة تعقيم وتنظيف غرفة النوم الرئيسية والمراتب بالبخار"
+            },
+            dining: {
+                title: "غرفة الطعام وركن الضيافة",
+                badge: "فخامة ولمعان مائدة الضيافة",
+                icon: "fa-solid fa-champagne-glasses",
+                tagline: "العناية الفائقة بطاولات الطعام الفاخرة والكراسي وتلميع الثريات الكريستالية الثمينة.",
+                tasks: [
+                    "تنظيف وتلميع طاولات السفرة الخشبية والرخامية وحمايتها من الخدوش",
+                    "غسيل وتعقيم كراسي الطعام القماشية والجلدية وإزالة بقع الأطعمة",
+                    "تنظيف وتلميع الثريات الكريستالية ووحدات الإضاءة بدقة متناهية",
+                    "تلميع البوفيه ودواليب حفظ أواني الضيافة من الخارج والداخل",
+                    "تنظيف وتطهير أرضيات الباركيه أو الرخام المحيطة بمائدة الطعام"
+                ],
+                duration: "35 - 50 دقيقة",
+                products: "ملمعات كريستال خاصة • مستحلبات حماية الأقمشة والجلد الطبيعي",
+                waMessage: "مرحباً سين ياء، أود حجز خدمة تنظيف وتلميع غرفة الطعام ومائدة الضيافة"
+            },
+            balcony: {
+                title: "الشرفة والواجهة البانورامية",
+                badge: "إطلالة نقية مقاومة للأتربة",
+                icon: "fa-solid fa-wind",
+                tagline: "إزالة الأتربة وغسيل النوافذ والدرابزين للاستمتاع بإطلالة مشرقة ونقية بدون غبار.",
+                tasks: [
+                    "غسيل وتطهير بلاط وأرضيات الشرفة بمضخات الضغط العالي المعتدلة",
+                    "تلميع النوافذ الزجاجية والواجهات المقاومة لعوامل الطقس والغبار",
+                    "تنظيف وتلميع درابزين الشرفة الزجاجي أو الاستانلس ستيل",
+                    "تنظيف أثاث الجلسات الخارجية وحمايته من أشعة الشمس والأتربة",
+                    "إزالة شباك العنكبوت وأعشاش الأتربة في الزوايا العلوية والأسقف"
+                ],
+                duration: "30 - 45 دقيقة",
+                products: "مضخات مياه نفاثة • مواد نانو بوليمر طاردة للأتربة",
+                waMessage: "مرحباً سين ياء، أود حجز خدمة غسيل الشرفة وتلميع الواجهات الزجاجية الخارجية"
+            }
+        };
+
+        const rooms = floorplanSvg.querySelectorAll(".floorplan-room");
+        const pills = document.querySelectorAll(".floorplan-nav-pill");
+        const tooltip = document.getElementById("floorplanTooltip");
+        const tooltipIcon = document.getElementById("tooltipIcon");
+        const tooltipTitle = document.getElementById("tooltipTitle");
+        const tooltipList = document.getElementById("tooltipList");
+        const svgContainer = floorplanSvg.closest(".blueprint-svg-container");
+
+        // Inspector Card Elements
+        const inspectorBadge = document.getElementById("inspectorBadge");
+        const inspectorIcon = document.getElementById("inspectorIcon");
+        const inspectorTitle = document.getElementById("inspectorTitle");
+        const inspectorTagline = document.getElementById("inspectorTagline");
+        const inspectorTasks = document.getElementById("inspectorTasks");
+        const inspectorDuration = document.getElementById("inspectorDuration");
+        const inspectorProducts = document.getElementById("inspectorProducts");
+        const inspectorWaBtn = document.getElementById("inspectorWaBtn");
+        const inspectorCard = document.getElementById("roomInspectorCard");
+
+        function selectFloorplanRoom(roomId) {
+            const data = floorplanRoomsData[roomId];
+            if (!data) return;
+
+            // Highlight in SVG
+            rooms.forEach((r) => {
+                if (r.dataset.room === roomId) {
+                    r.classList.add("active");
+                } else {
+                    r.classList.remove("active");
+                }
+            });
+
+            // Highlight in Pills
+            pills.forEach((p) => {
+                if (p.dataset.roomTarget === roomId) {
+                    p.classList.add("active");
+                } else {
+                    p.classList.remove("active");
+                }
+            });
+
+            // Update Inspector Card with smooth transition
+            if (inspectorCard) {
+                inspectorCard.style.opacity = "0.4";
+                inspectorCard.style.transform = "scale(0.99)";
+
+                setTimeout(() => {
+                    if (inspectorBadge) {
+                        inspectorBadge.innerHTML = `<i class="fa-solid fa-sparkles me-1 text-brand-secondary"></i> ${data.badge}`;
+                    }
+                    if (inspectorIcon) {
+                        inspectorIcon.innerHTML = `<i class="${data.icon}"></i>`;
+                    }
+                    if (inspectorTitle) {
+                        inspectorTitle.textContent = data.title;
+                    }
+                    if (inspectorTagline) {
+                        inspectorTagline.textContent = data.tagline;
+                    }
+                    if (inspectorTasks) {
+                        inspectorTasks.innerHTML = data.tasks
+                            .map(
+                                (task) => `
+                            <li>
+                                <i class="fa-solid fa-circle-check text-success me-2"></i>
+                                <span>${task}</span>
+                            </li>
+                        `
+                            )
+                            .join("");
+                    }
+                    if (inspectorDuration) {
+                        inspectorDuration.textContent = data.duration;
+                    }
+                    if (inspectorProducts) {
+                        inspectorProducts.textContent = data.products;
+                    }
+                    if (inspectorWaBtn) {
+                        inspectorWaBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(data.waMessage)}`;
+                    }
+
+                    inspectorCard.style.opacity = "1";
+                    inspectorCard.style.transform = "scale(1)";
+                }, 160);
+            }
+        }
+
+        // Click on SVG Rooms
+        rooms.forEach((room) => {
+            const roomId = room.dataset.room;
+            room.addEventListener("click", () => {
+                selectFloorplanRoom(roomId);
+            });
+
+            // Mouse hover tooltip on desktop
+            if (tooltip && svgContainer) {
+                room.addEventListener("mouseenter", () => {
+                    const data = floorplanRoomsData[roomId];
+                    if (!data) return;
+
+                    if (tooltipIcon) tooltipIcon.innerHTML = `<i class="${data.icon}"></i>`;
+                    if (tooltipTitle) tooltipTitle.textContent = data.title;
+                    if (tooltipList) {
+                        tooltipList.innerHTML = data.tasks
+                            .slice(0, 2)
+                            .map(
+                                (t) => `
+                            <li><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> ${t}</li>
+                        `
+                            )
+                            .join("");
+                    }
+                    tooltip.classList.add("visible");
+                });
+
+                room.addEventListener("mousemove", (e) => {
+                    const containerRect = svgContainer.getBoundingClientRect();
+                    const x = e.clientX - containerRect.left;
+                    const y = e.clientY - containerRect.top;
+
+                    const tooltipWidth = 260;
+                    const tooltipHeight = 130;
+                    let left = x + 18;
+                    let top = y + 18;
+
+                    if (left + tooltipWidth > containerRect.width) {
+                        left = x - tooltipWidth - 18;
+                    }
+                    if (top + tooltipHeight > containerRect.height) {
+                        top = y - tooltipHeight - 18;
+                    }
+
+                    tooltip.style.left = `${Math.max(10, left)}px`;
+                    tooltip.style.top = `${Math.max(10, top)}px`;
+                });
+
+                room.addEventListener("mouseleave", () => {
+                    tooltip.classList.remove("visible");
+                });
+            }
+        });
+
+        // Click on Pills
+        pills.forEach((pill) => {
+            pill.addEventListener("click", () => {
+                const target = pill.dataset.roomTarget;
+                selectFloorplanRoom(target);
+            });
+        });
+    }
 });

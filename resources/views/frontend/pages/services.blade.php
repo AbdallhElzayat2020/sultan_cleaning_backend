@@ -101,6 +101,11 @@
     </section>
 
     <!-- ==========================================================================
+           INTERACTIVE SVG FLOOR PLAN (خريطة المنزل التفاعلية)
+           ========================================================================== -->
+    @include('frontend.partials.interactive-floorplan')
+
+    <!-- ==========================================================================
            WHY CHOOSE US / لماذا تختارنا
            ========================================================================== -->
     <section class="py-5 bg-brand-light" id="why-us">
@@ -170,62 +175,6 @@
         </div>
     </section>
 
-    <!-- ==========================================================================
-           CUSTOMER REVIEWS / آراء العملاء
-           ========================================================================== -->
-    @if (!empty($testimonials) && count($testimonials) > 0)
-        <section class="py-5 bg-white" id="reviews">
-            <div class="container py-4">
-                <div class="text-center mb-5">
-                    <span class="badge bg-brand-accent text-white rounded-pill px-3 py-2 fw-bold mb-2">
-                        <i class="fa-solid fa-star me-1"></i> ثقة وتجارب حقيقية
-                    </span>
-                    <h2 class="fw-heading display-6 text-brand-primary mb-2">ماذا يقول عملاؤنا عن خدماتنا؟</h2>
-                    <p class="text-secondary max-w-700 mx-auto">فخورون بثقة أكثر من 1500 عميل في جميع أنحاء المملكة</p>
-                    <div class="mx-auto bg-brand-secondary rounded-pill" style="width: 50px; height: 3.5px;"></div>
-                </div>
-
-                <div class="row g-4">
-                    @foreach ($testimonials->take(3) as $testimonial)
-                        <div class="col-md-6 col-lg-4">
-                            <div class="custom-card p-4 h-100 d-flex flex-column justify-content-between">
-                                <div>
-                                    <div class="d-flex align-items-center justify-content-between mb-3">
-                                        <div class="d-flex align-items-center gap-3">
-                                            @if ($testimonial->avatar_url)
-                                                <img src="{{ $testimonial->avatar_url }}" alt="{{ $testimonial->name }}"
-                                                    class="rounded-circle object-fit-cover border"
-                                                    style="width: 48px; height: 48px;">
-                                            @else
-                                                <div class="rounded-circle bg-brand-light text-brand-primary fw-bold d-flex align-items-center justify-content-center border"
-                                                    style="width: 48px; height: 48px; font-size: 1.1rem;">
-                                                    {{ mb_substr($testimonial->name, 0, 1) }}
-                                                </div>
-                                            @endif
-                                            <div>
-                                                <h5 class="fw-bold mb-0 text-brand-primary fs-6">{{ $testimonial->name }}
-                                                </h5>
-                                                <small
-                                                    class="text-muted">{{ $testimonial->title ?? 'عميل متميز' }}</small>
-                                            </div>
-                                        </div>
-                                        <div class="text-warning small">
-                                            @for ($i = 0; $i < ($testimonial->rating ?? 5); $i++)
-                                                <i class="fa-solid fa-star"></i>
-                                            @endfor
-                                        </div>
-                                    </div>
-                                    <p class="text-secondary small mb-0 lh-lg">
-                                        "{{ $testimonial->review }}"
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
 
     <!-- ==========================================================================
            FAQ SECTION / الأسئلة الشائعة
