@@ -4,6 +4,41 @@
 @include('frontend.layouts.head')
 
 <body>
+    <!-- ==========================================================================
+       PRELOADER (SOAP BUBBLES & SQUEEGEE ANIMATION)
+       ========================================================================== -->
+    <div id="preloader" class="preloader">
+        <!-- Floating Soap Bubbles in Preloader Background -->
+        <div class="preloader-bubbles" aria-hidden="true">
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+        </div>
+
+        <div class="preloader-inner">
+            <div class="preloader-card">
+                <div class="preloader-icon-wrapper">
+                    <div class="preloader-glow"></div>
+                    <div class="preloader-bubble-main">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <i class="fa-solid fa-sparkles preloader-sparkle preloader-sparkle-1"></i>
+                    <i class="fa-solid fa-star preloader-sparkle preloader-sparkle-2"></i>
+                </div>
+                <h4 class="preloader-title">{{ setting('site_name', 'سين ياء') }}</h4>
+                <p class="preloader-subtitle">بريق يدوم .. ونظافة تفوق التوقعات</p>
+                <div class="preloader-bar">
+                    <div class="preloader-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @include('frontend.layouts.header')
 
     @yield('content')
@@ -49,6 +84,9 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <!-- Custom Theme JS -->
     <script src="{{ asset('assets/frontend/js/main.js') }}"></script>

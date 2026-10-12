@@ -10,7 +10,7 @@
     <!-- ==========================================================================
        PAGE HEADER BANNER
        ========================================================================== -->
-    <section class="page-header-banner py-5 text-center">
+    <section class="page-header-banner py-5 text-center" data-aos="fade-down">
         <div class="container py-3">
             <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
                 <i class="fa-solid fa-newspaper me-1 text-brand-secondary"></i> دليلك الشامل للنظافة والتعقيم
@@ -35,7 +35,7 @@
         <div class="container py-3">
 
             <!-- Categories Filter & Search Bar -->
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-5 p-3 bg-brand-light rounded-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-5 p-3 bg-brand-light rounded-4" data-aos="fade-up">
                 <div class="d-flex flex-wrap align-items-center gap-2">
                     <a href="{{ route('blog.index') }}" class="btn btn-sm rounded-pill px-3 py-2 fw-bold {{ !$category ? 'btn-brand-primary' : 'btn-outline-brand' }}">
                         الكل ({{ \App\Models\Post::where('status', true)->count() }})
@@ -63,7 +63,7 @@
 
             <!-- Featured Post (First Page & No Filter) -->
             @if(!$category && !$search && $featuredPost && $posts->currentPage() === 1)
-                <div class="blog-featured-card mb-5">
+                <div class="blog-featured-card mb-5" data-aos="fade-up">
                     <div class="row g-0 align-items-center">
                         <div class="col-lg-6">
                             <div class="position-relative h-100" style="min-height: 320px;">
@@ -101,7 +101,7 @@
             <!-- Articles Grid -->
             <div class="row g-4">
                 @forelse($posts as $post)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
                         <div class="blog-card h-100 d-flex flex-column">
                             <div class="blog-img-wrapper position-relative overflow-hidden" style="height: 220px;">
                                 <img src="{{ $post->image_url }}" alt="{{ $post->title }}" class="w-100 h-100 object-fit-cover">

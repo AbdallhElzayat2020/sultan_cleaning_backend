@@ -87,6 +87,9 @@
     <!-- Bootstrap 5 RTL CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
 
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
     <!-- Custom Theme CSS -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
 
@@ -640,6 +643,36 @@
 </head>
 
 <body>
+    <!-- Preloader (Soap Bubbles & Squeegee) -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-bubbles" aria-hidden="true">
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+            <span class="p-bubble"></span>
+        </div>
+        <div class="preloader-inner">
+            <div class="preloader-card">
+                <div class="preloader-icon-wrapper">
+                    <div class="preloader-glow"></div>
+                    <div class="preloader-bubble-main">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <i class="fa-solid fa-sparkles preloader-sparkle preloader-sparkle-1"></i>
+                    <i class="fa-solid fa-star preloader-sparkle preloader-sparkle-2"></i>
+                </div>
+                <h4 class="preloader-title">{{ setting('site_name', 'سين ياء') }}</h4>
+                <p class="preloader-subtitle">بريق يدوم .. ونظافة تفوق التوقعات</p>
+                <div class="preloader-bar">
+                    <div class="preloader-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     @php
         $phone = setting('top_bar_phone', '0531109831');
         $cleanPhone = preg_replace('/[^0-9+]/', '', $phone);
@@ -708,31 +741,48 @@
     <!-- ==========================================================================
        HERO BANNER SECTION (High Trust & Quick Conversion with Hero Gradient)
        ========================================================================== -->
-    <section class="hero-ad-section py-5">
-        <div class="container py-lg-4">
+    <section class="hero-ad-section py-5 position-relative overflow-hidden">
+        <!-- Floating Soap Bubbles in Hero Background -->
+        <div class="hero-bubbles" aria-hidden="true">
+            <span class="bubble bubble-1"></span>
+            <span class="bubble bubble-2"></span>
+            <span class="bubble bubble-3"></span>
+            <span class="bubble bubble-4"></span>
+            <span class="bubble bubble-5"></span>
+            <span class="bubble bubble-6"></span>
+            <span class="bubble bubble-7"></span>
+            <span class="bubble bubble-8"></span>
+            <span class="bubble bubble-9"></span>
+            <span class="bubble bubble-10"></span>
+            <span class="bubble bubble-11"></span>
+            <span class="bubble bubble-12"></span>
+        </div>
+
+        <div class="container py-lg-4 position-relative" style="z-index: 2;">
             <div class="row align-items-center g-5">
                 <!-- Text & Main CTA -->
-                <div class="col-lg-7 text-center text-lg-start">
-                    <div class="d-inline-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill shadow-sm mb-3">
+                <div class="col-lg-7 text-center text-lg-start" data-aos="fade-up" data-aos-duration="800">
+                    <div class="d-inline-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill shadow-sm mb-3"
+                        data-aos="fade-down" data-aos-delay="100">
                         <span class="badge rounded-pill px-2 py-1"
                             style="background-color: var(--cta); color: #fff;">خدمة معتمدة 100%</span>
                         <span class="small fw-bold" style="color: var(--primary);">شركة رائدة لخدمات النظافة والتعقيم الشامل</span>
                     </div>
 
-                    <h1 class="display-5 fw-heading text-white mb-3 lh-base">
+                    <h1 class="display-5 fw-heading text-white mb-3 lh-base" data-aos="fade-up" data-aos-delay="200">
                         نظافة عميقة وتعقيم فندقي متكامل
                         <span style="color: #EAF8FC; text-shadow: 0 2px 10px rgba(0,0,0,0.15);">بأحدث المعدات وبأفضل سعر
                             بدون وسيط</span>
                     </h1>
 
-                    <p class="lead fs-6 mb-4 max-w-700">
+                    <p class="lead fs-6 mb-4 max-w-700" data-aos="fade-up" data-aos-delay="300">
                         سواء كنت بحاجة إلى تنظيف فيلا جديدة، شقة مسكونة، غسيل كنب وسجاد بالبخار الفوري، أو جلي رخام
                         وتنظيف واجهات؛ نوفر لك عمالة محترفة ومدربة تضمن لك أعلى درجات اللمعان والنظافة مع تعقيم معتمد
                         آمن للأسرة.
                     </p>
 
                     <!-- Trust Bullet Points -->
-                    <div class="row g-2 mb-4 text-start">
+                    <div class="row g-2 mb-4 text-start" data-aos="fade-up" data-aos-delay="400">
                         <div class="col-sm-6">
                             <div class="d-flex align-items-center gap-2 text-white fw-semibold small">
                                 <i class="fa-solid fa-circle-check fs-6" style="color: #EAF8FC;"></i>
@@ -760,7 +810,8 @@
                     </div>
 
                     <!-- Dual Big Contact Buttons -->
-                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3"
+                        data-aos="fade-up" data-aos-delay="500">
                         <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('مرحباً، أرغب في الاستفسار وحجز خدمة تنظيف') }}"
                             target="_blank" class="cta-btn-xl btn-wa-hero">
                             <i class="fa-brands fa-whatsapp fs-4"></i>
@@ -780,7 +831,7 @@
                 </div>
 
                 <!-- Hero Image & Interactive Trust Card -->
-                <div class="col-lg-5">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
                     <div class="position-relative">
                         <div class="hero-img-box position-relative">
                             <img src="{{ asset('assets/frontend/images/hero.jpg') }}"
@@ -800,7 +851,7 @@
 
                         <!-- Floating Stat Badge -->
                         <div class="hero-badge hero-badge-1 bg-white p-3 rounded-4 shadow d-none d-sm-flex align-items-center gap-3 position-absolute top-0 start-0 translate-middle-y"
-                            style="border: 1px solid var(--border);">
+                            style="border: 1px solid var(--border);" data-aos="zoom-in" data-aos-delay="500">
                             <div class="badge-icon text-white rounded-circle p-2 d-flex align-items-center justify-content-center"
                                 style="width: 45px; height: 45px; background-color: var(--secondary);">
                                 <i class="fa-solid fa-star fs-5"></i>
@@ -821,7 +872,7 @@
        ========================================================================== -->
     <section class="py-5 services-section" id="services">
         <div class="container py-4">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <span class="badge rounded-pill px-3 py-2 fw-bold mb-2 shadow-sm"
                     style="background-color: #FFFFFF; color: var(--primary); border: 1px solid var(--border);">
                     <i class="fa-solid fa-sparkles me-1" style="color: var(--secondary);"></i> حلولنا المتكاملة
@@ -1193,6 +1244,9 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <!-- Custom Main JS -->
     <script src="{{ asset('assets/frontend/js/main.js') }}"></script>

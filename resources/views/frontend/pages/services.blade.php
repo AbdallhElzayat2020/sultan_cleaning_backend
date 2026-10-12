@@ -15,7 +15,7 @@
     <!-- ==========================================================================
            PAGE HEADER BANNER
            ========================================================================== -->
-    <section class="page-header-banner py-5 text-center">
+    <section class="page-header-banner py-5 text-center" data-aos="fade-down">
         <div class="container py-3">
             <span
                 class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
@@ -41,7 +41,7 @@
            ========================================================================== -->
     <section class="py-5 bg-white" id="services-grid">
         <div class="container py-4">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5" data-aos="fade-up">
                 <span
                     class="badge bg-brand-light text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-2">
                     <i class="fa-solid fa-layer-group text-brand-secondary me-1"></i> باقات خدماتنا
@@ -55,7 +55,7 @@
             <!-- Services Grid -->
             <div class="row g-4">
                 @forelse($services as $service)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
                         <div class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
                             @if ($service->discount)
                                 <span

@@ -1,7 +1,7 @@
 <footer class="text-white pt-5 pb-4">
     <div class="container">
         <div class="row g-4 mb-4">
-            <div class="col-lg-4">
+            <div class="col-lg-4" data-aos="fade-up">
                 <div class="site-logo mb-3 d-inline-block bg-white p-2 px-3 rounded-4 shadow-sm">
                     <img src="{{ setting('site_logo') ? asset(setting('site_logo')) : asset('assets/frontend/images/logo.png') }}" alt="{{ setting('site_name', 'سين ياء') }}" style="max-height: 48px; width: auto;">
                 </div>
@@ -11,7 +11,7 @@
                 </p>
             </div>
 
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-lg-2" data-aos="fade-up" data-aos-delay="100">
                 <h5 class="fw-bold mb-3 text-white">روابط سريعة</h5>
                 <ul class="list-unstyled small text-white-50 d-flex flex-column gap-2">
                     <li>
@@ -35,7 +35,7 @@
                 </ul>
             </div>
 
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                 <h5 class="fw-bold mb-3 text-white">أبرز الخدمات</h5>
                 <ul class="list-unstyled small text-white-50 d-flex flex-column gap-2">
                     <li>
@@ -54,7 +54,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-3">
+            <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
                 <h5 class="fw-bold mb-3 text-white">تواصل مباشر</h5>
                 <div class="d-flex flex-column gap-2 small text-white-50">
                     <div>

@@ -10,7 +10,7 @@
     <!-- ==========================================================================
        PAGE HEADER BANNER
        ========================================================================== -->
-    <section class="page-header-banner py-5 text-center">
+    <section class="page-header-banner py-5 text-center" data-aos="fade-down">
         <div class="container py-3">
             <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
                 <i class="fa-solid fa-headset me-1 text-brand-secondary"></i> خدمة عملاء 24/7
@@ -34,7 +34,7 @@
     <section class="py-5 bg-white">
         <div class="container py-3">
             <div class="row g-4 mb-5">
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="custom-card p-4 text-center h-100">
                         <div class="card-icon-bubble bg-brand-light text-brand-primary mx-auto mb-3">
                             <i class="fa-solid fa-phone-volume"></i>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="custom-card p-4 text-center h-100">
                         <div class="card-icon-bubble bg-brand-light text-brand-accent mx-auto mb-3">
                             <i class="fa-brands fa-whatsapp"></i>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="custom-card p-4 text-center h-100">
                         <div class="card-icon-bubble bg-brand-light text-brand-primary mx-auto mb-3">
                             <i class="fa-solid fa-location-dot"></i>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                     <div class="custom-card p-4 text-center h-100">
                         <div class="card-icon-bubble bg-brand-light text-brand-primary mx-auto mb-3">
                             <i class="fa-solid fa-clock"></i>
@@ -85,7 +85,7 @@
 
             <!-- Main Contact / Booking Form -->
             <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-left">
                     <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-2">✨ تواصل مباشر</span>
                     <h2 class="fw-heading display-6 text-brand-primary mb-3">احجز خدمتك واستمتع بنظافة فائقة</h2>
                     <p class="text-secondary lh-lg mb-4">

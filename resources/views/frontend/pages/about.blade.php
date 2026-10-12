@@ -10,7 +10,7 @@
     <!-- ==========================================================================
        PAGE HEADER BANNER
        ========================================================================== -->
-    <section class="page-header-banner py-5 text-center">
+    <section class="page-header-banner py-5 text-center" data-aos="fade-down">
         <div class="container py-3">
             <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
                 <i class="fa-solid fa-crown me-1 text-warning"></i> معايير ملكية وخبرة عريقة
@@ -34,7 +34,7 @@
     <section class="py-5 bg-white">
         <div class="container py-4">
             <div class="row align-items-center g-5">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="850">
                     <span class="badge bg-brand-light text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3">
                         <i class="fa-solid fa-building me-1"></i> قصتنا ورؤيتنا
                     </span>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="850">
                     <div class="hero-img-box position-relative">
                         <img src="{{ asset('assets/frontend/images/hero.jpg') }}" alt="شركة سين ياء للنظافة الشاملة" class="rounded-4 shadow-lg w-100">
                     </div>
@@ -83,7 +83,7 @@
        ========================================================================== -->
     <section class="py-5 bg-brand-light" id="features">
         <div class="container py-4">
-            <div class="text-center max-w-700 mx-auto mb-5">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
                 <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
                     <i class="fa-solid fa-award me-1"></i> لماذا يختارنا العملاء؟
                 </span>
@@ -97,7 +97,7 @@
 
             <div class="row g-4">
                 @forelse($whyChooseUsList as $feature)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                         <div class="custom-card p-4 h-100">
                             <div class="card-icon-bubble bg-brand-light text-brand-primary mb-3">
                                 <i class="{{ $feature->icon }}"></i>

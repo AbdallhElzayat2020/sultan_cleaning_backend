@@ -104,7 +104,7 @@
     <!-- ==========================================================================
        PAGE HEADER BANNER
        ========================================================================== -->
-    <section class="page-header-banner py-5 text-center position-relative overflow-hidden">
+    <section class="page-header-banner py-5 text-center position-relative overflow-hidden" data-aos="fade-down">
         <div class="container py-4 position-relative z-1">
             <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
                 <i class="fa-solid fa-camera-retro me-1 text-brand-secondary"></i> شاهد جودة العمل الحقيقية
@@ -131,7 +131,7 @@
     <section class="py-5 bg-brand-light">
         <div class="container py-4">
             
-            <div class="text-center max-w-700 mx-auto mb-5">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
                 <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
                     <i class="fa-solid fa-images me-1"></i> صور حية من الميدان
                 </span>
@@ -143,7 +143,7 @@
             <!-- Photos Grid (Clickable to Popup) -->
             <div class="row g-4">
                 @forelse($galleries as $item)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
                         <div class="photo-gallery-item"
                             data-gallery-img="{{ $item->image_url }}"
                             data-gallery-title="{{ $item->title }}"
