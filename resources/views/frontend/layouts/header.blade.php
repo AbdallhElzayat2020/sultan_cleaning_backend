@@ -31,7 +31,7 @@
                     @if ($whatsapp)
                         <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}" target="_blank"
                             class="text-white text-decoration-none fw-semibold">
-                            <i class="fa-brands fa-whatsapp text-brand-accent me-1"></i> خدمة 24/7
+                            <i class="fa-brands fa-whatsapp text-brand-accent me-1"></i> تواصل واتساب
                         </a>
                     @endif
                 </div>
