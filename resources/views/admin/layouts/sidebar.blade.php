@@ -83,6 +83,13 @@
                     <i class="fas fa-cog"></i> <span>إعدادات الموقع</span>
                 </a>
             </li>
+
+            {{--  Profile Route  --}}
+            <li class="{{ request()->routeIs('admin.profile.*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.profile.index') }}">
+                    <i class="fas fa-user-circle"></i> <span>الملف الشخصي</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>
