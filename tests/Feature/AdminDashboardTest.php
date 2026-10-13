@@ -7,7 +7,7 @@ use App\Models\User;
 test('guest cannot access admin dashboard', function () {
     $response = $this->get('/admin/dashboard');
 
-    $response->assertRedirect('/login');
+    $response->assertRedirect(route('login'));
 });
 
 test('authenticated admin can view dashboard with statistics', function () {

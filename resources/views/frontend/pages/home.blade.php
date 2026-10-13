@@ -1,16 +1,19 @@
 @extends('frontend.layouts.master')
 
 @section('title', 'الرئيسية | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض')
-@section('meta_description', 'شركة ' . setting('site_name', 'سين ياء') . ' الرائدة في خدمات النظافة والتعقيم الشامل بالرياض والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.')
-@section('meta_keywords', 'شركة تنظيف بالرياض, تنظيف منازل بالرياض, تنظيف فلل بالرياض, غسيل كنب بالبخار, جلي رخام بالرياض, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء'))
+@section('meta_description', 'شركة ' . setting('site_name', 'سين ياء') . ' الرائدة في خدمات النظافة والتعقيم الشامل
+    بالرياض والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.')
+@section('meta_keywords', 'شركة تنظيف بالرياض, تنظيف منازل بالرياض, تنظيف فلل بالرياض, غسيل كنب بالبخار, جلي رخام
+    بالرياض, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء'))
 @section('og_title', setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض')
-@section('og_description', 'أفضل خدمات التنظيف المتكاملة للفلل والمنازل والشركات بالبخار وأحدث أجهزة التعقيم مع شركة ' . setting('site_name', 'سين ياء') . '.')
+@section('og_description', 'أفضل خدمات التنظيف المتكاملة للفلل والمنازل والشركات بالبخار وأحدث أجهزة التعقيم مع شركة ' .
+    setting('site_name', 'سين ياء') . '.')
 @section('og_image', asset('images/hero.jpg'))
 
 @section('content')
     <!-- ==========================================================================
-       HERO SECTION (CLEAN & UNCLUTTERED WITH FLOATING BUBBLES)
-       ========================================================================== -->
+           HERO SECTION (CLEAN & UNCLUTTERED WITH FLOATING BUBBLES)
+           ========================================================================== -->
     <section class="hero hero-wrapper py-5 position-relative overflow-hidden">
         <!-- Floating Soap Bubbles in Hero Background -->
         <div class="hero-bubbles" aria-hidden="true">
@@ -32,8 +35,7 @@
             <div class="row align-items-center g-5">
                 <!-- Content Side -->
                 <div class="col-lg-7" data-aos="fade-up" data-aos-duration="800">
-                    <div
-                        class="d-inline-flex align-items-center gap-2 bg-white border border-brand rounded-pill px-3 py-1 shadow-sm mb-3"
+                    <div class="d-inline-flex align-items-center gap-2 bg-white border border-brand rounded-pill px-3 py-1 shadow-sm mb-3"
                         data-aos="fade-down" data-aos-delay="100">
                         <i class="fa-solid fa-crown text-warning"></i>
                         <span class="fw-bold text-brand-primary small">الرائدون في خدمات النظافة والتعقيم
@@ -56,12 +58,14 @@
                         <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}"
                             class="btn btn-primary btn-lg d-inline-flex align-items-center gap-2 px-4 shadow">
                             <i class="fa-brands fa-whatsapp"></i>
-                            <span> تواصل معنا </span>
+                            <span> تواصل واتساب </span>
                         </a>
                         <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}"
                             class="btn btn-hero-call btn-lg d-inline-flex align-items-center gap-2 px-4">
                             <i class="fa-solid fa-phone-volume"></i>
-                            <span>{{ setting('top_bar_phone', '0531109831') }}</span>
+                            <span>
+                                اتصل بنا
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -80,8 +84,8 @@
 
 
     <!-- ==========================================================================
-    FEATURES / WHY CHOOSE US
-    ========================================================================== -->
+        FEATURES / WHY CHOOSE US
+        ========================================================================== -->
     <section class="py-5 why-us bg-white" id="features">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -121,8 +125,8 @@
     </section>
 
     <!-- ==========================================================================
-                SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
-                ========================================================================== -->
+                    SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
+                    ========================================================================== -->
 
     @if (!empty($services) && count($services) > 0)
         <section class="services py-5" id="services">
@@ -135,7 +139,8 @@
                 <!-- Services Grid (Dynamic Cards) -->
                 <div class="row g-4">
                     @forelse($services ?? [] as $service)
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up"
+                            data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
                             <div
                                 class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
                                 @if ($service->discount)
@@ -176,29 +181,31 @@
     @endif
 
     <!-- ==========================================================================
-       INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
-       ========================================================================== -->
+           INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
+           ========================================================================== -->
     <section class="py-5 interactive-tour-section position-relative overflow-hidden" id="interactive-tour">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
-                <span class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2 shadow-sm">
+                <span
+                    class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2 shadow-sm">
                     <i class="fa-solid fa-wand-magic-sparkles me-1 text-brand-secondary"></i> جولة تفاعلية حية
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary mb-2">
                     نظافة ملكية في كل تفصيلة من منزلك
                 </h2>
                 <p class="text-secondary">
-                    مرّر المؤشر (أو اضغط) على أي من النقاط النابضة لاستكشاف كيف نعتني بكل ركن في مساحتك بأحدث المعدات الفندقية
+                    مرّر المؤشر (أو اضغط) على أي من النقاط النابضة لاستكشاف كيف نعتني بكل ركن في مساحتك بأحدث المعدات
+                    الفندقية
                 </p>
                 <div class="mx-auto bg-brand-secondary rounded-pill" style="width: 50px; height: 3.5px;"></div>
             </div>
 
             <!-- Hotspot Showcase Card -->
-            <div class="interactive-stage rounded-4 position-relative shadow-lg overflow-hidden" data-aos="zoom-in" data-aos-duration="900">
+            <div class="interactive-stage rounded-4 position-relative shadow-lg overflow-hidden" data-aos="zoom-in"
+                data-aos-duration="900">
                 <img src="{{ asset('assets/frontend/images/living-room-interactive.jpg') }}"
-                     alt="غرفة معيشة فاخرة ونظيفة - خدمات سين ياء"
-                     class="w-100 h-auto d-block interactive-bg-img"
-                     loading="lazy" />
+                    alt="غرفة معيشة فاخرة ونظيفة - خدمات سين ياء" class="w-100 h-auto d-block interactive-bg-img"
+                    loading="lazy" />
 
                 <!-- Hotspots Overlay Layer -->
                 <div class="hotspots-layer" aria-label="النقاط التفاعلية للخدمات">
@@ -211,13 +218,15 @@
                         </button>
                         <div class="hotspot-popover popover-top">
                             <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-primary"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                                <span class="popover-icon bg-brand-light text-brand-primary"><i
+                                        class="fa-solid fa-wand-magic-sparkles"></i></span>
                                 <h6 class="mb-0 fw-bold text-brand-primary">غسيل وتطهير السجاد والموكيت</h6>
                             </div>
                             <p class="popover-desc mb-3">
                                 غسيل عميق بأحدث أجهزة البخار الحار وشفط الأتربة والروائح لتعود أنسجة السجاد جديدة وناعمة.
                             </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة غسيل وتعقيم السجاد والموكيت') }}" target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة غسيل وتعقيم السجاد والموكيت') }}"
+                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
                                 <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة السجاد
                             </a>
                         </div>
@@ -231,13 +240,16 @@
                         </button>
                         <div class="hotspot-popover popover-right">
                             <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-primary"><i class="fa-solid fa-couch"></i></span>
+                                <span class="popover-icon bg-brand-light text-brand-primary"><i
+                                        class="fa-solid fa-couch"></i></span>
                                 <h6 class="mb-0 fw-bold text-brand-primary">غسيل وتعقيم الكنب والمجالس</h6>
                             </div>
                             <p class="popover-desc mb-3">
-                                إزالة أصعب البقع العميقة والدهون مع تعقيم طبي ومواد ألمانية آمنة تحافظ على رونق الأقمشة ولونها.
+                                إزالة أصعب البقع العميقة والدهون مع تعقيم طبي ومواد ألمانية آمنة تحافظ على رونق الأقمشة
+                                ولونها.
                             </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الكنب والمفروشات') }}" target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الكنب والمفروشات') }}"
+                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
                                 <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة الكنب
                             </a>
                         </div>
@@ -251,13 +263,16 @@
                         </button>
                         <div class="hotspot-popover popover-bottom">
                             <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-secondary"><i class="fa-solid fa-gem"></i></span>
+                                <span class="popover-icon bg-brand-light text-brand-secondary"><i
+                                        class="fa-solid fa-gem"></i></span>
                                 <h6 class="mb-0 fw-bold text-brand-primary">تلميع النوافذ والواجهات الزجاجية</h6>
                             </div>
                             <p class="popover-desc mb-3">
-                                تلميع زجاج داخلي وخارجي بمحاليل نانو طاردة للغبار تمنحك إطلالة بانورامية فائقة الشفافية واللمعان.
+                                تلميع زجاج داخلي وخارجي بمحاليل نانو طاردة للغبار تمنحك إطلالة بانورامية فائقة الشفافية
+                                واللمعان.
                             </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تلميع الواجهات والزجاج') }}" target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تلميع الواجهات والزجاج') }}"
+                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
                                 <i class="fa-brands fa-whatsapp me-1"></i> طلب تلميع الزجاج
                             </a>
                         </div>
@@ -271,13 +286,16 @@
                         </button>
                         <div class="hotspot-popover popover-bottom">
                             <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-secondary"><i class="fa-solid fa-lightbulb"></i></span>
+                                <span class="popover-icon bg-brand-light text-brand-secondary"><i
+                                        class="fa-solid fa-lightbulb"></i></span>
                                 <h6 class="mb-0 fw-bold text-brand-primary">تلميع الثريات ووحدات الإضاءة</h6>
                             </div>
                             <p class="popover-desc mb-3">
-                                عناية دقيقة بكل تفصيلة كريستالية بمعدات متخصصة دون تفكيك، لتعود وحدات الإضاءة لبريقها الفاخر.
+                                عناية دقيقة بكل تفصيلة كريستالية بمعدات متخصصة دون تفكيك، لتعود وحدات الإضاءة لبريقها
+                                الفاخر.
                             </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً، أود حجز خدمة تنظيف وتلميع الثريات') }}" target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً، أود حجز خدمة تنظيف وتلميع الثريات') }}"
+                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
                                 <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة الثريات
                             </a>
                         </div>
@@ -291,13 +309,16 @@
                         </button>
                         <div class="hotspot-popover popover-right">
                             <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-primary"><i class="fa-solid fa-wind"></i></span>
+                                <span class="popover-icon bg-brand-light text-brand-primary"><i
+                                        class="fa-solid fa-wind"></i></span>
                                 <h6 class="mb-0 fw-bold text-brand-primary">تعقيم الستائر بالبخار الجاف</h6>
                             </div>
                             <p class="popover-desc mb-3">
-                                تنظيف الستائر في مكانها بدون فك، مع إزالة العوالق والميكروبات وحبوب اللقاح برائحة منعشة ونظيفة.
+                                تنظيف الستائر في مكانها بدون فك، مع إزالة العوالق والميكروبات وحبوب اللقاح برائحة منعشة
+                                ونظيفة.
                             </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الستائر') }}" target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الستائر') }}"
+                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
                                 <i class="fa-brands fa-whatsapp me-1"></i> طلب تعقيم الستائر
                             </a>
                         </div>
@@ -305,7 +326,8 @@
                 </div>
 
                 <!-- Subtle Bottom Hint Bar -->
-                <div class="interactive-stage-hint d-flex align-items-center justify-content-between flex-wrap gap-2 px-4 py-3 position-absolute bottom-0 start-0 end-0">
+                <div
+                    class="interactive-stage-hint d-flex align-items-center justify-content-between flex-wrap gap-2 px-4 py-3 position-absolute bottom-0 start-0 end-0">
                     <div class="d-flex align-items-center gap-2 text-white small">
                         <span class="hint-pulse-dot"></span>
                         <span>اضغط أو مرّر المؤشر على النقاط البيضاء النابضة لتفقد خدمات كل ركن في الغرفة</span>
@@ -321,8 +343,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                       QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
-                                                       ========================================================================== -->
+                                                           QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
+                                                           ========================================================================== -->
     <section class="py-5 quote-section" id="quote">
         <div class="container py-4">
             <div class="row align-items-center g-5">
@@ -354,10 +376,13 @@
                     </div>
 
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-outline-brand">
-                            <i class="fa-solid fa-phone me-1"></i> اتصل هاتفياً: {{ setting('top_bar_phone', '0531109831') }}
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}"
+                            class="btn btn-outline-brand">
+                            <i class="fa-solid fa-phone me-1"></i> اتصل هاتفياً:
+                            {{ setting('top_bar_phone', '0531109831') }}
                         </a>
-                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}" target="_blank" class="btn btn-primary">
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}"
+                            target="_blank" class="btn btn-primary">
                             <i class="fa-brands fa-whatsapp me-1"></i> محادثة واتساب فورية
                         </a>
                     </div>
@@ -421,12 +446,11 @@
     </section>
 
     <!-- ==========================================================================
-                                                       REVIEWS (TESTIMONIALS)
-                                                       ========================================================================== -->
+                                                           REVIEWS (TESTIMONIALS)
+                                                           ========================================================================== -->
     <section class="py-5 bg-white reviews position-relative overflow-hidden" id="reviews">
         <div class="container py-4">
-            <div
-                class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start"
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start"
                 data-aos="fade-up">
                 <div>
                     <span
@@ -519,8 +543,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                       FAQ SECTION (BOOTSTRAP ACCORDION)
-                                                       ========================================================================== -->
+                                                           FAQ SECTION (BOOTSTRAP ACCORDION)
+                                                           ========================================================================== -->
     <section class="py-5 bg-brand-light faq" id="faq">
         <div class="container py-4">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -540,7 +564,8 @@
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
                     <div class="accordion" id="faqAccordion">
                         @forelse($faqs as $faq)
-                            <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 80 }}">
+                            <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm" data-aos="fade-up"
+                                data-aos-delay="{{ $loop->iteration * 80 }}">
                                 <h2 class="accordion-header" id="heading-faq-{{ $faq->id }}">
                                     <button
                                         class="accordion-button {{ $loop->first ? '' : 'collapsed' }} fw-bold text-brand-primary"
@@ -571,11 +596,12 @@
     </section>
 
     <!-- ==========================================================================
-                                                       BLOG & TIPS SECTION (المدونة وأحدث المقالات)
-                                                       ========================================================================== -->
+                                                           BLOG & TIPS SECTION (المدونة وأحدث المقالات)
+                                                           ========================================================================== -->
     <section class="py-5 bg-white" id="blog">
         <div class="container py-4">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3" data-aos="fade-up">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3"
+                data-aos="fade-up">
                 <div>
                     <span
                         class="badge bg-brand-light text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-2">
@@ -594,7 +620,8 @@
 
             <div class="row g-4">
                 @forelse($posts as $post)
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up"
+                        data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
                         <div class="blog-card h-100 d-flex flex-column">
                             <div class="blog-img-wrapper position-relative overflow-hidden" style="height: 220px;">
                                 <img src="{{ $post->image_url }}" alt="{{ $post->title }}"

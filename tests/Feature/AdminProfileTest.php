@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 test('guest cannot access admin profile page', function () {
     $response = $this->get('/admin/profile');
 
-    $response->assertRedirect('/login');
+    $response->assertRedirect(route('login'));
 });
 
 test('admin can view profile page', function () {
