@@ -22,10 +22,16 @@
 
         <div class="preloader-inner">
             <div class="preloader-card">
-                <div class="preloader-icon-wrapper">
-                    <div class="preloader-glow"></div>
-                    <div class="preloader-bubble-main">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <div class="preloader-bubbles-center">
+
+                    <div class="bubble-sat bubble-sat-1">
+                        <span class="bubble-shine"></span>
+                    </div>
+                    <div class="bubble-sat bubble-sat-2">
+                        <span class="bubble-shine"></span>
+                    </div>
+                    <div class="bubble-sat bubble-sat-3">
+                        <span class="bubble-shine"></span>
                     </div>
                     <i class="fa-solid fa-sparkles preloader-sparkle preloader-sparkle-1"></i>
                     <i class="fa-solid fa-star preloader-sparkle preloader-sparkle-2"></i>

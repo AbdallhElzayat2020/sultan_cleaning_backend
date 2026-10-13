@@ -46,7 +46,8 @@
                     </li>
                     <li>
                         <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">غسيل السجاد
-                            والموكيت</a>
+                            والموكيت
+                        </a>
                     </li>
                     <li>
                         <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">جلي وتلميع الرخام</a>
