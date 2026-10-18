@@ -1709,10 +1709,9 @@ body[data-aos-easing="ease-out-cubic"] [data-aos] {
     overflow: visible;
 }
 
-@media (max-width: 991.98px) {
-    .interactive-stage {
-        overflow: hidden;
-    }
+.interactive-stage-media {
+    position: relative;
+    border-radius: 26px;
 }
 
 .interactive-bg-img {
@@ -1937,37 +1936,66 @@ body[data-aos-easing="ease-out-cubic"] [data-aos] {
 
 /* Responsive adjustments for Mobile */
 @media (max-width: 767.98px) {
+    .interactive-stage {
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .interactive-stage-media {
+        height: 310px;
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+    }
+    .interactive-stage-media .interactive-bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0;
+    }
     .hotspot-trigger {
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
     }
     .hotspot-dot {
-        width: 26px;
-        height: 26px;
-        font-size: 0.72rem;
+        width: 28px;
+        height: 28px;
+        font-size: 0.78rem;
+    }
+    .room-hotspot.active .hotspot-dot {
+        transform: scale(1.25);
+        background: linear-gradient(135deg, var(--cta) 0%, var(--secondary) 100%);
+        box-shadow: 0 0 0 6px rgba(41, 198, 209, 0.4), 0 8px 24px rgba(53, 184, 90, 0.6);
     }
     .hotspot-popover {
-        width: 220px;
-        padding: 12px 14px;
+        display: none !important;
     }
-    .hotspot-popover.popover-top,
-    .hotspot-popover.popover-bottom {
-        left: 50%;
-        transform: translate(-50%, 0) scale(1) !important;
+    .interactive-mobile-dock {
+        border-radius: 0 0 20px 20px;
+        background: #ffffff;
+        box-shadow: 0 -4px 14px rgba(12, 43, 61, 0.05);
     }
-    .hotspot-popover.popover-left {
-        right: 0;
-        top: calc(100% + 8px);
-        transform: translate(0, 0) scale(1) !important;
+    .interactive-mobile-card {
+        animation: fadeInMobileCard 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .hotspot-popover.popover-right {
-        left: 0;
-        top: calc(100% + 8px);
-        transform: translate(0, 0) scale(1) !important;
+    .interactive-mobile-dock .popover-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
     }
-    .interactive-stage-hint {
-        padding: 8px 12px;
-        font-size: 0.72rem;
+    @keyframes fadeInMobileCard {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 

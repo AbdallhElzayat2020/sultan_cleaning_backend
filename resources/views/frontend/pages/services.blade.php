@@ -21,7 +21,7 @@
                 class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
                 <i class="fa-solid fa-sparkles me-1 text-brand-secondary"></i> جودة فندقية وضمان ذهبي
             </span>
-            <h1 class="display-5 fw-heading text-brand-primary mb-2">خدمات النظافة والتعقيم الشامل</h1>
+            <h1 class="display-5 fw-heading text-brand-primary mb-2">معايير جودة عالية وتنفيذ احترافي</h1>
             <p class="lead text-secondary fs-6 max-w-700 mx-auto mb-3">
                 حلول متكاملة للمنازل، الفلل، والمؤسسات بأحدث المعدات الألمانية والإيطالية وأعلى معايير الإتقان.
             </p>
@@ -107,13 +107,13 @@
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5">
                 <span class="badge bg-brand-primary text-white rounded-pill px-3 py-2 fw-bold mb-2">
-                    <i class="fa-solid fa-award me-1"></i> لماذا شركة سين ياء؟
+                    <i class="fa-solid fa-award me-1"></i> لماذا تختار سين ياء كلين؟
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary">
-                    معايير ملكية في النظافة والتعقيم
+                    احترافية في الأداء ودقة في التفاصيل
                 </h2>
                 <p class="text-secondary">
-                    نضع خبراتنا الطويلة بين يديك لنمنحك بيئة صحية، نظيفة، ولامعة تعكس جمال ورقي مساحتك.
+                    نقدم خدمات نظافة متكاملة تجمع بين خبرة الكوادر المدربة، وتقنيات التنظيف الحديثة، واستخدام منتجات عالية الجودة، مع الالتزام بمعايير النظافة والسلامة لتحقيق نتائج تلبي تطلعات عملائنا.
                 </p>
             </div>
 

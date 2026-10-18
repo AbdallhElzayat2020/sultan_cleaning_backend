@@ -98,11 +98,10 @@
                     <i class="fa-solid fa-award me-1"></i> لماذا نحن ؟
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary">
-                    معايير ملكية في النظافة والتعقيم
+                    معايير عالية الجودة في النظافة والتعقيم
                 </h2>
                 <p class="text-secondary">
-                    نضع خبراتنا الطويلة بين يديك لنمنحك بيئة صحية، نظيفة، ولامعة تعكس
-                    جمال ورقي مساحتك.
+                    نقدم خدمات النظافة والتعقيم وفق معايير عالية من الجودة والاحترافية، بالاعتماد على كوادر مدربة، ومعدات متطورة، ومواد تنظيف عالية الجودة، لنمنحك بيئة نظيفة وصحية مع الاهتمام بأدق التفاصيل.
                 </p>
             </div>
 
@@ -192,154 +191,182 @@
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
                 <span
                     class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2 shadow-sm">
-                    <i class="fa-solid fa-wand-magic-sparkles me-1 text-brand-secondary"></i> جولة تفاعلية حية
+                    <i class="fa-solid fa-wand-magic-sparkles me-1 text-brand-secondary"></i> اكتشف خدماتنا التفاعلية
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary mb-2">
-                    نظافة ملكية في كل تفصيلة من منزلك
+                    نظافة استثنائية في أدق تفاصيل منزلك
                 </h2>
                 <p class="text-secondary">
-                    مرّر المؤشر (أو اضغط) على أي من النقاط النابضة لاستكشاف كيف نعتني بكل ركن في مساحتك بأحدث المعدات
-                    الفندقية
+                    اكتشف مستوى جديدًا من العناية بمنزلك، من خلال خدمات تنظيف احترافية تعتمد على عمالة مدرّبة، ومعدات متطورة، ومنتجات تنظيف عالية الجودة، لنمنح كل زاوية الاهتمام الذي تستحقه.
                 </p>
                 <div class="mx-auto bg-brand-secondary rounded-pill" style="width: 50px; height: 3.5px;"></div>
             </div>
 
             <!-- Hotspot Showcase Card -->
-            <div class="interactive-stage rounded-4 position-relative shadow-lg overflow-hidden" data-aos="zoom-in"
+            <div class="interactive-stage rounded-4 position-relative shadow-lg" data-aos="zoom-in"
                 data-aos-duration="900">
-                <img src="{{ asset('assets/frontend/images/living-room-interactive.jpg') }}"
-                    alt="غرفة معيشة فاخرة ونظيفة - خدمات سين ياء" class="w-100 h-auto d-block interactive-bg-img"
-                    loading="lazy" />
+                <!-- Media Wrapper (Holds image and hotspots) -->
+                <div class="interactive-stage-media position-relative">
+                    <img src="{{ asset('assets/frontend/images/living-room-interactive.jpg') }}"
+                        alt="غرفة معيشة فاخرة ونظيفة - خدمات سين ياء" class="w-100 d-block interactive-bg-img"
+                        loading="lazy" />
 
-                <!-- Hotspots Overlay Layer -->
-                <div class="hotspots-layer" aria-label="النقاط التفاعلية للخدمات">
+                    <!-- Hotspots Overlay Layer -->
+                    <div class="hotspots-layer" aria-label="النقاط التفاعلية للخدمات">
 
-                    <!-- Hotspot 1: Rug / Carpet -->
-                    <div class="room-hotspot" style="top: 76%; left: 50%;" tabindex="0">
-                        <button class="hotspot-trigger" aria-label="غسيل وتطهير السجاد والموكيت">
-                            <span class="hotspot-ping"></span>
-                            <span class="hotspot-dot"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                        </button>
-                        <div class="hotspot-popover popover-top">
-                            <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-primary"><i
-                                        class="fa-solid fa-wand-magic-sparkles"></i></span>
-                                <h6 class="mb-0 fw-bold text-brand-primary">غسيل وتطهير السجاد والموكيت</h6>
+                        <!-- Hotspot 1: Rug / Carpet -->
+                        <div class="room-hotspot" style="top: 76%; left: 50%;" tabindex="0">
+                            <button class="hotspot-trigger" aria-label="غسيل وتطهير السجاد والموكيت">
+                                <span class="hotspot-ping"></span>
+                                <span class="hotspot-dot"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            </button>
+                            <div class="hotspot-popover popover-top">
+                                <div class="popover-header">
+                                    <span class="popover-icon bg-brand-light text-brand-primary"><i
+                                            class="fa-solid fa-wand-magic-sparkles"></i></span>
+                                    <h6 class="mb-0 fw-bold text-brand-primary">غسيل وتطهير السجاد والموكيت</h6>
+                                </div>
+                                <p class="popover-desc mb-3">
+                                    غسيل عميق بأحدث أجهزة البخار الحار وشفط الأتربة والروائح لتعود أنسجة السجاد جديدة وناعمة.
+                                </p>
+                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة غسيل وتعقيم السجاد والموكيت') }}"
+                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة السجاد
+                                </a>
                             </div>
-                            <p class="popover-desc mb-3">
-                                غسيل عميق بأحدث أجهزة البخار الحار وشفط الأتربة والروائح لتعود أنسجة السجاد جديدة وناعمة.
-                            </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة غسيل وتعقيم السجاد والموكيت') }}"
-                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة السجاد
-                            </a>
+                        </div>
+
+                        <!-- Hotspot 2: Sofa / Upholstery -->
+                        <div class="room-hotspot" style="top: 64%; left: 22%;" tabindex="0">
+                            <button class="hotspot-trigger" aria-label="تنظيف وتعقيم الكنب والمفروشات">
+                                <span class="hotspot-ping"></span>
+                                <span class="hotspot-dot"><i class="fa-solid fa-couch"></i></span>
+                            </button>
+                            <div class="hotspot-popover popover-right">
+                                <div class="popover-header">
+                                    <span class="popover-icon bg-brand-light text-brand-primary"><i
+                                            class="fa-solid fa-couch"></i></span>
+                                    <h6 class="mb-0 fw-bold text-brand-primary">غسيل وتعقيم الكنب والمجالس</h6>
+                                </div>
+                                <p class="popover-desc mb-3">
+                                    إزالة أصعب البقع العميقة والدهون مع تعقيم طبي ومواد ألمانية آمنة تحافظ على رونق الأقمشة
+                                    ولونها.
+                                </p>
+                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الكنب والمفروشات') }}"
+                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة الكنب
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 3: Panoramic Glass Windows -->
+                        <div class="room-hotspot" style="top: 36%; left: 52%;" tabindex="0">
+                            <button class="hotspot-trigger" aria-label="تلميع الواجهات والزجاج البانورامي">
+                                <span class="hotspot-ping"></span>
+                                <span class="hotspot-dot"><i class="fa-solid fa-gem"></i></span>
+                            </button>
+                            <div class="hotspot-popover popover-bottom">
+                                <div class="popover-header">
+                                    <span class="popover-icon bg-brand-light text-brand-secondary"><i
+                                            class="fa-solid fa-gem"></i></span>
+                                    <h6 class="mb-0 fw-bold text-brand-primary">تلميع النوافذ والواجهات الزجاجية</h6>
+                                </div>
+                                <p class="popover-desc mb-3">
+                                    تلميع زجاج داخلي وخارجي بمحاليل نانو طاردة للغبار تمنحك إطلالة بانورامية فائقة الشفافية
+                                    واللمعان.
+                                </p>
+                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تلميع الواجهات والزجاج') }}"
+                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب تلميع الزجاج
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 5: Crystal Chandelier -->
+                        <div class="room-hotspot" style="top: 14%; left: 50%;" tabindex="0">
+                            <button class="hotspot-trigger" aria-label="تنظيف وتلميع الثريات الكريستالية">
+                                <span class="hotspot-ping"></span>
+                                <span class="hotspot-dot"><i class="fa-solid fa-lightbulb"></i></span>
+                            </button>
+                            <div class="hotspot-popover popover-bottom">
+                                <div class="popover-header">
+                                    <span class="popover-icon bg-brand-light text-brand-secondary"><i
+                                            class="fa-solid fa-lightbulb"></i></span>
+                                    <h6 class="mb-0 fw-bold text-brand-primary">تلميع الثريات ووحدات الإضاءة</h6>
+                                </div>
+                                <p class="popover-desc mb-3">
+                                    عناية دقيقة بكل تفصيلة كريستالية بمعدات متخصصة دون تفكيك، لتعود وحدات الإضاءة لبريقها
+                                    الفاخر.
+                                </p>
+                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً، أود حجز خدمة تنظيف وتلميع الثريات') }}"
+                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة الثريات
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 6: Curtains -->
+                        <div class="room-hotspot" style="top: 36%; left: 27%;" tabindex="0">
+                            <button class="hotspot-trigger" aria-label="تنظيف وتعقيم الستائر">
+                                <span class="hotspot-ping"></span>
+                                <span class="hotspot-dot"><i class="fa-solid fa-wind"></i></span>
+                            </button>
+                            <div class="hotspot-popover popover-right">
+                                <div class="popover-header">
+                                    <span class="popover-icon bg-brand-light text-brand-primary"><i
+                                            class="fa-solid fa-wind"></i></span>
+                                    <h6 class="mb-0 fw-bold text-brand-primary">تعقيم الستائر بالبخار الجاف</h6>
+                                </div>
+                                <p class="popover-desc mb-3">
+                                    تنظيف الستائر في مكانها بدون فك، مع إزالة العوالق والميكروبات وحبوب اللقاح برائحة منعشة
+                                    ونظيفة.
+                                </p>
+                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الستائر') }}"
+                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
+                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب تعقيم الستائر
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Hotspot 2: Sofa / Upholstery -->
-                    <div class="room-hotspot" style="top: 64%; left: 22%;" tabindex="0">
-                        <button class="hotspot-trigger" aria-label="تنظيف وتعقيم الكنب والمفروشات">
-                            <span class="hotspot-ping"></span>
-                            <span class="hotspot-dot"><i class="fa-solid fa-couch"></i></span>
-                        </button>
-                        <div class="hotspot-popover popover-right">
-                            <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-primary"><i
-                                        class="fa-solid fa-couch"></i></span>
-                                <h6 class="mb-0 fw-bold text-brand-primary">غسيل وتعقيم الكنب والمجالس</h6>
-                            </div>
-                            <p class="popover-desc mb-3">
-                                إزالة أصعب البقع العميقة والدهون مع تعقيم طبي ومواد ألمانية آمنة تحافظ على رونق الأقمشة
-                                ولونها.
-                            </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الكنب والمفروشات') }}"
-                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة الكنب
-                            </a>
+                    <!-- Subtle Bottom Hint Bar (Desktop) -->
+                    <div
+                        class="interactive-stage-hint d-none d-md-flex align-items-center justify-content-between flex-wrap gap-2 px-4 py-3 position-absolute bottom-0 start-0 end-0">
+                        <div class="d-flex align-items-center gap-2 text-white small">
+                            <span class="hint-pulse-dot"></span>
+                            <span>اضغط على النقاط التفاعلية داخل الصورة لتتعرف على خدماتنا وكيف نعتني بكل تفاصيل منزلك</span>
                         </div>
-                    </div>
-
-                    <!-- Hotspot 3: Panoramic Glass Windows -->
-                    <div class="room-hotspot" style="top: 36%; left: 52%;" tabindex="0">
-                        <button class="hotspot-trigger" aria-label="تلميع الواجهات والزجاج البانورامي">
-                            <span class="hotspot-ping"></span>
-                            <span class="hotspot-dot"><i class="fa-solid fa-gem"></i></span>
-                        </button>
-                        <div class="hotspot-popover popover-bottom">
-                            <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-secondary"><i
-                                        class="fa-solid fa-gem"></i></span>
-                                <h6 class="mb-0 fw-bold text-brand-primary">تلميع النوافذ والواجهات الزجاجية</h6>
-                            </div>
-                            <p class="popover-desc mb-3">
-                                تلميع زجاج داخلي وخارجي بمحاليل نانو طاردة للغبار تمنحك إطلالة بانورامية فائقة الشفافية
-                                واللمعان.
-                            </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تلميع الواجهات والزجاج') }}"
-                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                <i class="fa-brands fa-whatsapp me-1"></i> طلب تلميع الزجاج
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Hotspot 5: Crystal Chandelier -->
-                    <div class="room-hotspot" style="top: 14%; left: 50%;" tabindex="0">
-                        <button class="hotspot-trigger" aria-label="تنظيف وتلميع الثريات الكريستالية">
-                            <span class="hotspot-ping"></span>
-                            <span class="hotspot-dot"><i class="fa-solid fa-lightbulb"></i></span>
-                        </button>
-                        <div class="hotspot-popover popover-bottom">
-                            <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-secondary"><i
-                                        class="fa-solid fa-lightbulb"></i></span>
-                                <h6 class="mb-0 fw-bold text-brand-primary">تلميع الثريات ووحدات الإضاءة</h6>
-                            </div>
-                            <p class="popover-desc mb-3">
-                                عناية دقيقة بكل تفصيلة كريستالية بمعدات متخصصة دون تفكيك، لتعود وحدات الإضاءة لبريقها
-                                الفاخر.
-                            </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً، أود حجز خدمة تنظيف وتلميع الثريات') }}"
-                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة الثريات
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Hotspot 6: Curtains -->
-                    <div class="room-hotspot" style="top: 36%; left: 27%;" tabindex="0">
-                        <button class="hotspot-trigger" aria-label="تنظيف وتعقيم الستائر">
-                            <span class="hotspot-ping"></span>
-                            <span class="hotspot-dot"><i class="fa-solid fa-wind"></i></span>
-                        </button>
-                        <div class="hotspot-popover popover-right">
-                            <div class="popover-header">
-                                <span class="popover-icon bg-brand-light text-brand-primary"><i
-                                        class="fa-solid fa-wind"></i></span>
-                                <h6 class="mb-0 fw-bold text-brand-primary">تعقيم الستائر بالبخار الجاف</h6>
-                            </div>
-                            <p class="popover-desc mb-3">
-                                تنظيف الستائر في مكانها بدون فك، مع إزالة العوالق والميكروبات وحبوب اللقاح برائحة منعشة
-                                ونظيفة.
-                            </p>
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الستائر') }}"
-                                target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                <i class="fa-brands fa-whatsapp me-1"></i> طلب تعقيم الستائر
-                            </a>
+                        <div class="d-none d-md-flex align-items-center gap-3 text-white small">
+                            <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> عمالة محترفة</span>
+                            <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> مواد آمنة 100%</span>
+                            <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> ضمان ذهبي</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Subtle Bottom Hint Bar -->
-                <div
-                    class="interactive-stage-hint d-flex align-items-center justify-content-between flex-wrap gap-2 px-4 py-3 position-absolute bottom-0 start-0 end-0">
-                    <div class="d-flex align-items-center gap-2 text-white small">
-                        <span class="hint-pulse-dot"></span>
-                        <span>اضغط أو مرّر المؤشر على النقاط البيضاء النابضة لتفقد خدمات كل ركن في الغرفة</span>
+                <!-- Mobile Interactive Dock (Mobile only, below image) -->
+                <div class="interactive-mobile-dock d-block d-md-none p-3 bg-white border-top">
+                    <!-- Default Prompt Hint -->
+                    <div id="interactiveMobileHint" class="d-flex align-items-center gap-2 text-secondary small py-1">
+                        <span class="hint-pulse-dot flex-shrink-0"></span>
+                        <span class="fw-medium">اضغط على النقاط التفاعلية داخل الصورة لتتعرف على خدماتنا وكيف نعتني بكل تفاصيل منزلك</span>
                     </div>
-                    <div class="d-none d-md-flex align-items-center gap-3 text-white small">
-                        <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> عمالة محترفة</span>
-                        <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> مواد آمنة 100%</span>
-                        <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> ضمان ذهبي</span>
+
+                    <!-- Active Service Details Card -->
+                    <div id="interactiveMobileCard" class="interactive-mobile-card d-none">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <span id="mobileCardIcon" class="popover-icon bg-brand-light text-brand-primary"></span>
+                                <h6 id="mobileCardTitle" class="mb-0 fw-bold text-brand-primary"></h6>
+                            </div>
+                            <button type="button" id="closeMobileCardBtn" class="btn btn-sm btn-light rounded-circle p-1 border-0 text-muted" aria-label="إغلاق">
+                                <i class="fa-solid fa-xmark fs-6"></i>
+                            </button>
+                        </div>
+                        <p id="mobileCardDesc" class="small text-secondary mb-3 lh-base"></p>
+                        <a id="mobileCardBtn" href="#" target="_blank" class="btn btn-brand-primary btn-sm w-100 rounded-pill fw-bold py-2 shadow-sm">
+                            <i class="fa-brands fa-whatsapp me-1"></i> <span>طلب الخدمة</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -355,27 +382,27 @@
                 <div class="col-lg-6" data-aos="fade-left" data-aos-duration="850">
                     <span
                         class="badge bg-white text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-3 shadow-sm">
-                        <i class="fa-solid fa-calendar-check me-1"></i> طلب وحجز فوري
+                        <i class="fa-solid fa-calendar-check me-1"></i> طلب خدمة وحجز موعد
                     </span>
                     <h2 class="fw-heading display-6 mb-3 text-brand-primary">
-                        احصل على خدمة تنظيف متكاملة الآن
+                        نظافة احترافية بمعايير جودة عالية
                     </h2>
                     <p class="text-secondary mb-4">
-                        املأ بياناتك وسيقوم فريقنا بالتواصل معك لتأكيد الموعد وتنسيق تفاصيل الخدمة بأسرع وقت.
+                        في سين ياء كلين، نقدم حلول نظافة متكاملة تلبي مختلف الاحتياجات، من خلال فريق عمل مدرّب، ومعدات حديثة، ومنتجات تنظيف عالية الجودة، مع اهتمام دقيق بالتفاصيل لتحقيق أفضل النتائج.
                     </p>
 
                     <div class="d-flex flex-column gap-3 mb-4">
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span class="fw-semibold">تقييم وتنسيق فوري بدون أي التزام مسبق</span>
+                            <span class="fw-semibold">خدمات تنظيف متكاملة تناسب مختلف المساحات</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span class="fw-semibold">ضمان على جودة التنظيف</span>
+                            <span class="fw-semibold">فريق عمل مؤهل ومعدات تنظيف متطورة</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span class="fw-semibold">دعم مباشر عبر الواتساب والهاتف على مدار الساعة</span>
+                            <span class="fw-semibold">التزام بالمواعيد وعناية بأدق التفاصيل</span>
                         </div>
                     </div>
 
@@ -387,7 +414,7 @@
                         </a>
                         <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}"
                             target="_blank" class="btn btn-primary">
-                            <i class="fa-brands fa-whatsapp me-1"></i> محادثة واتساب فورية
+                            <i class="fa-brands fa-whatsapp me-1"></i> تواصل مع فريقنا
                         </a>
                     </div>
                 </div>
@@ -395,10 +422,10 @@
                 <div class="col-lg-6" data-aos="fade-right" data-aos-duration="850">
                     <div class="card quote-card border-0 rounded-4 p-4 text-dark shadow-lg bg-white">
                         <h4 class="fw-heading text-brand-primary mb-1 text-center">
-                            حجز الخدمة والتواصل السريع
+                            اطلب خدمتك الآن
                         </h4>
                         <p class="text-secondary small text-center mb-3">
-                            سيتم تجهيز طلبك وتوجيهه مباشرة لخدمة العملاء عبر واتساب
+                            شاركنا تفاصيل الخدمة المطلوبة، وسيتواصل معك فريقنا لتقييم احتياجاتك وتقديم عرض السعر وتنسيق الموعد المناسب.
                         </p>
 
                         <form action="{{ route('booking.store') }}" method="POST" class="whatsapp-booking-form"
@@ -438,7 +465,7 @@
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary w-100 py-3 fw-bold fs-6"
                                         id="submitBookingBtn">
-                                        <i class="fa-brands fa-whatsapp me-1"></i> إرسال الطلب وتأكيد الحجز
+                                        <i class="fa-solid fa-paper-plane me-1"></i> اطلب عرض سعر
                                     </button>
                                 </div>
                             </div>
@@ -450,8 +477,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                                                           REVIEWS (TESTIMONIALS)
-                                                                                           ========================================================================== -->
+    REVIEWS (TESTIMONIALS)
+    ========================================================================== -->
     <section class="py-5 bg-white reviews position-relative overflow-hidden" id="reviews">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start"
@@ -459,13 +486,13 @@
                 <div>
                     <span
                         class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-2 fw-bold mb-2">
-                        <i class="fa-solid fa-comments me-1"></i> آراء وتجارب العملاء
+                        <i class="fa-solid fa-comments me-1"></i> آراء وتجارب عملائنا
                     </span>
                     <h2 class="fw-heading display-6 text-brand-primary mb-1">
-                        ماذا يقول عملاؤنا عن شركة سين ياء؟
+                        ثقة عملائنا تعكس جودة خدماتنا
                     </h2>
                     <p class="text-secondary mb-0">
-                        ثقة عملائنا هي سر نجاحنا وتميزنا المستمر في كافة أحياء الرياض والمملكة.
+                        نؤمن بأن رضا العملاء هو المقياس الحقيقي لجودة خدماتنا، لذلك نحرص على تقديم تجربة تنظيف احترافية تجمع بين الدقة في التنفيذ، والاهتمام بالتفاصيل، والالتزام بمعايير الجودة.
                     </p>
                 </div>
                 <!-- Navigation Arrows -->
@@ -557,10 +584,10 @@
                     <i class="fa-solid fa-circle-question me-1"></i> الأسئلة الشائعة
                 </span>
                 <h2 class="fw-heading display-6 text-brand-primary">
-                    إجابات على أكثر استفساراتكم
+                    كل ما تحتاج معرفته عن خدماتنا
                 </h2>
-                <p class="text-secondary">
-                    كل ما تود معرفته حول خدماتنا والخصم والضمانات.
+                <p class="text-secondary mx-auto" style="max-width: 680px;">
+                    نجيب عن أبرز استفساراتكم حول خدمات التنظيف، وآلية الحجز، والأسعار، والمعدات المستخدمة، لنساعدكم على اختيار الخدمة المناسبة بكل وضوح وثقة.
                 </p>
             </div>
 
@@ -609,7 +636,7 @@
                 <div>
                     <span
                         class="badge bg-brand-light text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-2">
-                        <i class="fa-solid fa-newspaper text-brand-secondary me-1"></i> مدونة شركة سين ياء
+                        <i class="fa-solid fa-newspaper text-brand-secondary me-1"></i> مدونة شركة سين ياء كلين
                     </span>
                     <h2 class="fw-heading display-6 text-brand-primary mb-1">نصائح وإرشادات النظافة الشاملة</h2>
                     <p class="text-secondary mb-0">مقالات ومعلومات حصرية تساعدك في الحفاظ على بريق منزلك وصحة عائلتك

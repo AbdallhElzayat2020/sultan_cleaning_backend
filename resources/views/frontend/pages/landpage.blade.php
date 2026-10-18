@@ -10,7 +10,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR055WX2EV"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-HR055WX2EV');
@@ -22,7 +25,8 @@
     <meta name="title" content="{{ setting('site_name', 'سين ياء') }} | شركة خدمات النظافة والتعقيم الشامل ">
     <meta name="description"
         content="شركة {{ setting('site_name', 'سين ياء') }} - لخدمات التنظيف الشامل، تنظيف الفلل، الشقق، الكنب، السجاد، والمفروشات بالبخار بأحدث التقنيات وأعلى معايير الإتقان وبأفضل الأسعار التنافسية.">
-    <meta name="keywords" content="شركة تنظيف , تنظيف منازل, غسيل كنب بالبخار, جلي رخام, تنظيف فلل , تعقيم منازل, سين ياء لخدمات النظافة">
+    <meta name="keywords"
+        content="شركة تنظيف , تنظيف منازل, غسيل كنب بالبخار, جلي رخام, تنظيف فلل , تعقيم منازل, سين ياء لخدمات النظافة">
     <meta name="author" content="{{ setting('site_name', 'سين ياء') }} لخدمات النظافة والتعقيم">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="{{ url('/landpage') }}">
@@ -32,15 +36,18 @@
     <meta property="og:locale" content="ar_SA">
     <meta property="og:site_name" content="{{ setting('site_name', 'سين ياء') }}">
     <meta property="og:url" content="{{ url('/landpage') }}">
-    <meta property="og:title" content="{{ setting('site_name', 'سين ياء') }} | نظافة عميقة وتعقيم فندقي متكامل بأفضل الأسعار">
-    <meta property="og:description" content="احجز خدمتك الآن مع شركة {{ setting('site_name', 'سين ياء') }}. تنظيف فلل وشقق ومفروشات بأحدث أجهزة البخار وأفضل مواد التعقيم الآمنة 100%.">
+    <meta property="og:title"
+        content="{{ setting('site_name', 'سين ياء') }} | نظافة عميقة وتعقيم فندقي متكامل بأفضل الأسعار">
+    <meta property="og:description"
+        content="احجز خدمتك الآن مع شركة {{ setting('site_name', 'سين ياء') }}. تنظيف فلل وشقق ومفروشات بأحدث أجهزة البخار وأفضل مواد التعقيم الآمنة 100%.">
     <meta property="og:image" content="{{ asset('images/logo.png') }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url('/landpage') }}">
     <meta name="twitter:title" content="{{ setting('site_name', 'سين ياء') }} | خدمات النظافة والتعقيم الشامل">
-    <meta name="twitter:description" content="خدمات تنظيف فندقية ومفروشات بالبخار وجلي رخام مع شركة {{ setting('site_name', 'سين ياء') }}.">
+    <meta name="twitter:description"
+        content="خدمات تنظيف فندقية ومفروشات بالبخار وجلي رخام مع شركة {{ setting('site_name', 'سين ياء') }}.">
     <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
 
     <!-- Favicon -->
@@ -57,7 +64,10 @@
             'url' => url('/landpage'),
             'logo' => asset('images/logo.png'),
             'image' => asset('images/hero.jpg'),
-            'description' => 'شركة ' . setting('site_name', 'سين ياء') . ' لخدمات التنظيف الشامل، تنظيف الفلل، الشقق، الكنب، السجاد، والمفروشات بالبخار بالرياض.',
+            'description' =>
+                'شركة ' .
+                setting('site_name', 'سين ياء') .
+                ' لخدمات التنظيف الشامل، تنظيف الفلل، الشقق، الكنب، السجاد، والمفروشات بالبخار بالرياض.',
             'telephone' => setting('top_bar_phone', '0531109831'),
             'priceRange' => '$$',
             'address' => [
@@ -721,10 +731,12 @@
                     </span>
                 </div>
                 <div class="d-none d-md-flex align-items-center gap-3">
-                    <span><i class="fa-solid fa-clock me-1" style="color: var(--secondary);"></i> متاحون 24 ساعة</span>
+                    <span><i class="fa-solid fa-clock me-1" style="color: var(--secondary);"></i> متاحون 24
+                        ساعة</span>
                     <span class="text-white-50">|</span>
                     <a href="tel:{{ $cleanPhone }}" class="text-white text-decoration-none fw-bold">
-                        <i class="fa-solid fa-phone-volume me-1" style="color: var(--secondary);"></i> {{ $phone }}
+                        <i class="fa-solid fa-phone-volume me-1" style="color: var(--secondary);"></i>
+                        {{ $phone }}
                     </a>
                 </div>
             </div>
@@ -786,12 +798,14 @@
                         data-aos="fade-down" data-aos-delay="100">
                         <span class="badge rounded-pill px-2 py-1"
                             style="background-color: var(--cta); color: #fff;">خدمة معتمدة 100%</span>
-                        <span class="small fw-bold" style="color: var(--primary);">شركة رائدة لخدمات النظافة والتعقيم الشامل</span>
+                        <span class="small fw-bold" style="color: var(--primary);">شركة رائدة لخدمات النظافة والتعقيم
+                            الشامل</span>
                     </div>
 
                     <h1 class="display-5 fw-heading text-white mb-3 lh-base" data-aos="fade-up" data-aos-delay="200">
                         نظافة عميقة وتعقيم فندقي متكامل
-                        <span style="color: #EAF8FC; text-shadow: 0 2px 10px rgba(0,0,0,0.15);">بأحدث المعدات وبأفضل سعر
+                        <span style="color: #EAF8FC; text-shadow: 0 2px 10px rgba(0,0,0,0.15);">بأحدث المعدات وبأفضل
+                            سعر
                             بدون وسيط</span>
                     </h1>
 
@@ -1148,7 +1162,8 @@
                     جاهزون لخدمتكم بأعلى مستويات الجودة والإتقان
                 </h2>
                 <p class="lead text-white text-opacity-90 max-w-700 mx-auto mb-5 fs-6">
-                    تواصل معنا اليوم لحجز خدمتك واستمتع بنظافة استثنائية لمنزلك أو منشأتك على أيدي فريقنا المتخصص وبأفضل الأسعار.
+                    تواصل معنا اليوم لحجز خدمتك واستمتع بنظافة استثنائية لمنزلك أو منشأتك على أيدي فريقنا المتخصص وبأفضل
+                    الأسعار.
                 </p>
 
                 <!-- Giant Buttons -->
@@ -1195,16 +1210,22 @@
             </p>
 
             @php
-                $landpageFooterPages = \App\Models\Page::where('status', true)->where('show_in_footer', true)->orderBy('order')->get();
+                $landpageFooterPages = \App\Models\Page::where('status', true)
+                    ->where('show_in_footer', true)
+                    ->orderBy('order')
+                    ->get();
             @endphp
-            @if($landpageFooterPages->isNotEmpty())
-                <div class="py-3 border-top border-white border-opacity-10 d-flex flex-wrap justify-content-center align-items-center gap-3 text-center mb-2">
-                    <span class="text-white text-opacity-50 small fw-bold"><i class="fa-solid fa-shield-halved text-brand-secondary me-1"></i> وثائق ومعلومات:</span>
-                    @foreach($landpageFooterPages as $footerPage)
-                        <a href="{{ route('pages.show', $footerPage->slug) }}" class="text-white text-opacity-80 text-decoration-none small fw-semibold">
+            @if ($landpageFooterPages->isNotEmpty())
+                <div
+                    class="py-3 border-top border-white border-opacity-10 d-flex flex-wrap justify-content-center align-items-center gap-3 text-center mb-2">
+                    <span class="text-white text-opacity-50 small fw-bold"><i
+                            class="fa-solid fa-shield-halved text-brand-secondary me-1"></i> وثائق ومعلومات:</span>
+                    @foreach ($landpageFooterPages as $footerPage)
+                        <a href="{{ route('pages.show', $footerPage->slug) }}"
+                            class="text-white text-opacity-80 text-decoration-none small fw-semibold">
                             {{ $footerPage->title }}
                         </a>
-                        @if(!$loop->last)
+                        @if (!$loop->last)
                             <span class="text-white text-opacity-25 small">•</span>
                         @endif
                     @endforeach
@@ -1215,8 +1236,7 @@
                 <!-- Copyright -->
                 <div class="col-md-6 text-center text-md-start">
                     <p class="mb-0 small text-white text-opacity-75">
-                        &copy; 2026 جميع الحقوق محفوظة لـ <strong>شركة
-                            {{ setting('site_name', 'سين ياء') }}</strong>.
+                        &copy; 2026 جميع الحقوق محفوظة لـ <strong>شركة سين ياء كلين</strong>.
                     </p>
                 </div>
 
@@ -1224,9 +1244,7 @@
                 <div class="col-md-6 text-center text-md-end">
                     <span class="author-credit small">
                         <i class="fa-solid fa-code text-brand-secondary me-1"></i>
-                        تم التصميم والتطوير بواسطة <a href="#"
-                            class="text-white text-decoration-none fw-bold">عبدالله
-                            الزيات</a>
+                        تصميم بواسطة <a href="#" class="text-white text-decoration-none fw-bold">اولي</a>
                     </span>
                 </div>
             </div>

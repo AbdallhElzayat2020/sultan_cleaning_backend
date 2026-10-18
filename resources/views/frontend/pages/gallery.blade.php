@@ -107,11 +107,11 @@
     <section class="page-header-banner py-5 text-center position-relative overflow-hidden" data-aos="fade-down">
         <div class="container py-4 position-relative z-1">
             <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
-                <i class="fa-solid fa-camera-retro me-1 text-brand-secondary"></i> شاهد جودة العمل الحقيقية
+                <i class="fa-solid fa-camera-retro me-1 text-brand-secondary"></i> نماذج من أعمالنا
             </span>
-            <h1 class="display-5 fw-heading text-brand-primary mb-2">معرض صور شركة سين ياء</h1>
+            <h1 class="display-5 fw-heading text-brand-primary mb-2">جودة التنفيذ تتحدث عن نفسها</h1>
             <p class="lead text-secondary fs-6 max-w-700 mx-auto mb-3">
-                اضغط على أي صورة لعرضها بالحجم الكامل مع تفاصيل الخدمة والطلب السريع عبر واتساب.
+                استعرض مجموعة من أعمالنا في خدمات النظافة والعناية بمختلف المساحات، واكتشف مستوى الدقة والاهتمام بالتفاصيل الذي نحرص عليه في كل خدمة نقدمها
             </p>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0 small">

@@ -86,24 +86,24 @@
             <!-- Main Contact / Booking Form -->
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6" data-aos="fade-left">
-                    <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-2">✨ تواصل مباشر</span>
-                    <h2 class="fw-heading display-6 text-brand-primary mb-3">احجز خدمتك واستمتع بنظافة فائقة</h2>
+                    <span class="badge bg-brand-accent text-white px-3 py-2 rounded-pill fw-bold mb-2">✨ تواصل معنا واطلب خدمتك</span>
+                    <h2 class="fw-heading display-6 text-brand-primary mb-3">خدمات نظافة احترافية تبدأ بخطوة بسيطة</h2>
                     <p class="text-secondary lh-lg mb-4">
-                        املأ بياناتك ونوع الخدمة المطلوبة وسيتواصل معك فني شركة سين ياء لتحديد موعد الزيارة وتأكيد الحجز فوراً.
+                        شاركنا تفاصيل الخدمة التي تحتاجها، وسيتواصل معك فريق سين ياء كلين لمناقشة متطلباتك وتقديم عرض السعر وتنسيق الموعد المناسب، مع الحرص على تقديم خدمات نظافة عالية الجودة تلبي تطلعاتك.
                     </p>
 
                     <div class="d-flex flex-column gap-3 mb-4">
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span class="fw-bold text-brand-primary">تقييم وحجز فوري بدون أي تعقيد</span>
+                            <span class="fw-bold text-brand-primary">طلب خدمة سهل وتنسيق سريع للمواعيد.</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span class="fw-bold text-brand-primary">أحدث معدات البخار الألمانية Kärcher</span>
+                            <span class="fw-bold text-brand-primary">معدات تنظيف حديثة ومنتجات عالية الجودة.</span>
                         </div>
                         <div class="d-flex align-items-center gap-3">
                             <i class="fa-solid fa-circle-check text-brand-secondary fs-5"></i>
-                            <span class="fw-bold text-brand-primary">ضمان ذهبي لإعادة التنظيف في حال عدم الرضا</span>
+                            <span class="fw-bold text-brand-primary">فريق عمل مدرّب واهتمام دقيق بجودة التنفيذ.</span>
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">المدينة / الحي <span class="text-danger">*</span></label>
-                                    <input type="text" name="city" class="form-control rounded-3 bg-white" placeholder="الرياض - حي النرجس" required>
+                                    <input type="text" name="city" class="form-control rounded-3 bg-white" placeholder="جدة / مكة - الحي" required>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">تفاصيل أو ملاحظات إضافية (اختياري)</label>
@@ -143,7 +143,7 @@
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" id="contactBookingSubmitBtn" class="btn btn-primary w-100 py-3 fw-bold fs-6 shadow">
-                                        <i class="fa-brands fa-whatsapp me-1"></i> إرسال الطلب وتأكيد الحجز
+                                        <i class="fa-solid fa-paper-plane me-1"></i> اطلب عرض سعر الآن
                                     </button>
                                 </div>
                             </div>

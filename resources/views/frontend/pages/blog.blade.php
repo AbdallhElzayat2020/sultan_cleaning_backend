@@ -15,7 +15,7 @@
             <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
                 <i class="fa-solid fa-newspaper me-1 text-brand-secondary"></i> دليلك الشامل للنظافة والتعقيم
             </span>
-            <h1 class="display-5 fw-heading text-brand-primary mb-2">مدونة شركة سين ياء</h1>
+            <h1 class="display-5 fw-heading text-brand-primary mb-2">مدونة شركة سين ياء كلين</h1>
             <p class="lead text-secondary fs-6 max-w-700 mx-auto mb-3">
                 أحدث النصائح والحيل والحلول الاحترافية للحفاظ على نظافة وبريق منزلك ومكتبك وصحة عائلتك.
             </p>

@@ -69,7 +69,7 @@
                     </div>
                     <div>
                         <i class="fa-solid fa-location-dot text-brand-secondary me-2"></i>
-                        نغطي كافة أحياء الرياض ومناطق المملكة
+                        كافة أنحاء مدينة جدة ومكة
                     </div>
                 </div>
             </div>
@@ -95,13 +95,13 @@
         <div
             class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center flex-wrap gap-2 small text-white-50">
             <div>
-                جميع الحقوق محفوظة © 2026 <strong>{{ setting('site_name', 'سين ياء') }}</strong>
+                جميع الحقوق محفوظة © 2026 <strong>شركة سين ياء كلين</strong>
             </div>
 
             <div>
-                تم التصميم والبرمجة بواسطة
-                <a href="#" class="text-brand-secondary">
-                    عبدالله الزيات
+                تصميم بواسطة
+                <a href="#" class="text-brand-secondary text-decoration-none fw-semibold">
+                    اولي
                 </a>
             </div>
         </div>
