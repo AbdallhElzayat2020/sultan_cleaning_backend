@@ -1,9 +1,13 @@
 @extends('frontend.layouts.master')
 
 @section('title', 'الرئيسية | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض')
-@section('meta_description', 'شركة ' . setting('site_name', 'سين ياء') . ' الرائدة في خدمات النظافة والتعقيم الشامل
+@section('meta_description',
+    'شركة ' .
+    setting('site_name', 'سين ياء') .
+    ' الرائدة في خدمات النظافة والتعقيم الشامل
     بالرياض والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.')
-@section('meta_keywords', 'شركة تنظيف بالرياض, تنظيف منازل بالرياض, تنظيف فلل بالرياض, غسيل كنب بالبخار, جلي رخام
+@section('meta_keywords',
+    'شركة تنظيف بالرياض, تنظيف منازل بالرياض, تنظيف فلل بالرياض, غسيل كنب بالبخار, جلي رخام
     بالرياض, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء'))
 @section('og_title', setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض')
 @section('og_description', 'أفضل خدمات التنظيف المتكاملة للفلل والمنازل والشركات بالبخار وأحدث أجهزة التعقيم مع شركة ' .
@@ -11,9 +15,9 @@
 @section('og_image', asset('images/hero.jpg'))
 
 @section('content')
-    <!-- ==========================================================================
-           HERO SECTION (CLEAN & UNCLUTTERED WITH FLOATING BUBBLES)
-           ========================================================================== -->
+    {{-- <!-- ==========================================================================
+                           HERO SECTION (CLEAN & UNCLUTTERED WITH FLOATING BUBBLES)
+                           ========================================================================== --> --}}
     <section class="hero hero-wrapper py-5 position-relative overflow-hidden">
         <!-- Floating Soap Bubbles in Hero Background -->
         <div class="hero-bubbles" aria-hidden="true">
@@ -34,7 +38,7 @@
         <div class="container py-4 position-relative" style="z-index: 2;">
             <div class="row align-items-center g-5">
                 <!-- Content Side -->
-                <div class="col-lg-7" data-aos="fade-up" data-aos-duration="800">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
                     <div class="d-inline-flex align-items-center gap-2 bg-white border border-brand rounded-pill px-3 py-1 shadow-sm mb-3"
                         data-aos="fade-down" data-aos-delay="100">
                         <i class="fa-solid fa-crown text-warning"></i>
@@ -71,9 +75,9 @@
                 </div>
 
                 <!-- Visual Side -->
-                <div class="col-lg-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
                     <div class="hero-img-box position-relative">
-                        <img src="{{ asset('assets/frontend/images/hero.jpg') }}"
+                        <img src="{{ asset('assets/frontend/images/hero_master.jpeg') }}"
                             alt="خدمات تنظيف احترافية في شركة سين ياء" />
                     </div>
                 </div>
@@ -84,8 +88,8 @@
 
 
     <!-- ==========================================================================
-        FEATURES / WHY CHOOSE US
-        ========================================================================== -->
+                    FEATURES / WHY CHOOSE US
+                    ========================================================================== -->
     <section class="py-5 why-us bg-white" id="features">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -125,8 +129,8 @@
     </section>
 
     <!-- ==========================================================================
-                    SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
-                    ========================================================================== -->
+                                                    SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
+                                                    ========================================================================== -->
 
     @if (!empty($services) && count($services) > 0)
         <section class="services py-5" id="services">
@@ -181,8 +185,8 @@
     @endif
 
     <!-- ==========================================================================
-           INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
-           ========================================================================== -->
+                                           INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
+                                           ========================================================================== -->
     <section class="py-5 interactive-tour-section position-relative overflow-hidden" id="interactive-tour">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -343,8 +347,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                           QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
-                                                           ========================================================================== -->
+                                                                                           QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
+                                                                                           ========================================================================== -->
     <section class="py-5 quote-section" id="quote">
         <div class="container py-4">
             <div class="row align-items-center g-5">
@@ -446,8 +450,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                           REVIEWS (TESTIMONIALS)
-                                                           ========================================================================== -->
+                                                                                           REVIEWS (TESTIMONIALS)
+                                                                                           ========================================================================== -->
     <section class="py-5 bg-white reviews position-relative overflow-hidden" id="reviews">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start"
@@ -543,8 +547,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                           FAQ SECTION (BOOTSTRAP ACCORDION)
-                                                           ========================================================================== -->
+                                                                                           FAQ SECTION (BOOTSTRAP ACCORDION)
+                                                                                           ========================================================================== -->
     <section class="py-5 bg-brand-light faq" id="faq">
         <div class="container py-4">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -596,8 +600,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                           BLOG & TIPS SECTION (المدونة وأحدث المقالات)
-                                                           ========================================================================== -->
+                                                                                           BLOG & TIPS SECTION (المدونة وأحدث المقالات)
+                                                                                           ========================================================================== -->
     <section class="py-5 bg-white" id="blog">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3"

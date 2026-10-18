@@ -4,6 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR055WX2EV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HR055WX2EV');
+    </script>
+
     <meta name="description"
         content="سياسة الخصوصية والشروط والأحكام لشركة سين ياء لخدمات النظافة والتعقيم الشامل بالمملكة العربية السعودية.">
     <title>سياسة الخصوصية والشروط | سين ياء</title>

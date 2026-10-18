@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR055WX2EV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HR055WX2EV');
+    </script>
+
+
     <!-- Primary SEO Meta Tags -->
     <title>{{ setting('site_name', 'سين ياء') }} | شركة خدمات النظافة والتعقيم الشامل </title>
     <meta name="title" content="{{ setting('site_name', 'سين ياء') }} | شركة خدمات النظافة والتعقيم الشامل ">

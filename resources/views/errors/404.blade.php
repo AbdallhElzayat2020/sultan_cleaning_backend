@@ -12,13 +12,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9 col-xl-8">
                     
-                    <!-- Animated Visual Badge & Number -->
-                    <div class="error-visual-container" data-aos="zoom-in" data-aos-duration="700">
-                        <div class="error-big-number">404</div>
-                        <div class="error-floating-icon">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                    </div>
+              
 
                     <!-- Status Pill -->
                     <div class="mb-3" data-aos="fade-up" data-aos-delay="100">
