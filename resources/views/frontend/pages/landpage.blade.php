@@ -112,7 +112,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}?v={{ filemtime(public_path('assets/frontend/css/style.css')) }}">
 
     <style>
         :root {
@@ -679,9 +679,13 @@
         <div class="preloader-inner">
             <div class="preloader-card">
                 <div class="preloader-bubbles-center">
-                    <div class="bubble-main">
+                    <div class="preloader-logo-ring"></div>
+
+                    <div class="bubble-main preloader-logo-bubble">
                         <span class="bubble-shine"></span>
-                        <i class="fa-solid fa-wand-magic-sparkles bubble-icon"></i>
+                        <img src="{{ asset('assets/frontend/images/favicon_master.png') }}"
+                            alt="{{ setting('site_name', 'سين ياء كلين') }}"
+                            class="preloader-logo-img" />
                     </div>
                     <div class="bubble-sat bubble-sat-1">
                         <span class="bubble-shine"></span>
@@ -695,7 +699,7 @@
                     <i class="fa-solid fa-sparkles preloader-sparkle preloader-sparkle-1"></i>
                     <i class="fa-solid fa-star preloader-sparkle preloader-sparkle-2"></i>
                 </div>
-                <h4 class="preloader-title">{{ setting('site_name', 'سين ياء') }}</h4>
+                <h4 class="preloader-title">{{ setting('site_name', 'سين ياء كلين') }}</h4>
                 <p class="preloader-subtitle">بريق يدوم .. ونظافة تفوق التوقعات</p>
                 <div class="preloader-bar">
                     <div class="preloader-progress"></div>
@@ -1260,7 +1264,7 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <!-- Custom Main JS -->
-    <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/main.js') }}?v={{ filemtime(public_path('assets/frontend/js/main.js')) }}"></script>
 
     <script>
         // Scroll to top functionality

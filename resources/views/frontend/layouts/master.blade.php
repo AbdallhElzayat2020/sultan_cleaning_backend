@@ -23,6 +23,14 @@
         <div class="preloader-inner">
             <div class="preloader-card">
                 <div class="preloader-bubbles-center">
+                    <div class="preloader-logo-ring"></div>
+
+                    <div class="bubble-main preloader-logo-bubble">
+                        <span class="bubble-shine"></span>
+                        <img src="{{ asset('assets/frontend/images/favicon_master.png') }}"
+                            alt="{{ setting('site_name', 'سين ياء كلين') }}"
+                            class="preloader-logo-img" />
+                    </div>
 
                     <div class="bubble-sat bubble-sat-1">
                         <span class="bubble-shine"></span>
@@ -36,7 +44,7 @@
                     <i class="fa-solid fa-sparkles preloader-sparkle preloader-sparkle-1"></i>
                     <i class="fa-solid fa-star preloader-sparkle preloader-sparkle-2"></i>
                 </div>
-                <h4 class="preloader-title">{{ setting('site_name', 'سين ياء') }}</h4>
+                <h4 class="preloader-title">{{ setting('site_name', 'سين ياء كلين') }}</h4>
                 <p class="preloader-subtitle">بريق يدوم .. ونظافة تفوق التوقعات</p>
                 <div class="preloader-bar">
                     <div class="preloader-progress"></div>
@@ -95,7 +103,7 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <!-- Custom Theme JS -->
-    <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/main.js') }}?v={{ file_exists(public_path('assets/frontend/js/main.js')) ? filemtime(public_path('assets/frontend/js/main.js')) : '1.0' }}"></script>
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -38,20 +38,32 @@
             <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                 <h5 class="fw-bold mb-3 text-white">أبرز الخدمات</h5>
                 <ul class="list-unstyled small text-white-50 d-flex flex-column gap-2">
-                    <li>
-                        <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">تنظيف الفلل والقصور</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">تنظيف الكنب بالبخار</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">غسيل السجاد
-                            والموكيت
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">جلي وتلميع الرخام</a>
-                    </li>
+                    @php
+                        $footerServices = \App\Models\Service::where('status', true)->orderBy('order', 'asc')->take(6)->get();
+                    @endphp
+                    @forelse ($footerServices as $fService)
+                        <li>
+                            <a href="{{ route('services.show', $fService->slug) }}" class="text-white-50 text-decoration-none">
+                                {{ $fService->title }}
+                            </a>
+                        </li>
+                    @empty
+                        <li>
+                            <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">تنظيف المنازل والفلل</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">غسيل السجاد والكنب بالبخار</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">تنظيف الزجاج والواجهات</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('services.index') }}" class="text-white-50 text-decoration-none">تنظيف المكاتب والشركات</a>
+                        </li>
+                    @endforelse
                 </ul>
             </div>
 

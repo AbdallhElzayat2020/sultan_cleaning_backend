@@ -238,76 +238,39 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 12. Interactive Living Room Hotspots Handler
-    const hotspots = document.querySelectorAll(".room-hotspot");
-    if (hotspots.length) {
-        const mobileHint = document.getElementById("interactiveMobileHint");
-        const mobileCard = document.getElementById("interactiveMobileCard");
-        const mobileIcon = document.getElementById("mobileCardIcon");
-        const mobileTitle = document.getElementById("mobileCardTitle");
-        const mobileDesc = document.getElementById("mobileCardDesc");
-        const mobileBtn = document.getElementById("mobileCardBtn");
-        const closeMobileBtn = document.getElementById("closeMobileCardBtn");
+    // 12. Interactive Living Room Hotspots Popup Modal
+    const hotspotTriggers = document.querySelectorAll(".hotspot-trigger, .hotspot-chip-trigger");
+    const modalEl = document.getElementById("interactiveHotspotModal");
+    if (hotspotTriggers.length && modalEl && typeof bootstrap !== "undefined") {
+        const modalTitle = document.getElementById("interactiveModalTitle");
+        const modalDesc = document.getElementById("interactiveModalDesc");
+        const modalIcon = document.getElementById("modalServiceIcon");
+        const modalBadge = document.getElementById("modalServiceBadge");
+        const modalWhatsapp = document.getElementById("interactiveModalWhatsapp");
+        const modalLink = document.getElementById("interactiveModalLink");
 
-        function closeMobileDetails() {
-            hotspots.forEach((s) => s.classList.remove("active"));
-            if (mobileCard && mobileHint) {
-                mobileCard.classList.add("d-none");
-                mobileHint.classList.remove("d-none");
-            }
-        }
-
-        if (closeMobileBtn) {
-            closeMobileBtn.addEventListener("click", (e) => {
+        hotspotTriggers.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
                 e.stopPropagation();
-                closeMobileDetails();
+
+                const title = btn.getAttribute("data-service-title") || "";
+                const badge = btn.getAttribute("data-service-badge") || "خدمة معتمدة";
+                const desc = btn.getAttribute("data-service-desc") || "";
+                const icon = btn.getAttribute("data-service-icon") || "fa-solid fa-wand-magic-sparkles";
+                const url = btn.getAttribute("data-service-url") || "#";
+                const whatsapp = btn.getAttribute("data-service-whatsapp") || "#";
+
+                if (modalTitle) modalTitle.textContent = title;
+                if (modalBadge) modalBadge.textContent = badge;
+                if (modalDesc) modalDesc.textContent = desc;
+                if (modalIcon) modalIcon.className = icon + " fs-4";
+                if (modalWhatsapp) modalWhatsapp.setAttribute("href", whatsapp);
+                if (modalLink) modalLink.setAttribute("href", url);
+
+                const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+                bsModal.show();
             });
-        }
-
-        hotspots.forEach((spot) => {
-            const trigger = spot.querySelector(".hotspot-trigger");
-            if (trigger) {
-                trigger.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    const isCurrentlyActive = spot.classList.contains("active");
-                    hotspots.forEach((s) => s.classList.remove("active"));
-
-                    if (!isCurrentlyActive) {
-                        spot.classList.add("active");
-
-                        // Update Mobile Card
-                        if (mobileCard && mobileHint) {
-                            const title = spot.querySelector(".popover-header h6")?.textContent.trim();
-                            const desc = spot.querySelector(".popover-desc")?.textContent.trim();
-                            const iconEl = spot.querySelector(".popover-header i");
-                            const iconClass = iconEl ? iconEl.className : "fa-solid fa-sparkles";
-                            const btn = spot.querySelector(".hotspot-popover a.btn");
-                            const btnUrl = btn ? btn.getAttribute("href") : "#";
-                            const btnText = btn ? btn.innerHTML : "طلب الخدمة";
-
-                            if (mobileTitle) mobileTitle.textContent = title || "";
-                            if (mobileDesc) mobileDesc.textContent = desc || "";
-                            if (mobileIcon) mobileIcon.innerHTML = `<i class="${iconClass}"></i>`;
-                            if (mobileBtn) {
-                                mobileBtn.setAttribute("href", btnUrl);
-                                mobileBtn.innerHTML = btnText;
-                            }
-
-                            mobileHint.classList.add("d-none");
-                            mobileCard.classList.remove("d-none");
-                        }
-                    } else {
-                        closeMobileDetails();
-                    }
-                });
-            }
-        });
-
-        // Close any active hotspot when clicking outside
-        document.addEventListener("click", (e) => {
-            if (!e.target.closest(".room-hotspot") && !e.target.closest(".interactive-mobile-dock")) {
-                closeMobileDetails();
-            }
         });
     }
 

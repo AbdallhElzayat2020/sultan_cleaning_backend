@@ -203,170 +203,85 @@
             </div>
 
             <!-- Hotspot Showcase Card -->
-            <div class="interactive-stage rounded-4 position-relative shadow-lg" data-aos="zoom-in"
+            <div class="interactive-stage-card bg-white rounded-4 shadow-lg overflow-hidden border" data-aos="zoom-in"
                 data-aos-duration="900">
-                <!-- Media Wrapper (Holds image and hotspots) -->
-                <div class="interactive-stage-media position-relative">
+                <!-- Media Wrapper (Holds image and dynamic hotspots with zero overlay covering the picture) -->
+                <div class="interactive-stage-media position-relative overflow-hidden">
                     <img src="{{ asset('assets/frontend/images/living-room-interactive.jpg') }}"
-                        alt="غرفة معيشة فاخرة ونظيفة - خدمات سين ياء" class="w-100 d-block interactive-bg-img"
+                        alt="غرفة معيشة فاخرة ونظيفة - خدمات سين ياء كلين"
+                        class="w-100 h-auto d-block interactive-bg-img"
                         loading="lazy" />
 
-                    <!-- Hotspots Overlay Layer -->
+                    @php
+                        $cleanWhatsapp = preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831'));
+                        $dynamicServices = (isset($services) && $services->count())
+                            ? $services
+                            : \App\Models\Service::where('status', true)->orderBy('order', 'asc')->orderBy('id', 'asc')->get();
+
+                        // Coordinates for hotspots across the living room scene
+                        $hotspotPositions = [
+                            0 => ['top' => '18%', 'left' => '50%'], // أعلى السقف / الثريات
+                            1 => ['top' => '36%', 'left' => '26%'], // الستائر الجانبية
+                            2 => ['top' => '36%', 'left' => '52%'], // الواجهات الزجاجية
+                            3 => ['top' => '56%', 'left' => '24%'], // الكنب والمجالس
+                            4 => ['top' => '52%', 'left' => '74%'], // ركن الغرفة والنباتات
+                            5 => ['top' => '70%', 'left' => '50%'], // السجاد وطاولة الوسط (واضح ومكشوف 100%)
+                            6 => ['top' => '54%', 'left' => '12%'], // الجلسة الإضافية
+                            7 => ['top' => '50%', 'left' => '88%'], // الديكور الجداري
+                        ];
+                    @endphp
+
+                    <!-- Hotspots Overlay Layer (Dynamic Services from Database) -->
                     <div class="hotspots-layer" aria-label="النقاط التفاعلية للخدمات">
-
-                        <!-- Hotspot 1: Rug / Carpet -->
-                        <div class="room-hotspot" style="top: 76%; left: 50%;" tabindex="0">
-                            <button class="hotspot-trigger" aria-label="غسيل وتطهير السجاد والموكيت">
-                                <span class="hotspot-ping"></span>
-                                <span class="hotspot-dot"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                            </button>
-                            <div class="hotspot-popover popover-top">
-                                <div class="popover-header">
-                                    <span class="popover-icon bg-brand-light text-brand-primary"><i
-                                            class="fa-solid fa-wand-magic-sparkles"></i></span>
-                                    <h6 class="mb-0 fw-bold text-brand-primary">غسيل وتطهير السجاد والموكيت</h6>
-                                </div>
-                                <p class="popover-desc mb-3">
-                                    غسيل عميق بأحدث أجهزة البخار الحار وشفط الأتربة والروائح لتعود أنسجة السجاد جديدة وناعمة.
-                                </p>
-                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة غسيل وتعقيم السجاد والموكيت') }}"
-                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة السجاد
-                                </a>
+                        @foreach ($dynamicServices as $index => $srv)
+                            @php
+                                $pos = $hotspotPositions[$index] ?? null;
+                                if (!$pos) break;
+                                $serviceIcon = !empty($srv->icon) ? $srv->icon : 'fa-solid fa-sparkles';
+                                $serviceDesc = !empty($srv->short_description) ? $srv->short_description : \Illuminate\Support\Str::limit(strip_tags($srv->description ?? ''), 130);
+                            @endphp
+                            <div class="room-hotspot" style="top: {{ $pos['top'] }}; left: {{ $pos['left'] }};">
+                                <button class="hotspot-trigger" type="button"
+                                    aria-label="{{ $srv->title }}"
+                                    title="{{ $srv->title }}"
+                                    data-service-title="{{ $srv->title }}"
+                                    data-service-badge="خدمة معتمدة"
+                                    data-service-desc="{{ $serviceDesc }}"
+                                    data-service-icon="{{ $serviceIcon }}"
+                                    data-service-url="{{ route('services.show', $srv->slug) }}"
+                                    data-service-whatsapp="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار وحجز خدمة ' . $srv->title . ' من شركة سين ياء كلين') }}">
+                                    <span class="hotspot-ping"></span>
+                                    <span class="hotspot-dot">
+                                        <i class="{{ $serviceIcon }}"></i>
+                                    </span>
+                                    <span class="hotspot-label-tag d-none d-md-inline-block">
+                                        {{ $srv->title }}
+                                    </span>
+                                </button>
                             </div>
-                        </div>
-
-                        <!-- Hotspot 2: Sofa / Upholstery -->
-                        <div class="room-hotspot" style="top: 64%; left: 22%;" tabindex="0">
-                            <button class="hotspot-trigger" aria-label="تنظيف وتعقيم الكنب والمفروشات">
-                                <span class="hotspot-ping"></span>
-                                <span class="hotspot-dot"><i class="fa-solid fa-couch"></i></span>
-                            </button>
-                            <div class="hotspot-popover popover-right">
-                                <div class="popover-header">
-                                    <span class="popover-icon bg-brand-light text-brand-primary"><i
-                                            class="fa-solid fa-couch"></i></span>
-                                    <h6 class="mb-0 fw-bold text-brand-primary">غسيل وتعقيم الكنب والمجالس</h6>
-                                </div>
-                                <p class="popover-desc mb-3">
-                                    إزالة أصعب البقع العميقة والدهون مع تعقيم طبي ومواد ألمانية آمنة تحافظ على رونق الأقمشة
-                                    ولونها.
-                                </p>
-                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الكنب والمفروشات') }}"
-                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة الكنب
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Hotspot 3: Panoramic Glass Windows -->
-                        <div class="room-hotspot" style="top: 36%; left: 52%;" tabindex="0">
-                            <button class="hotspot-trigger" aria-label="تلميع الواجهات والزجاج البانورامي">
-                                <span class="hotspot-ping"></span>
-                                <span class="hotspot-dot"><i class="fa-solid fa-gem"></i></span>
-                            </button>
-                            <div class="hotspot-popover popover-bottom">
-                                <div class="popover-header">
-                                    <span class="popover-icon bg-brand-light text-brand-secondary"><i
-                                            class="fa-solid fa-gem"></i></span>
-                                    <h6 class="mb-0 fw-bold text-brand-primary">تلميع النوافذ والواجهات الزجاجية</h6>
-                                </div>
-                                <p class="popover-desc mb-3">
-                                    تلميع زجاج داخلي وخارجي بمحاليل نانو طاردة للغبار تمنحك إطلالة بانورامية فائقة الشفافية
-                                    واللمعان.
-                                </p>
-                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تلميع الواجهات والزجاج') }}"
-                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب تلميع الزجاج
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Hotspot 5: Crystal Chandelier -->
-                        <div class="room-hotspot" style="top: 14%; left: 50%;" tabindex="0">
-                            <button class="hotspot-trigger" aria-label="تنظيف وتلميع الثريات الكريستالية">
-                                <span class="hotspot-ping"></span>
-                                <span class="hotspot-dot"><i class="fa-solid fa-lightbulb"></i></span>
-                            </button>
-                            <div class="hotspot-popover popover-bottom">
-                                <div class="popover-header">
-                                    <span class="popover-icon bg-brand-light text-brand-secondary"><i
-                                            class="fa-solid fa-lightbulb"></i></span>
-                                    <h6 class="mb-0 fw-bold text-brand-primary">تلميع الثريات ووحدات الإضاءة</h6>
-                                </div>
-                                <p class="popover-desc mb-3">
-                                    عناية دقيقة بكل تفصيلة كريستالية بمعدات متخصصة دون تفكيك، لتعود وحدات الإضاءة لبريقها
-                                    الفاخر.
-                                </p>
-                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً، أود حجز خدمة تنظيف وتلميع الثريات') }}"
-                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب خدمة الثريات
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Hotspot 6: Curtains -->
-                        <div class="room-hotspot" style="top: 36%; left: 27%;" tabindex="0">
-                            <button class="hotspot-trigger" aria-label="تنظيف وتعقيم الستائر">
-                                <span class="hotspot-ping"></span>
-                                <span class="hotspot-dot"><i class="fa-solid fa-wind"></i></span>
-                            </button>
-                            <div class="hotspot-popover popover-right">
-                                <div class="popover-header">
-                                    <span class="popover-icon bg-brand-light text-brand-primary"><i
-                                            class="fa-solid fa-wind"></i></span>
-                                    <h6 class="mb-0 fw-bold text-brand-primary">تعقيم الستائر بالبخار الجاف</h6>
-                                </div>
-                                <p class="popover-desc mb-3">
-                                    تنظيف الستائر في مكانها بدون فك، مع إزالة العوالق والميكروبات وحبوب اللقاح برائحة منعشة
-                                    ونظيفة.
-                                </p>
-                                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود حجز خدمة تنظيف وتعقيم الستائر') }}"
-                                    target="_blank" class="btn btn-sm btn-brand-primary w-100 rounded-pill fw-bold">
-                                    <i class="fa-brands fa-whatsapp me-1"></i> طلب تعقيم الستائر
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Subtle Bottom Hint Bar (Desktop) -->
-                    <div
-                        class="interactive-stage-hint d-none d-md-flex align-items-center justify-content-between flex-wrap gap-2 px-4 py-3 position-absolute bottom-0 start-0 end-0">
-                        <div class="d-flex align-items-center gap-2 text-white small">
-                            <span class="hint-pulse-dot"></span>
-                            <span>اضغط على النقاط التفاعلية داخل الصورة لتتعرف على خدماتنا وكيف نعتني بكل تفاصيل منزلك</span>
-                        </div>
-                        <div class="d-none d-md-flex align-items-center gap-3 text-white small">
-                            <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> عمالة محترفة</span>
-                            <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> مواد آمنة 100%</span>
-                            <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> ضمان ذهبي</span>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
-                <!-- Mobile Interactive Dock (Mobile only, below image) -->
-                <div class="interactive-mobile-dock d-block d-md-none p-3 bg-white border-top">
-                    <!-- Default Prompt Hint -->
-                    <div id="interactiveMobileHint" class="d-flex align-items-center gap-2 text-secondary small py-1">
+                <!-- Stage Dock Bar (Below the image: completely uncovered, zero shadow on image!) -->
+                <div class="interactive-stage-dock p-3 p-md-3 bg-white d-flex align-items-center justify-content-between flex-wrap gap-3">
+                    <div class="d-flex align-items-center gap-2 text-dark small fw-medium">
                         <span class="hint-pulse-dot flex-shrink-0"></span>
-                        <span class="fw-medium">اضغط على النقاط التفاعلية داخل الصورة لتتعرف على خدماتنا وكيف نعتني بكل تفاصيل منزلك</span>
+                        <span>اضغط على أي أيقونة تفاعلية داخل الصورة أو اختر الخدمة أدناه لحجزها مباشرة عبر واتساب</span>
                     </div>
-
-                    <!-- Active Service Details Card -->
-                    <div id="interactiveMobileCard" class="interactive-mobile-card d-none">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <div class="d-flex align-items-center gap-2">
-                                <span id="mobileCardIcon" class="popover-icon bg-brand-light text-brand-primary"></span>
-                                <h6 id="mobileCardTitle" class="mb-0 fw-bold text-brand-primary"></h6>
-                            </div>
-                            <button type="button" id="closeMobileCardBtn" class="btn btn-sm btn-light rounded-circle p-1 border-0 text-muted" aria-label="إغلاق">
-                                <i class="fa-solid fa-xmark fs-6"></i>
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        @foreach ($dynamicServices->take(6) as $srv)
+                            <button type="button" class="btn btn-sm btn-light border rounded-pill px-3 py-1.5 small hotspot-chip-trigger text-brand-primary"
+                                data-service-title="{{ $srv->title }}"
+                                data-service-badge="خدمة معتمدة"
+                                data-service-desc="{{ !empty($srv->short_description) ? $srv->short_description : \Illuminate\Support\Str::limit(strip_tags($srv->description ?? ''), 130) }}"
+                                data-service-icon="{{ !empty($srv->icon) ? $srv->icon : 'fa-solid fa-sparkles' }}"
+                                data-service-url="{{ route('services.show', $srv->slug) }}"
+                                data-service-whatsapp="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار وحجز خدمة ' . $srv->title . ' من شركة سين ياء كلين') }}">
+                                <i class="{{ !empty($srv->icon) ? $srv->icon : 'fa-solid fa-sparkles' }} text-brand-secondary me-1"></i>
+                                {{ $srv->title }}
                             </button>
-                        </div>
-                        <p id="mobileCardDesc" class="small text-secondary mb-3 lh-base"></p>
-                        <a id="mobileCardBtn" href="#" target="_blank" class="btn btn-brand-primary btn-sm w-100 rounded-pill fw-bold py-2 shadow-sm">
-                            <i class="fa-brands fa-whatsapp me-1"></i> <span>طلب الخدمة</span>
-                        </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -374,8 +289,66 @@
     </section>
 
     <!-- ==========================================================================
-                                                                                           QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
-                                                                                           ========================================================================== -->
+       INTERACTIVE TOUR SERVICE POPUP MODAL
+       ========================================================================== -->
+    <div class="modal fade" id="interactiveHotspotModal" tabindex="-1" aria-labelledby="interactiveModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 490px;">
+            <div class="modal-content border-0 rounded-4 shadow-2xl p-0 overflow-hidden" style="background: #ffffff;">
+                <!-- Top Accent Gradient Line -->
+                <div style="height: 5px; background: linear-gradient(90deg, #0B3D91 0%, #29C6D1 50%, #35B85A 100%);"></div>
+
+                <!-- Header -->
+                <div class="modal-header border-0 pt-4 px-4 pb-2 align-items-start">
+                    <div class="d-flex align-items-center gap-3">
+                        <div id="modalServiceIconWrapper" class="d-flex align-items-center justify-content-center text-white rounded-4 shadow-sm flex-shrink-0"
+                            style="width: 54px; height: 54px; background: linear-gradient(135deg, #0B3D91 0%, #29C6D1 100%);">
+                            <i id="modalServiceIcon" class="fa-solid fa-wand-magic-sparkles fs-4"></i>
+                        </div>
+                        <div>
+                            <span id="modalServiceBadge" class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-1 small fw-bold mb-1">
+                                خدمة معتمدة
+                            </span>
+                            <h5 class="modal-title fw-heading text-brand-primary mb-0 fs-5" id="interactiveModalTitle">
+                                اسم الخدمة
+                            </h5>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close shadow-none p-2 border-0 rounded-circle bg-light" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body px-4 py-3">
+                    <p id="interactiveModalDesc" class="text-secondary lh-base mb-3 fs-6">
+                        وصف الخدمة
+                    </p>
+
+                    <div class="d-flex align-items-center justify-content-between p-2.5 px-3 rounded-3 bg-light text-muted small">
+                        <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> عمالة مدربة</span>
+                        <span><i class="fa-solid fa-shield-halved text-brand-primary me-1"></i> مواد آمنة 100%</span>
+                        <span><i class="fa-solid fa-sparkles text-warning me-1"></i> ضمان الجودة</span>
+                    </div>
+                </div>
+
+                <!-- Footer / CTA -->
+                <div class="modal-footer border-0 pt-1 pb-4 px-4 d-flex gap-2">
+                    <a id="interactiveModalWhatsapp" href="#" target="_blank"
+                        class="btn btn-brand-whatsapp flex-grow-1 py-2.5 px-3 rounded-pill fw-bold d-inline-flex align-items-center justify-content-center gap-2 shadow-sm">
+                        <i class="fa-brands fa-whatsapp fs-5"></i>
+                        <span>طلب الخدمة عبر واتساب</span>
+                    </a>
+                    <a id="interactiveModalLink" href="#"
+                        class="btn btn-outline-brand py-2.5 px-3 rounded-pill fw-bold d-inline-flex align-items-center justify-content-center gap-1">
+                        <span>تفاصيل الخدمة</span>
+                        <i class="fa-solid fa-arrow-left small"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
+========================================================================== -->
     <section class="py-5 quote-section" id="quote">
         <div class="container py-4">
             <div class="row align-items-center g-5">

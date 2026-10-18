@@ -104,7 +104,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
     <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}?v={{ file_exists(public_path('assets/frontend/css/style.css')) ? filemtime(public_path('assets/frontend/css/style.css')) : '1.0' }}" />
 
     @stack('styles')
     @stack('css')
