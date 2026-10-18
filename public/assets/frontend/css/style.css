@@ -191,6 +191,7 @@ header {
 footer .site-logo img {
     width: auto;
     max-width: 180px;
+    max-height: 48px;
     height: auto;
     object-fit: contain;
     filter: none !important;

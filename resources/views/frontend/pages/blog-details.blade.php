@@ -27,7 +27,7 @@
                 'name' => setting('site_name', 'سين ياء لخدمات النظافة والتعقيم'),
                 'logo' => [
                     '@type' => 'ImageObject',
-                    'url' => asset('images/logo.png'),
+                    'url' => asset('assets/frontend/images/logo_master.png'),
                 ],
             ],
             'mainEntityOfPage' => [

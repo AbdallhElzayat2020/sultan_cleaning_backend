@@ -42,13 +42,13 @@
     <!-- ==========================================================================
        NAVBAR (BOOTSTRAP 5)
        ========================================================================== -->
-    <nav class="navbar navbar-expand-lg sticky-top main-navbar py-3 shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top main-navbar py-2 shadow-sm">
         <div class="container">
             <!-- Brand Logo -->
             <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none site-logo"
                 href="{{ route('home') }}">
 
-                <img style="width: 220px;" src="{{ asset('assets/frontend/images/logo_master.png') }}"
+                <img style="max-height: 48px; width: auto; object-fit: contain;" src="{{ asset('assets/frontend/images/logo_master.png') }}"
                     alt="{{ setting('site_name', 'سين ياء كلين') }}">
             </a>
 

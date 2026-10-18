@@ -22,6 +22,10 @@
         content="سياسة الخصوصية والشروط والأحكام لشركة سين ياء لخدمات النظافة والتعقيم الشامل بالمملكة العربية السعودية.">
     <title>سياسة الخصوصية والشروط | سين ياء</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/frontend/images/favicon_master.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/frontend/images/favicon_master.png') }}">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -89,17 +93,11 @@
     <!-- ==========================================================================
        NAVBAR (BOOTSTRAP 5)
        ========================================================================== -->
-    <nav class="navbar navbar-expand-lg sticky-top main-navbar py-3 shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top main-navbar py-2 shadow-sm">
         <div class="container">
             <!-- Brand Logo -->
-            <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none" href="index.html">
-                <div>
-                    <div class="fw-heading fs-4 text-brand-primary lh-1">
-                        سين <span class="text-brand-secondary">ياء</span>
-                    </div>
-                    <small class="text-muted fw-semibold" style="font-size: 0.72rem">لخدمات النظافة والتعقيم
-                        الشامل</small>
-                </div>
+            <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none site-logo" href="{{ route('home') }}">
+                <img style="max-height: 48px; width: auto; object-fit: contain;" src="{{ asset('assets/frontend/images/logo_master.png') }}" alt="{{ setting('site_name', 'سين ياء كلين') }}">
             </a>
 
             <!-- Mobile Toggle -->
@@ -295,8 +293,8 @@
             <div class="row g-4 mb-4">
                 <div class="col-lg-4">
                     <div class="site-logo mb-3 d-inline-block bg-white p-2 px-3 rounded-4 shadow-sm">
-                        <img src="{{ asset('assets/frontend/images/logo.png') }}"
-                            alt="{{ setting('site_name', 'سين ياء') }}" style="max-height: 48px; width: auto;">
+                        <img src="{{ asset('assets/frontend/images/logo_master.png') }}"
+                            alt="{{ setting('site_name', 'سين ياء كلين') }}" style="max-height: 48px; width: auto;">
                     </div>
                     <p class="text-white-50 small mb-3">
                         الرائدون في تقديم أرقى خدمات التنظيف المنزلي والمكتبي، تنظيف

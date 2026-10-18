@@ -197,7 +197,7 @@
             width: auto;
             max-width: 210px;
             height: auto;
-            max-height: 58px;
+            max-height: 48px;
             object-fit: contain;
             filter: none !important;
             display: inline-block;
@@ -746,7 +746,7 @@
     <!-- ==========================================================================
        FOCUSED AD LANDING NAVBAR (WITH ORIGINAL LOGO)
        ========================================================================== -->
-    <header class="landing-header py-3">
+    <header class="landing-header py-2">
         <div class="container d-flex justify-content-between align-items-center">
             <!-- Brand Logo (Original Logo Preserved) -->
             <a href="{{ route('home') }}" class="d-flex align-items-center gap-2 text-decoration-none site-logo">
