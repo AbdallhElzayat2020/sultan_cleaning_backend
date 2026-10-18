@@ -226,7 +226,7 @@
                 <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-outline-brand rounded-pill px-5 fw-bold shadow-sm">
                     <i class="fa-solid fa-phone-volume me-2"></i> اتصل الآن: {{ setting('top_bar_phone', '0531109831') }}
                 </a>
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وحجز خدمة تنظيف') }}"
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
                     target="_blank" class="btn btn-primary rounded-pill px-5 fw-bold shadow">
                     <i class="fa-brands fa-whatsapp fs-5 me-2"></i> حجز سريع عبر واتساب
                 </a>

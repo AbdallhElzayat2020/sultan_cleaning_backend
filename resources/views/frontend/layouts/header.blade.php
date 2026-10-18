@@ -29,7 +29,7 @@
                         </a>
                     @endif
                     @if ($whatsapp)
-                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}" target="_blank"
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}" target="_blank"
                             class="text-white text-decoration-none fw-semibold">
                             <i class="fa-brands fa-whatsapp text-brand-accent me-1"></i> تواصل واتساب
                         </a>
@@ -48,8 +48,8 @@
             <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none site-logo"
                 href="{{ route('home') }}">
 
-                <img style="width: 220px;" src="{{ asset('assets/frontend/images/logo.png') }}"
-                    alt="{{ setting('site_name', 'سين ياء') }}">
+                <img style="width: 220px;" src="{{ asset('assets/frontend/images/logo_master.png') }}"
+                    alt="{{ setting('site_name', 'سين ياء كلين') }}">
             </a>
 
             <!-- Mobile Toggle -->

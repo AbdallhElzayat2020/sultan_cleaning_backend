@@ -9,7 +9,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR055WX2EV"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-HR055WX2EV');
@@ -151,7 +154,8 @@
        ========================================================================== -->
     <section class="page-header-banner py-5 text-center">
         <div class="container py-4">
-            <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
+            <span
+                class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
                 <i class="fa-solid fa-shield-halved me-1 text-brand-secondary"></i> التزامنا بالشفافية والأمان
             </span>
             <h1 class="display-5 fw-heading text-brand-primary mb-2">سياسة الخصوصية والشروط</h1>
@@ -336,8 +340,8 @@
                         </div>
                         <div>
                             <i class="fa-brands fa-whatsapp text-brand-accent me-2"></i>
-                            <a href="https://wa.me/966531109831" target="_blank"
-                                class="text-white text-decoration-none">واتساب خدمة العملاء</a>
+                            <a href="https://wa.me/966531109831?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
+                                target="_blank" class="text-white text-decoration-none">واتساب خدمة العملاء</a>
                         </div>
                         <div>
                             <i class="fa-solid fa-location-dot text-brand-secondary me-2"></i>
@@ -352,7 +356,8 @@
                 <div>جميع الحقوق محفوظة © 2026 <strong>شركة سين ياء كلين</strong></div>
                 <div>
                     تصميم بواسطة
-                    <a href="#" class="text-brand-secondary text-decoration-none fw-semibold">
+                    <a href="https://awali.com.sa" target="_blank" rel="noopener noreferrer"
+                        class="text-brand-secondary text-decoration-none fw-semibold">
                         اولي
                     </a>
                 </div>
@@ -366,7 +371,7 @@
             <i class="fa-solid fa-phone"></i>
             <span>اتصال هاتفي</span>
         </a>
-        <a href="https://wa.me/966531109831?text=مرحباً%20سين%20ياء،%20أود%20الاستفسار%20وحجز%20خدمة%20تنظيف"
+        <a href="https://wa.me/966531109831?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
             target="_blank" class="btn btn-brand-whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
             <span>واتساب فوري</span>
@@ -375,7 +380,7 @@
 
     <!-- Floating Actions (WhatsApp & Direct Call) -->
     <div class="floating-bar">
-        <a href="https://wa.me/966531109831?text=مرحباً%20سين%20ياء،%20أود%20الاستفسار%20وحجز%20خدمة%20تنظيف"
+        <a href="https://wa.me/966531109831?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
             target="_blank" class="floating-circle-btn floating-whatsapp" title="تواصل عبر الواتساب">
             <i class="fa-brands fa-whatsapp"></i>
         </a>

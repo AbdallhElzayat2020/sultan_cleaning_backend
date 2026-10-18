@@ -3,7 +3,7 @@
         <div class="row g-4 mb-4">
             <div class="col-lg-4" data-aos="fade-up">
                 <div class="site-logo mb-3 d-inline-block bg-white p-2 px-3 rounded-4 shadow-sm">
-                    <img src="{{ setting('site_logo') ? asset(setting('site_logo')) : asset('assets/frontend/images/logo.png') }}" alt="{{ setting('site_name', 'سين ياء') }}" style="max-height: 48px; width: auto;">
+                    <img src="{{ setting('site_logo') ? asset(setting('site_logo')) : asset('assets/frontend/images/logo_master.png') }}" alt="{{ setting('site_name', 'سين ياء كلين') }}" style="max-height: 48px; width: auto;">
                 </div>
                 <p class="text-white-50 small mb-3">
                     الرائدون في تقديم أرقى خدمات التنظيف المنزلي والمكتبي، تنظيف
@@ -64,7 +64,7 @@
                     </div>
                     <div>
                         <i class="fa-brands fa-whatsapp text-brand-accent me-2"></i>
-                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}" target="_blank"
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}" target="_blank"
                             class="text-white text-decoration-none">واتساب خدمة العملاء ({{ setting('top_bar_phone', '0531109831') }})</a>
                     </div>
                     <div>
@@ -100,7 +100,7 @@
 
             <div>
                 تصميم بواسطة
-                <a href="#" class="text-brand-secondary text-decoration-none fw-semibold">
+                <a href="https://awali.com.sa" target="_blank" rel="noopener noreferrer" class="text-brand-secondary text-decoration-none fw-semibold">
                     اولي
                 </a>
             </div>

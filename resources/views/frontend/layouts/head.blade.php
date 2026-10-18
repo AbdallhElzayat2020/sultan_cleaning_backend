@@ -29,18 +29,18 @@
     <meta property="og:url" content="@yield('og_url', url()->current())" />
     <meta property="og:title" content="@hasSection('og_title')@yield('og_title')@elseif(View::hasSection('title'))@yield('title')@else{{ setting('meta_title', setting('site_name', 'سين ياء') . ' | خدمات النظافة والتعقيم الشامل') }}@endif" />
     <meta property="og:description" content="@hasSection('og_description')@yield('og_description')@elseif(View::hasSection('meta_description'))@yield('meta_description')@else{{ setting('meta_description', 'شركة سين ياء لخدمات النظافة والتعقيم الشامل بالرياض. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار بأحدث التقنيات.') }}@endif" />
-    <meta property="og:image" content="@hasSection('og_image')@yield('og_image')@else{{ asset('images/logo.png') }}@endif" />
+    <meta property="og:image" content="@hasSection('og_image')@yield('og_image')@else{{ asset('assets/frontend/images/logo_master.png') }}@endif" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="@yield('twitter_url', url()->current())" />
-    <meta name="twitter:title" content="@hasSection('twitter_title')@yield('twitter_title')@elseif(View::hasSection('title'))@yield('title')@else{{ setting('meta_title', setting('site_name', 'سين ياء')) }}@endif" />
-    <meta name="twitter:description" content="@hasSection('twitter_description')@yield('twitter_description')@elseif(View::hasSection('meta_description'))@yield('meta_description')@else{{ setting('meta_description', 'شركة سين ياء لخدمات النظافة والتعقيم الشامل بالرياض.') }}@endif" />
-    <meta name="twitter:image" content="@hasSection('twitter_image')@yield('twitter_image')@elseif(View::hasSection('og_image'))@yield('og_image')@else{{ asset('images/logo.png') }}@endif" />
+    <meta name="twitter:title" content="@hasSection('twitter_title')@yield('twitter_title')@elseif(View::hasSection('title'))@yield('title')@else{{ setting('meta_title', setting('site_name', 'سين ياء كلين')) }}@endif" />
+    <meta name="twitter:description" content="@hasSection('twitter_description')@yield('twitter_description')@elseif(View::hasSection('meta_description'))@yield('meta_description')@else{{ setting('meta_description', 'شركة سين ياء كلين لخدمات النظافة والتعقيم الشامل.') }}@endif" />
+    <meta name="twitter:image" content="@hasSection('twitter_image')@yield('twitter_image')@elseif(View::hasSection('og_image'))@yield('og_image')@else{{ asset('assets/frontend/images/logo_master.png') }}@endif" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('assets/frontend/images/favicon.png') }}" />
-    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/frontend/images/favicon.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/frontend/images/favicon_master.png') }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/frontend/images/favicon_master.png') }}" />
 
     <!-- JSON-LD Structured Data -->
     @hasSection('schema_org')
@@ -50,12 +50,12 @@
             $headSchema = [
                 '@context' => 'https://schema.org',
                 '@type' => 'HomeAndConstructionBusiness',
-                'name' => setting('site_name', 'سين ياء لخدمات النظافة والتعقيم'),
-                'alternateName' => 'سين ياء',
+                'name' => setting('site_name', 'سين ياء كلين لخدمات النظافة والصيانة'),
+                'alternateName' => 'سين ياء كلين',
                 'url' => url('/'),
-                'logo' => asset('images/logo.png'),
+                'logo' => asset('assets/frontend/images/logo_master.png'),
                 'image' => asset('images/hero.jpg'),
-                'description' => setting('meta_description', 'شركة سين ياء لخدمات النظافة والتعقيم الشامل بالرياض والمملكة. تنظيف منازل وفلل وشقق ومفروشات بالبخار وجلي رخام.'),
+                'description' => setting('meta_description', 'شركة سين ياء لخدمات النظافة والصيانة  بالرياض . تنظيف منازل وفلل وشقق ومفروشات بالبخار وجلي رخام.'),
                 'telephone' => setting('top_bar_phone', '0531109831'),
                 'priceRange' => '$$',
                 'address' => [

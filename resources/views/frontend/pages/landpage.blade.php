@@ -40,29 +40,29 @@
         content="{{ setting('site_name', 'سين ياء') }} | نظافة عميقة وتعقيم فندقي متكامل بأفضل الأسعار">
     <meta property="og:description"
         content="احجز خدمتك الآن مع شركة {{ setting('site_name', 'سين ياء') }}. تنظيف فلل وشقق ومفروشات بأحدث أجهزة البخار وأفضل مواد التعقيم الآمنة 100%.">
-    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+    <meta property="og:image" content="{{ asset('assets/frontend/images/logo_master.png') }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url('/landpage') }}">
-    <meta name="twitter:title" content="{{ setting('site_name', 'سين ياء') }} | خدمات النظافة والتعقيم الشامل">
+    <meta name="twitter:title" content="{{ setting('site_name', 'سين ياء كلين') }} | خدمات النظافة والصيانة الشامل">
     <meta name="twitter:description"
-        content="خدمات تنظيف فندقية ومفروشات بالبخار وجلي رخام مع شركة {{ setting('site_name', 'سين ياء') }}.">
-    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
+        content="خدمات تنظيف في جدة ومفروشات بالبخار وجلي رخام مع شركة {{ setting('site_name', 'سين ياء كلين') }}.">
+    <meta name="twitter:image" content="{{ asset('assets/frontend/images/logo_master.png') }}">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('assets/frontend/images/favicon.png') }}">
-    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/frontend/images/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/frontend/images/favicon_master.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/frontend/images/favicon_master.png') }}">
 
     <!-- Schema.org JSON-LD -->
     @php
         $landpageSchema = [
             '@context' => 'https://schema.org',
             '@type' => 'HomeAndConstructionBusiness',
-            'name' => 'شركة ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم',
-            'alternateName' => 'سين ياء',
+            'name' => 'شركة ' . setting('site_name', 'سين ياء كلين') . ' لخدمات النظافة والصيانة',
+            'alternateName' => 'سين ياء كلين',
             'url' => url('/landpage'),
-            'logo' => asset('images/logo.png'),
+            'logo' => asset('assets/frontend/images/logo_master.png'),
             'image' => asset('images/hero.jpg'),
             'description' =>
                 'شركة ' .
@@ -708,7 +708,7 @@
         $cleanPhone = preg_replace('/[^0-9+]/', '', $phone);
         $whatsapp = setting('top_bar_whatsapp', '966531109831');
         $cleanWhatsapp = preg_replace('/[^0-9]/', '', $whatsapp);
-        $logo = setting('site_logo') ? asset(setting('site_logo')) : asset('assets/frontend/images/logo.png');
+        $logo = setting('site_logo') ? asset(setting('site_logo')) : asset('assets/frontend/images/logo_master.png');
     @endphp
 
     @if (setting('top_bar_active', '1') == '1')
@@ -755,7 +755,7 @@
 
             <!-- Direct Fast Contact CTA Buttons (Green #35B85A for Booking/Contact) -->
             <div class="d-flex align-items-center gap-2">
-                <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('مرحباً، أود الاستفسار وحجز خدمة تنظيف من شركة ' . setting('site_name', 'سين ياء')) }}"
+                <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
                     target="_blank"
                     class="btn btn-primary fw-bold rounded-pill px-3 px-md-4 py-2 d-none d-sm-inline-flex align-items-center gap-2 shadow-sm">
                     <i class="fa-brands fa-whatsapp fs-5"></i>
@@ -815,38 +815,10 @@
                         آمن للأسرة.
                     </p>
 
-                    <!-- Trust Bullet Points -->
-                    <div class="row g-2 mb-4 text-start" data-aos="fade-up" data-aos-delay="400">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center gap-2 text-white fw-semibold small">
-                                <i class="fa-solid fa-circle-check fs-6" style="color: #EAF8FC;"></i>
-                                <span>تقييم فوري وحجز مباشر بدون أي تعقيد</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center gap-2 text-white fw-semibold small">
-                                <i class="fa-solid fa-circle-check fs-6" style="color: #EAF8FC;"></i>
-                                <span>مواد تنظيف وتعقيم أصلية آمنة 100%</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center gap-2 text-white fw-semibold small">
-                                <i class="fa-solid fa-circle-check fs-6" style="color: #EAF8FC;"></i>
-                                <span>أجهزة بخار وضغط عالي إيطالية وألمانية</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center gap-2 text-white fw-semibold small">
-                                <i class="fa-solid fa-circle-check fs-6" style="color: #EAF8FC;"></i>
-                                <span>ضمان إعادة العمل مجاناً في حال عدم الرضا</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Dual Big Contact Buttons -->
                     <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3"
                         data-aos="fade-up" data-aos-delay="500">
-                        <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('مرحباً، أرغب في الاستفسار وحجز خدمة تنظيف') }}"
+                        <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
                             target="_blank" class="cta-btn-xl btn-wa-hero">
                             <i class="fa-brands fa-whatsapp fs-4"></i>
                             <span>حجز وتواصل عبر واتساب</span>
@@ -868,7 +840,7 @@
                 <div class="col-lg-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
                     <div class="position-relative">
                         <div class="hero-img-box position-relative">
-                            <img src="{{ asset('assets/frontend/images/hero.jpg') }}"
+                            <img src="{{ asset('assets/frontend/images/hero_master.jpeg') }}"
                                 alt="خدمات شركة سين ياء للنظافة الشاملة" class="img-fluid">
                             <div class="position-absolute bottom-0 start-0 end-0 p-3"
                                 style="background: linear-gradient(to top, rgba(23,78,107,0.92), transparent); border-radius: 0 0 24px 24px;">
@@ -1044,7 +1016,7 @@
 
             <!-- Middle Quick Action -->
             <div class="text-center mt-5">
-                <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('مرحباً، أريد معرفة المزيد عن خدماتكم وحجز موعد تنظيف') }}"
+                <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
                     target="_blank" class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow">
                     <i class="fa-solid fa-calendar-check me-2"></i> احجز خدمتك الآن وتواصل معنا مباشرة
                 </a>
@@ -1170,7 +1142,7 @@
                 <div
                     class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 max-w-700 mx-auto">
                     <!-- Direct WhatsApp Button (Green #35B85A) -->
-                    <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('مرحباً، أود الاستفسار وحجز خدمة تنظيف من شركة ' . setting('site_name', 'سين ياء')) }}"
+                    <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
                         target="_blank"
                         class="btn btn-primary fw-bold py-3 px-4 px-lg-5 rounded-pill fs-5 d-inline-flex align-items-center justify-content-center gap-2 w-100 shadow-lg">
                         <i class="fa-brands fa-whatsapp fs-3"></i>
@@ -1244,7 +1216,8 @@
                 <div class="col-md-6 text-center text-md-end">
                     <span class="author-credit small">
                         <i class="fa-solid fa-code text-brand-secondary me-1"></i>
-                        تصميم بواسطة <a href="#" class="text-white text-decoration-none fw-bold">اولي</a>
+                        تصميم بواسطة <a href="https://awali.com.sa" target="_blank" rel="noopener noreferrer"
+                            class="text-white text-decoration-none fw-bold">اولي</a>
                     </span>
                 </div>
             </div>
@@ -1257,7 +1230,7 @@
             <i class="fa-solid fa-phone"></i>
             <span>اتصال هاتفي</span>
         </a>
-        <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('مرحباً، أود الاستفسار وحجز خدمة تنظيف') }}"
+        <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
             target="_blank" class="btn btn-primary">
             <i class="fa-brands fa-whatsapp"></i>
             <span>واتساب فوري</span>
@@ -1266,7 +1239,7 @@
 
     <!-- Floating Actions (WhatsApp & Call) -->
     <div class="floating-bar">
-        <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('مرحباً، أود الاستفسار وحجز خدمة تنظيف') }}"
+        <a href="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
             target="_blank" class="floating-circle-btn floating-whatsapp" title="تواصل عبر واتساب">
             <i class="fa-brands fa-whatsapp"></i>
         </a>

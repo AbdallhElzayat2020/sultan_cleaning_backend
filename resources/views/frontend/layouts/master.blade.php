@@ -57,7 +57,7 @@
        FLOATING ACTIONS (WHATSAPP & DIRECT CALL)
        ========================================================================== -->
     <div class="floating-bar">
-        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وطلب حجز خدمة') }}"
+        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
             target="_blank" class="floating-circle-btn floating-whatsapp" title="تواصل عبر الواتساب">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
@@ -73,7 +73,7 @@
             <i class="fa-solid fa-phone"></i>
             <span>اتصال بنا </span>
         </a>
-        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وطلب حجز خدمة') }}"
+        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
             target="_blank" class="btn btn-brand-whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
             <span>تواصل واتساب </span>

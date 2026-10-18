@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const notes = fd.get("notes") || "";
 
             const msg =
-                `مرحباً سين ياء 🌟%0A` +
+                `مرحباً سين ياء كلين 🌟%0A` +
                 `أود تأكيد طلب حجز خدمة تنظيف:%0A%0A` +
                 `👤 *الاسم:* ${encodeURIComponent(name)}%0A` +
                 `📱 *الجوال:* ${encodeURIComponent(phone)}%0A` +
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const service = btn.getAttribute("data-wa-service");
             const msg = encodeURIComponent(
-                `مرحباً سين ياء 👋 أود الاستفسار وحجز خدمة: *${service}*`,
+                `مرحباًشركة سين ياء كلين  أود الاستفسار وحجز خدمة: *${service}*`,
             );
             window.open(
                 `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,

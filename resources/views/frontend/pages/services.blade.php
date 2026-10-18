@@ -88,7 +88,7 @@
 
             <!-- Direct Fast Action Bar -->
             <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وحجز خدمة تنظيف') }}"
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء كلين، أود الاستفسار وحجز خدمة تنظيف') }}"
                     target="_blank" class="btn btn-brand-whatsapp btn-lg rounded-pill px-5 py-3 shadow-sm">
                     <i class="fa-brands fa-whatsapp fs-5 me-2"></i> تواصل عبر واتساب
                 </a>
@@ -233,7 +233,7 @@
                     class="btn btn-outline-brand rounded-pill px-5 fw-bold shadow-sm">
                     <i class="fa-solid fa-phone-volume me-2"></i> اتصل الآن: {{ setting('top_bar_phone', '0531109831') }}
                 </a>
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وحجز خدمة تنظيف') }}"
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء كلين، أود الاستفسار وحجز خدمة تنظيف') }}"
                     target="_blank" class="btn btn-primary rounded-pill px-5 fw-bold shadow">
                     <i class="fa-brands fa-whatsapp fs-5 me-2"></i> حجز سريع عبر واتساب
                 </a>

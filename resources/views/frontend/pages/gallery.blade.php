@@ -223,13 +223,13 @@
             <span class="badge bg-white text-brand-primary border border-brand px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">✨ جودة وإتقان يرضي تطلعاتك</span>
             <h2 class="display-6 fw-heading text-brand-primary mb-3">احجز موعد خدمتك اليوم واستمتع بأعلى معايير النظافة</h2>
             <p class="lead text-secondary max-w-700 mx-auto mb-4 fs-6">
-                فريقنا جاهز على مدار الساعة في جميع أحياء الرياض ومناطق المملكة لتوفير أرقى تجربة نظافة ترضي تطلعاتك.
+                فريقنا جاهز على مدار الساعة في كافة أنحاء مدينة جدة ومكة ومناطق المملكة لتوفير أرقى تجربة نظافة ترضي تطلعاتك.
             </p>
             <div class="d-flex justify-content-center flex-wrap gap-3">
                 <a href="tel:{{ preg_replace('/[^0-9+]/', '', setting('top_bar_phone', '0531109831')) }}" class="btn btn-outline-brand rounded-pill px-5 fw-bold shadow-sm">
                     <i class="fa-solid fa-phone-volume me-2"></i> اتصل الآن: {{ setting('top_bar_phone', '0531109831') }}
                 </a>
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، شاهدت معرض الصور وأرغب في حجز خدمة تنظيف') }}"
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
                     target="_blank" class="btn btn-primary rounded-pill px-5 fw-bold shadow">
                     <i class="fa-brands fa-whatsapp fs-5 me-2"></i> حجز عبر واتساب
                 </a>

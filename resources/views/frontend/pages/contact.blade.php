@@ -54,7 +54,7 @@
                         </div>
                         <h5 class="fw-bold text-brand-primary mb-2">محادثة واتساب</h5>
                         <p class="text-secondary small mb-3">رد فوري وسريع للحجوزات</p>
-                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('مرحباً سين ياء، أود الاستفسار وحجز خدمة تنظيف') }}" target="_blank" class="btn btn-primary rounded-pill w-100 py-2 fw-bold">
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}" target="_blank" class="btn btn-primary rounded-pill w-100 py-2 fw-bold">
                             تواصل واتساب ({{ setting('top_bar_phone', '0531109831') }})
                         </a>
                     </div>
