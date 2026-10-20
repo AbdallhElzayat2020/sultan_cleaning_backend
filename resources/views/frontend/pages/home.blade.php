@@ -1,21 +1,17 @@
 @extends('frontend.layouts.master')
 
 @section('title', 'الرئيسية | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل ')
-@section(
-    'meta_description',
+@section('meta_description',
     'شركة ' .
     setting('site_name', 'سين ياء') .
     ' الرائدة في خدمات النظافة والتعقيم الشامل
-    ب والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.'
-)
-@section(
-    'meta_keywords',
+    ب والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.')
+@section('meta_keywords',
     'شركة تنظيف ب, تنظيف منازل ب, تنظيف فلل ب, غسيل كنب بالبخار, جلي رخام
-    ب, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء')
-)
+    ب, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء'))
 @section('og_title', setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل ب')
 @section('og_description', 'أفضل خدمات التنظيف المتكاملة للفلل والمنازل والشركات بالبخار وأحدث أجهزة التعقيم مع شركة ' .
-setting('site_name', 'سين ياء') . '.')
+    setting('site_name', 'سين ياء') . '.')
 @section('og_image', asset('images/hero.jpg'))
 
 @section('content')
@@ -89,11 +85,66 @@ setting('site_name', 'سين ياء') . '.')
         </div>
     </section>
 
+    <!-- ==========================================================================
+            SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
+            ========================================================================== -->
+
+    @if (!empty($services) && count($services) > 0)
+        <section class="services py-5" id="services">
+            <div class="container py-4">
+                <div class="text-center mb-5" data-aos="fade-up">
+                    <h2 class="fw-heading display-6 text-brand-primary mb-2">خدماتنا</h2>
+                    <div class="mx-auto bg-brand-secondary rounded-pill" style="width: 50px; height: 3.5px"></div>
+                </div>
+
+                <!-- Services Grid (Dynamic Cards) -->
+                <div class="row g-4">
+                    @forelse($services ?? [] as $service)
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up"
+                            data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
+                            <div
+                                class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
+                                @if ($service->discount)
+                                    <span
+                                        class="badge bg-brand-accent position-absolute top-0 end-0 m-3 px-2 py-1 small rounded-pill shadow-sm">
+                                        <i class="fa-solid fa-percent me-1"></i> {{ $service->discount }}
+                                    </span>
+                                @endif
+                                <div>
+                                    <div class="service-clean-icon">
+                                        <i class="{{ $service->icon ?: 'fa-solid fa-wand-magic-sparkles' }}"></i>
+                                    </div>
+                                    <h4 class="service-clean-title">{{ $service->title }}</h4>
+                                    <p class="service-clean-desc">
+                                        {{ $service->short_description }}
+                                    </p>
+                                </div>
+                                <a href="{{ route('services.show', $service->slug) }}" class="service-clean-link mt-3">
+                                    <span>عرض التفاصيل</span>
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="col-12 text-center text-muted py-4">
+                            لا توجد خدمات معروضة حالياً.
+                        </div>
+                    @endforelse
+                </div>
+
+                <div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <a href="{{ route('services.index') }}" class="btn btn-brand-primary btn-lg px-5">
+                        <i class="fa-solid fa-list-check me-2"></i> عرض كافة الخدمات وحجز الخدمة
+                    </a>
+                </div>
+            </div>
+        </section>
+    @endif
 
 
     <!-- ==========================================================================
-    FEATURES / WHY CHOOSE US
-    ========================================================================== -->
+        FEATURES / WHY CHOOSE US
+        ========================================================================== -->
     <section class="py-5 why-us bg-white" id="features">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -132,63 +183,10 @@ setting('site_name', 'سين ياء') . '.')
         </div>
     </section>
 
-    <!-- ==========================================================================
-        SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
-        ========================================================================== -->
-
-    @if (!empty($services) && count($services) > 0)
-        <section class="services py-5" id="services">
-            <div class="container py-4">
-                <div class="text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-heading display-6 text-brand-primary mb-2">خدماتنا</h2>
-                    <div class="mx-auto bg-brand-secondary rounded-pill" style="width: 50px; height: 3.5px"></div>
-                </div>
-
-                <!-- Services Grid (Dynamic Cards) -->
-                <div class="row g-4">
-                    @forelse($services ?? [] as $service)
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
-                            <div class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
-                                @if ($service->discount)
-                                    <span
-                                        class="badge bg-brand-accent position-absolute top-0 end-0 m-3 px-2 py-1 small rounded-pill shadow-sm">
-                                        <i class="fa-solid fa-percent me-1"></i> {{ $service->discount }}
-                                    </span>
-                                @endif
-                                <div>
-                                    <div class="service-clean-icon">
-                                        <i class="{{ $service->icon ?: 'fa-solid fa-wand-magic-sparkles' }}"></i>
-                                    </div>
-                                    <h4 class="service-clean-title">{{ $service->title }}</h4>
-                                    <p class="service-clean-desc">
-                                        {{ $service->short_description }}
-                                    </p>
-                                </div>
-                                <a href="{{ route('services.show', $service->slug) }}" class="service-clean-link mt-3">
-                                    <span>عرض التفاصيل</span>
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </a>
-                            </div>
-                        </div>
-                    @empty
-                        <div class="col-12 text-center text-muted py-4">
-                            لا توجد خدمات معروضة حالياً.
-                        </div>
-                    @endforelse
-                </div>
-
-                <div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="150">
-                    <a href="{{ route('services.index') }}" class="btn btn-brand-primary btn-lg px-5">
-                        <i class="fa-solid fa-list-check me-2"></i> عرض كافة الخدمات وحجز الخدمة
-                    </a>
-                </div>
-            </div>
-        </section>
-    @endif
 
     <!-- ==========================================================================
-                        INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
-                        ========================================================================== -->
+                            INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
+                            ========================================================================== -->
     <section class="py-5 interactive-tour-section position-relative overflow-hidden" id="interactive-tour">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -217,9 +215,13 @@ setting('site_name', 'سين ياء') . '.')
 
                     @php
                         $cleanWhatsapp = preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831'));
-                        $dynamicServices = (isset($services) && $services->count())
-                            ? $services
-                            : \App\Models\Service::where('status', true)->orderBy('order', 'asc')->orderBy('id', 'asc')->get();
+                        $dynamicServices =
+                            isset($services) && $services->count()
+                                ? $services
+                                : \App\Models\Service::where('status', true)
+                                    ->orderBy('order', 'asc')
+                                    ->orderBy('id', 'asc')
+                                    ->get();
 
                         // Coordinates for hotspots across the living room scene
                         $hotspotPositions = [
@@ -239,10 +241,13 @@ setting('site_name', 'سين ياء') . '.')
                         @foreach ($dynamicServices as $index => $srv)
                             @php
                                 $pos = $hotspotPositions[$index] ?? null;
-                                if (!$pos)
+                                if (!$pos) {
                                     break;
+                                }
                                 $serviceIcon = !empty($srv->icon) ? $srv->icon : 'fa-solid fa-sparkles';
-                                $serviceDesc = !empty($srv->short_description) ? $srv->short_description : \Illuminate\Support\Str::limit(strip_tags($srv->description ?? ''), 130);
+                                $serviceDesc = !empty($srv->short_description)
+                                    ? $srv->short_description
+                                    : \Illuminate\Support\Str::limit(strip_tags($srv->description ?? ''), 130);
                             @endphp
                             <div class="room-hotspot" style="top: {{ $pos['top'] }}; left: {{ $pos['left'] }};">
                                 <button class="hotspot-trigger" type="button" aria-label="{{ $srv->title }}"
@@ -292,8 +297,8 @@ setting('site_name', 'سين ياء') . '.')
     </section>
 
     <!-- ==========================================================================
-           INTERACTIVE TOUR SERVICE POPUP MODAL
-           ========================================================================== -->
+               INTERACTIVE TOUR SERVICE POPUP MODAL
+               ========================================================================== -->
     <div class="modal fade" id="interactiveHotspotModal" tabindex="-1" aria-labelledby="interactiveModalTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 490px;">
@@ -355,8 +360,8 @@ setting('site_name', 'سين ياء') . '.')
     </div>
 
     <!-- ==========================================================================
-    QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
-    ========================================================================== -->
+        QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
+        ========================================================================== -->
     <section class="py-5 quote-section" id="quote">
         <div class="container py-4">
             <div class="row align-items-center g-5">
@@ -417,13 +422,13 @@ setting('site_name', 'سين ياء') . '.')
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">الاسم الكريم</label>
-                                    <input type="text" name="name" class="form-control rounded-3" placeholder="أبو فهد"
-                                        required />
+                                    <input type="text" name="name" class="form-control rounded-3"
+                                        placeholder="أبو فهد" required />
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">رقم الجوال (واتساب)</label>
-                                    <input type="tel" name="phone" class="form-control rounded-3" placeholder="05XXXXXXXX"
-                                        required />
+                                    <input type="tel" name="phone" class="form-control rounded-3"
+                                        placeholder="05XXXXXXXX" required />
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">نوع الخدمة</label>
@@ -443,8 +448,7 @@ setting('site_name', 'سين ياء') . '.')
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">ملاحظات إضافية (اختياري)</label>
-                                    <textarea name="notes" class="form-control rounded-3" rows="2"
-                                        placeholder="أي تفاصيل تود توضيحها..."></textarea>
+                                    <textarea name="notes" class="form-control rounded-3" rows="2" placeholder="أي تفاصيل تود توضيحها..."></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary w-100 py-3 fw-bold fs-6"
@@ -461,8 +465,8 @@ setting('site_name', 'سين ياء') . '.')
     </section>
 
     <!-- ==========================================================================
-        REVIEWS (TESTIMONIALS)
-        ========================================================================== -->
+            REVIEWS (TESTIMONIALS)
+            ========================================================================== -->
     <section class="py-5 bg-white reviews position-relative overflow-hidden" id="reviews">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start"
@@ -513,7 +517,8 @@ setting('site_name', 'سين ياء') . '.')
                                             <i class="fa-regular fa-star text-muted"></i>
                                         @endif
                                     @endfor
-                                    <span class="text-muted small ms-1 font-weight-bold">({{ $testimonial->rating }}.0)</span>
+                                    <span
+                                        class="text-muted small ms-1 font-weight-bold">({{ $testimonial->rating }}.0)</span>
                                 </div>
 
                                 <!-- Review Body -->
@@ -558,8 +563,8 @@ setting('site_name', 'سين ياء') . '.')
     </section>
 
     <!-- ==========================================================================
-                                                                                               FAQ SECTION (BOOTSTRAP ACCORDION)
-                                                                                               ========================================================================== -->
+                                                                                                   FAQ SECTION (BOOTSTRAP ACCORDION)
+                                                                                                   ========================================================================== -->
     <section class="py-5 bg-brand-light faq" id="faq">
         <div class="container py-4">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -585,7 +590,8 @@ setting('site_name', 'سين ياء') . '.')
                                 <h2 class="accordion-header" id="heading-faq-{{ $faq->id }}">
                                     <button
                                         class="accordion-button {{ $loop->first ? '' : 'collapsed' }} fw-bold text-brand-primary"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-{{ $faq->id }}"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq-collapse-{{ $faq->id }}"
                                         aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
                                         aria-controls="faq-collapse-{{ $faq->id }}">
                                         {{ $faq->question }}
@@ -611,8 +617,8 @@ setting('site_name', 'سين ياء') . '.')
     </section>
 
     <!-- ==========================================================================
-                                                                                               BLOG & TIPS SECTION (المدونة وأحدث المقالات)
-                                                                                               ========================================================================== -->
+                                                                                                   BLOG & TIPS SECTION (المدونة وأحدث المقالات)
+                                                                                                   ========================================================================== -->
     <section class="py-5 bg-white" id="blog">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3"
@@ -635,10 +641,12 @@ setting('site_name', 'سين ياء') . '.')
 
             <div class="row g-4">
                 @forelse($posts as $post)
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up"
+                        data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
                         <div class="blog-card h-100 d-flex flex-column">
                             <div class="blog-img-wrapper position-relative overflow-hidden" style="height: 220px;">
-                                <img src="{{ $post->image_url }}" alt="{{ $post->title }}" class="w-100 h-100 object-fit-cover">
+                                <img src="{{ $post->image_url }}" alt="{{ $post->title }}"
+                                    class="w-100 h-100 object-fit-cover">
                                 <span class="blog-badge bg-brand-primary text-white">
                                     <i class="{{ $post->category_icon ?? 'fa-solid fa-lightbulb' }} me-1"></i>
                                     {{ $post->category }}
@@ -670,7 +678,8 @@ setting('site_name', 'سين ياء') . '.')
                                         <span>اقرأ المقال كاملاً</span>
                                         <i class="fa-solid fa-arrow-left small"></i>
                                     </a>
-                                    <span class="badge bg-brand-light text-brand-primary small">{{ $post->category }}</span>
+                                    <span
+                                        class="badge bg-brand-light text-brand-primary small">{{ $post->category }}</span>
                                 </div>
                             </div>
                         </div>
@@ -749,7 +758,7 @@ setting('site_name', 'سين ياء') . '.')
 
 @push('scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Initialize Testimonials Swiper Slider
             if (typeof Swiper !== 'undefined' && document.querySelector('.testimonials-slider')) {
                 const testimonialsSwiper = new Swiper('.testimonials-slider', {
@@ -790,7 +799,7 @@ setting('site_name', 'سين ياء') . '.')
             // Booking Form AJAX handling
             const bookingForm = document.getElementById('bookingForm');
             if (bookingForm) {
-                bookingForm.addEventListener('submit', function (e) {
+                bookingForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     const submitBtn = document.getElementById('submitBookingBtn');
                     const originalText = submitBtn.innerHTML;
@@ -801,13 +810,13 @@ setting('site_name', 'سين ياء') . '.')
                     const formData = new FormData(bookingForm);
 
                     fetch("{{ route('booking.store') }}", {
-                        method: 'POST',
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                            'Accept': 'application/json'
-                        },
-                        body: formData
-                    })
+                            method: 'POST',
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Accept': 'application/json'
+                            },
+                            body: formData
+                        })
                         .then(response => response.json().then(data => ({
                             status: response.status,
                             body: data
