@@ -138,26 +138,7 @@
                 جميع الحقوق محفوظة © 2026 <strong>شركة سين ياء كلين</strong>
             </div>
 
-            <div class="d-flex gap-2 align-items-center">
-                <a href="https://www.instagram.com/seenyaa.clean?psln=MWUycXQ3dnEwMWJxZg==" target="_blank" rel="noopener noreferrer"
-                    class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
-                    style="width:32px;height:32px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);transition:opacity .2s;"
-                    title="إنستجرام" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
-                    <i class="fa-brands fa-instagram" style="font-size:.9rem;"></i>
-                </a>
-                <a href="https://www.tiktok.com/@seenyaa.clean?_r=1&_t=ZS-9AiTEEwbnV9" target="_blank" rel="noopener noreferrer"
-                    class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
-                    style="width:32px;height:32px;background:#010101;border:1px solid rgba(255,255,255,.2);transition:opacity .2s;"
-                    title="تيك توك" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
-                    <i class="fa-brands fa-tiktok" style="font-size:.85rem;"></i>
-                </a>
-                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}" target="_blank" rel="noopener noreferrer"
-                    class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
-                    style="width:32px;height:32px;background:#25d366;transition:opacity .2s;"
-                    title="واتساب" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
-                    <i class="fa-brands fa-whatsapp" style="font-size:.9rem;"></i>
-                </a>
-            </div>
+        
 
             <div>
                 تصميم بواسطة
