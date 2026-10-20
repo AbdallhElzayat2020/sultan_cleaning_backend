@@ -7,7 +7,7 @@
     <!-- ==========================================================================
        PRELOADER (SOAP BUBBLES & SQUEEGEE ANIMATION)
        ========================================================================== -->
-    <div id="preloader" class="preloader">
+    {{-- <div id="preloader" class="preloader">
         <!-- Floating Soap Bubbles in Preloader Background -->
         <div class="preloader-bubbles" aria-hidden="true">
             <span class="p-bubble"></span>
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     @include('frontend.layouts.header')
 

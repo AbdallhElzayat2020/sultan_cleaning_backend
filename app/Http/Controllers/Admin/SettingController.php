@@ -39,6 +39,14 @@ class SettingController extends Controller
             'canonical_url' => ['nullable', 'string', 'max:255'],
 
             // Core Static Pages SEO Settings
+            'seo_home_title' => ['nullable', 'string', 'max:255'],
+            'seo_home_description' => ['nullable', 'string', 'max:1000'],
+            'seo_home_keywords' => ['nullable', 'string', 'max:1000'],
+
+            'seo_landpage_title' => ['nullable', 'string', 'max:255'],
+            'seo_landpage_description' => ['nullable', 'string', 'max:1000'],
+            'seo_landpage_keywords' => ['nullable', 'string', 'max:1000'],
+
             'seo_about_title' => ['nullable', 'string', 'max:255'],
             'seo_about_description' => ['nullable', 'string', 'max:1000'],
             'seo_about_keywords' => ['nullable', 'string', 'max:1000'],

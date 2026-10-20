@@ -74,7 +74,7 @@
 
                 <div class="col-lg-6" data-aos="fade-right" data-aos-duration="850">
                     <div class="hero-img-box position-relative">
-                        <img src="{{ asset('assets/frontend/images/hero.jpg') }}" alt="شركة سين ياء للنظافة الشاملة" class="rounded-4 shadow-lg w-100">
+                        <img src="{{ asset('assets/frontend/images/hero_final.png') }}" alt="شركة سين ياء للنظافة الشاملة" class="rounded-4 shadow-lg w-100">
                     </div>
                 </div>
             </div>

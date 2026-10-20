@@ -356,7 +356,15 @@
                                 <div class="row">
                                     <div class="col-12 col-md-3 mb-3">
                                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                            <a class="nav-link active font-weight-bold d-flex justify-content-between align-items-center mb-2 shadow-sm" id="v-pills-about-tab" data-toggle="pill" href="#v-pills-about" role="tab" aria-controls="v-pills-about" aria-selected="true">
+                                            <a class="nav-link active font-weight-bold d-flex justify-content-between align-items-center mb-2 shadow-sm" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                                                <span><i class="fas fa-home mr-2 text-warning"></i> الصفحة الرئيسية</span>
+                                                <i class="fas fa-chevron-left text-muted small"></i>
+                                            </a>
+                                            <a class="nav-link font-weight-bold d-flex justify-content-between align-items-center mb-2 shadow-sm" id="v-pills-landpage-tab" data-toggle="pill" href="#v-pills-landpage" role="tab" aria-controls="v-pills-landpage" aria-selected="false">
+                                                <span><i class="fas fa-file-alt mr-2 text-secondary"></i> صفحة الهبوط</span>
+                                                <i class="fas fa-chevron-left text-muted small"></i>
+                                            </a>
+                                            <a class="nav-link font-weight-bold d-flex justify-content-between align-items-center mb-2 shadow-sm" id="v-pills-about-tab" data-toggle="pill" href="#v-pills-about" role="tab" aria-controls="v-pills-about" aria-selected="false">
                                                 <span><i class="fas fa-info-circle mr-2 text-primary"></i> من نحن</span>
                                                 <i class="fas fa-chevron-left text-muted small"></i>
                                             </a>
@@ -381,8 +389,102 @@
 
                                     <div class="col-12 col-md-9">
                                         <div class="tab-content border rounded p-4 bg-white shadow-sm" id="v-pills-tabContent">
+                                            {{-- Tab 0: Home Page --}}
+                                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                                                    <h5 class="mb-0 text-dark font-weight-bold">
+                                                        <i class="fas fa-home text-warning mr-1"></i> إعدادات سيو الصفحة الرئيسية (Home)
+                                                    </h5>
+                                                    <a href="{{ route('home') }}" target="_blank" class="btn btn-outline-warning btn-sm">
+                                                        <i class="fas fa-external-link-alt mr-1"></i> معاينة الصفحة
+                                                    </a>
+                                                </div>
+
+                                                <!-- Google Snippet Preview -->
+                                                <div class="alert alert-light border p-3 mb-3 rounded" style="background-color: #fafbfc;">
+                                                    <div class="small font-weight-bold text-muted mb-1"><i class="fab fa-google text-primary mr-1"></i> شكل ظهور الصفحة في نتائج بحث Google:</div>
+                                                    <div class="text-success small" style="direction: ltr; text-align: right;">{{ route('home') }}</div>
+                                                    <div class="text-primary font-weight-bold" style="font-size: 1.05rem;" id="preview-seo-home-title">{{ $settings['seo_home_title'] ?? 'الرئيسية | ' . ($settings['site_name'] ?? 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل' }}</div>
+                                                    <div class="text-muted small" style="line-height: 1.4;" id="preview-seo-home-desc">{{ $settings['seo_home_description'] ?? 'شركة ' . ($settings['site_name'] ?? 'سين ياء') . ' الرائدة في خدمات النظافة والتعقيم الشامل بالمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.' }}</div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="seo_home_title">عنوان السيو (Meta Title)</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-heading"></i></div></div>
+                                                        <input type="text" name="seo_home_title" id="seo_home_title" class="form-control @error('seo_home_title') is-invalid @enderror" value="{{ old('seo_home_title', $settings['seo_home_title'] ?? '') }}" placeholder="مثال: الرئيسية | سين ياء لخدمات النظافة والتعقيم الشامل">
+                                                    </div>
+                                                    <small class="form-text text-muted">العنوان الظاهر في تبويب المتصفح ومحركات البحث (مستحسن 50 - 65 حرف).</small>
+                                                    @error('seo_home_title')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="seo_home_description">وصف الميتا (Meta Description)</label>
+                                                    <textarea name="seo_home_description" id="seo_home_description" rows="3" class="form-control @error('seo_home_description') is-invalid @enderror" placeholder="وصف موجز وجذاب للصفحة الرئيسية...">{{ old('seo_home_description', $settings['seo_home_description'] ?? '') }}</textarea>
+                                                    <small class="form-text text-muted">يظهر أسفل عنوان الرابط في نتائج البحث (مستحسن 130 - 160 حرف).</small>
+                                                    @error('seo_home_description')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                                                </div>
+
+                                                <div class="form-group mb-0">
+                                                    <label for="seo_home_keywords">الكلمات المفتاحية (Meta Keywords)</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-key"></i></div></div>
+                                                        <input type="text" name="seo_home_keywords" id="seo_home_keywords" class="form-control @error('seo_home_keywords') is-invalid @enderror" value="{{ old('seo_home_keywords', $settings['seo_home_keywords'] ?? '') }}" placeholder="شركة تنظيف, تنظيف منازل, غسيل كنب بالبخار, جلي رخام, سين ياء">
+                                                    </div>
+                                                    <small class="form-text text-muted">افصل بين الكلمات بفواصل (,).</small>
+                                                    @error('seo_home_keywords')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                                                </div>
+                                            </div>
+
+                                            {{-- Tab 1.5: Landing Page --}}
+                                            <div class="tab-pane fade" id="v-pills-landpage" role="tabpanel" aria-labelledby="v-pills-landpage-tab">
+                                                <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                                                    <h5 class="mb-0 text-dark font-weight-bold">
+                                                        <i class="fas fa-file-alt text-secondary mr-1"></i> إعدادات سيو صفحة الهبوط (Landing Page)
+                                                    </h5>
+                                                    <a href="{{ route('landpage') }}" target="_blank" class="btn btn-outline-secondary btn-sm">
+                                                        <i class="fas fa-external-link-alt mr-1"></i> معاينة الصفحة
+                                                    </a>
+                                                </div>
+
+                                                <!-- Google Snippet Preview -->
+                                                <div class="alert alert-light border p-3 mb-3 rounded" style="background-color: #fafbfc;">
+                                                    <div class="small font-weight-bold text-muted mb-1"><i class="fab fa-google text-primary mr-1"></i> شكل ظهور الصفحة في نتائج بحث Google:</div>
+                                                    <div class="text-success small" style="direction: ltr; text-align: right;">{{ route('landpage') }}</div>
+                                                    <div class="text-primary font-weight-bold" style="font-size: 1.05rem;" id="preview-seo-landpage-title">{{ $settings['seo_landpage_title'] ?? ($settings['site_name'] ?? 'سين ياء') . ' | نظافة عميقة وتعقيم فندقي متكامل بأفضل الأسعار' }}</div>
+                                                    <div class="text-muted small" style="line-height: 1.4;" id="preview-seo-landpage-desc">{{ $settings['seo_landpage_description'] ?? 'احجز خدمتك الآن مع شركة ' . ($settings['site_name'] ?? 'سين ياء') . '. تنظيف فلل وشقق ومفروشات بأحدث أجهزة البخار وأفضل مواد التعقيم الآمنة 100%.' }}</div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="seo_landpage_title">عنوان السيو (Meta Title)</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-heading"></i></div></div>
+                                                        <input type="text" name="seo_landpage_title" id="seo_landpage_title" class="form-control @error('seo_landpage_title') is-invalid @enderror" value="{{ old('seo_landpage_title', $settings['seo_landpage_title'] ?? '') }}" placeholder="مثال: سين ياء | نظافة عميقة وتعقيم فندقي متكامل بأفضل الأسعار">
+                                                    </div>
+                                                    <small class="form-text text-muted">العنوان الظاهر في تبويب المتصفح ومحركات البحث (مستحسن 50 - 65 حرف).</small>
+                                                    @error('seo_landpage_title')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="seo_landpage_description">وصف الميتا (Meta Description)</label>
+                                                    <textarea name="seo_landpage_description" id="seo_landpage_description" rows="3" class="form-control @error('seo_landpage_description') is-invalid @enderror" placeholder="وصف موجز وجذاب لصفحة الهبوط...">{{ old('seo_landpage_description', $settings['seo_landpage_description'] ?? '') }}</textarea>
+                                                    <small class="form-text text-muted">يظهر أسفل عنوان الرابط في نتائج البحث (مستحسن 130 - 160 حرف).</small>
+                                                    @error('seo_landpage_description')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                                                </div>
+
+                                                <div class="form-group mb-0">
+                                                    <label for="seo_landpage_keywords">الكلمات المفتاحية (Meta Keywords)</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-key"></i></div></div>
+                                                        <input type="text" name="seo_landpage_keywords" id="seo_landpage_keywords" class="form-control @error('seo_landpage_keywords') is-invalid @enderror" value="{{ old('seo_landpage_keywords', $settings['seo_landpage_keywords'] ?? '') }}" placeholder="شركة تنظيف, تنظيف فلل, غسيل كنب بالبخار, جلي رخام, سين ياء">
+                                                    </div>
+                                                    <small class="form-text text-muted">افصل بين الكلمات بفواصل (,).</small>
+                                                    @error('seo_landpage_keywords')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                                                </div>
+                                            </div>
+
                                             {{-- Tab 1: About Us --}}
-                                            <div class="tab-pane fade show active" id="v-pills-about" role="tabpanel" aria-labelledby="v-pills-about-tab">
+                                            <div class="tab-pane fade" id="v-pills-about" role="tabpanel" aria-labelledby="v-pills-about-tab">
                                                 <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
                                                     <h5 class="mb-0 text-dark font-weight-bold">
                                                         <i class="fas fa-info-circle text-primary mr-1"></i> إعدادات سيو صفحة (من نحن)
@@ -684,7 +786,7 @@
             updateSiteSeoPreview();
 
             // Core Static Pages SEO Live Previews
-            ['about', 'services', 'gallery', 'blog', 'contact'].forEach(function(page) {
+            ['home', 'landpage', 'about', 'services', 'gallery', 'blog', 'contact'].forEach(function(page) {
                 function updatePagePreview() {
                     var title = $('#seo_' + page + '_title').val();
                     var desc = $('#seo_' + page + '_description').val();

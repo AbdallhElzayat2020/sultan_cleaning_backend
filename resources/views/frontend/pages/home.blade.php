@@ -1,18 +1,11 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'الرئيسية | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل ')
-@section('meta_description',
-    'شركة ' .
-    setting('site_name', 'سين ياء') .
-    ' الرائدة في خدمات النظافة والتعقيم الشامل
-    ب والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.')
-@section('meta_keywords',
-    'شركة تنظيف ب, تنظيف منازل ب, تنظيف فلل ب, غسيل كنب بالبخار, جلي رخام
-    ب, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء'))
-@section('og_title', setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل ب')
-@section('og_description', 'أفضل خدمات التنظيف المتكاملة للفلل والمنازل والشركات بالبخار وأحدث أجهزة التعقيم مع شركة ' .
-    setting('site_name', 'سين ياء') . '.')
-@section('og_image', asset('images/hero.jpg'))
+@section('title', setting('seo_home_title', 'الرئيسية | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل'))
+@section('meta_description', setting('seo_home_description', 'شركة ' . setting('site_name', 'سين ياء') . ' الرائدة في خدمات النظافة والتعقيم الشامل بالمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.'))
+@section('meta_keywords', setting('seo_home_keywords', 'شركة تنظيف, تنظيف منازل, تنظيف فلل, غسيل كنب بالبخار, جلي رخام, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء')))
+@section('og_title', setting('seo_home_title', setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل'))
+@section('og_description', setting('seo_home_description', 'أفضل خدمات التنظيف المتكاملة للفلل والمنازل والشركات بالبخار وأحدث أجهزة التعقيم مع شركة ' . setting('site_name', 'سين ياء') . '.'))
+@section('og_image', asset('assets/frontend/images/hero_final.png'))
 
 @section('content')
     {{-- <!-- ==========================================================================
@@ -20,20 +13,7 @@
         ========================================================================== --> --}}
     <section class="hero hero-wrapper py-5 position-relative overflow-hidden">
         <!-- Floating Soap Bubbles in Hero Background -->
-        <div class="hero-bubbles" aria-hidden="true">
-            <span class="bubble bubble-1"></span>
-            <span class="bubble bubble-2"></span>
-            <span class="bubble bubble-3"></span>
-            <span class="bubble bubble-4"></span>
-            <span class="bubble bubble-5"></span>
-            <span class="bubble bubble-6"></span>
-            <span class="bubble bubble-7"></span>
-            <span class="bubble bubble-8"></span>
-            <span class="bubble bubble-9"></span>
-            <span class="bubble bubble-10"></span>
-            <span class="bubble bubble-11"></span>
-            <span class="bubble bubble-12"></span>
-        </div>
+    
 
         <div class="container py-4 position-relative" style="z-index: 2;">
             <div class="row align-items-center g-5">

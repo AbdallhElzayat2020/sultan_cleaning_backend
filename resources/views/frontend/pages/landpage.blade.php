@@ -21,12 +21,12 @@
 
 
     <!-- Primary SEO Meta Tags -->
-    <title>{{ setting('site_name', 'سين ياء') }} | شركة خدمات النظافة والتعقيم الشامل </title>
-    <meta name="title" content="{{ setting('site_name', 'سين ياء') }} | شركة خدمات النظافة والتعقيم الشامل ">
+    <title>{{ setting('seo_landpage_title', setting('site_name', 'سين ياء') . ' | شركة خدمات النظافة والتعقيم الشامل') }}</title>
+    <meta name="title" content="{{ setting('seo_landpage_title', setting('site_name', 'سين ياء') . ' | شركة خدمات النظافة والتعقيم الشامل') }}">
     <meta name="description"
-        content="شركة {{ setting('site_name', 'سين ياء') }} - لخدمات التنظيف الشامل، تنظيف الفلل، الشقق، الكنب، السجاد، والمفروشات بالبخار بأحدث التقنيات وأعلى معايير الإتقان وبأفضل الأسعار التنافسية.">
+        content="{{ setting('seo_landpage_description', 'شركة ' . setting('site_name', 'سين ياء') . ' - لخدمات التنظيف الشامل، تنظيف الفلل، الشقق، الكنب، السجاد، والمفروشات بالبخار بأحدث التقنيات وأعلى معايير الإتقان وبأفضل الأسعار التنافسية.') }}">
     <meta name="keywords"
-        content="شركة تنظيف , تنظيف منازل, غسيل كنب بالبخار, جلي رخام, تنظيف فلل , تعقيم منازل, سين ياء لخدمات النظافة">
+        content="{{ setting('seo_landpage_keywords', 'شركة تنظيف , تنظيف منازل, غسيل كنب بالبخار, جلي رخام, تنظيف فلل , تعقيم منازل, سين ياء لخدمات النظافة') }}">
     <meta name="author" content="{{ setting('site_name', 'سين ياء') }} لخدمات النظافة والتعقيم">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="{{ url('/landpage') }}">
@@ -37,18 +37,20 @@
     <meta property="og:site_name" content="{{ setting('site_name', 'سين ياء') }}">
     <meta property="og:url" content="{{ url('/landpage') }}">
     <meta property="og:title"
-        content="{{ setting('site_name', 'سين ياء') }} | نظافة عميقة وتعقيم فندقي متكامل بأفضل الأسعار">
+        content="{{ setting('seo_landpage_title', setting('site_name', 'سين ياء') . ' | نظافة عميقة وتعقيم فندقي متكامل بأفضل الأسعار') }}">
     <meta property="og:description"
-        content="احجز خدمتك الآن مع شركة {{ setting('site_name', 'سين ياء') }}. تنظيف فلل وشقق ومفروشات بأحدث أجهزة البخار وأفضل مواد التعقيم الآمنة 100%.">
-    <meta property="og:image" content="{{ asset('assets/frontend/images/logo_master.png') }}">
+        content="{{ setting('seo_landpage_description', 'احجز خدمتك الآن مع شركة ' . setting('site_name', 'سين ياء') . '. تنظيف فلل وشقق ومفروشات بأحدث أجهزة البخار وأفضل مواد التعقيم الآمنة 100%.') }}">
+    <meta property="og:image" content="{{ asset('assets/frontend/images/hero_final.png') }}">
+    <meta property="og:image:width" content="1538">
+    <meta property="og:image:height" content="866">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url('/landpage') }}">
-    <meta name="twitter:title" content="{{ setting('site_name', 'سين ياء كلين') }} | خدمات النظافة والصيانة الشامل">
+    <meta name="twitter:title" content="{{ setting('seo_landpage_title', setting('site_name', 'سين ياء كلين') . ' | خدمات النظافة والصيانة الشامل') }}">
     <meta name="twitter:description"
-        content="خدمات تنظيف في جدة ومفروشات بالبخار وجلي رخام مع شركة {{ setting('site_name', 'سين ياء كلين') }}.">
-    <meta name="twitter:image" content="{{ asset('assets/frontend/images/logo_master.png') }}">
+        content="{{ setting('seo_landpage_description', 'خدمات تنظيف في جدة ومفروشات بالبخار وجلي رخام مع شركة ' . setting('site_name', 'سين ياء كلين') . '.') }}">
+    <meta name="twitter:image" content="{{ asset('assets/frontend/images/hero_final.png') }}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('assets/frontend/images/favicon_master.png') }}">
@@ -666,7 +668,7 @@
 
 <body>
     <!-- Preloader (Soap Bubbles & Squeegee) -->
-    <div id="preloader" class="preloader">
+    {{-- <div id="preloader" class="preloader">
         <div class="preloader-bubbles" aria-hidden="true">
             <span class="p-bubble"></span>
             <span class="p-bubble"></span>
@@ -706,7 +708,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     @php
         $phone = setting('top_bar_phone', '0531109831');
         $cleanPhone = preg_replace('/[^0-9+]/', '', $phone);
@@ -832,12 +834,6 @@
                             <i class="fa-solid fa-phone-volume"></i>
                             <span>اتصال فوري: {{ $phone }}</span>
                         </a>
-                    </div>
-
-                    <div class="mt-3 text-white text-opacity-90 small text-center text-lg-start">
-                        <i class="fa-solid fa-shield-halved me-1" style="color: #EAF8FC;"></i> لا توجد أي رسوم خفية •
-                        الدفع
-                        بعد إتمام الخدمة ورضاك الكامل
                     </div>
                 </div>
 
