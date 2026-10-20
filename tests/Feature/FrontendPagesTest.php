@@ -84,14 +84,14 @@ test('contact page renders dynamic services and faqs', function () {
 
 test('gallery page renders dynamic items and lightbox modal structure', function () {
     $gallery = Gallery::factory()->create([
-        'title' => 'تنظيف واجهات زجاجية بالرياض',
+        'title' => 'تنظيف واجهات زجاجية بجده',
         'status' => true,
     ]);
 
     $response = $this->get(route('gallery'));
 
     $response->assertOk();
-    $response->assertSee('تنظيف واجهات زجاجية بالرياض');
+    $response->assertSee('تنظيف واجهات زجاجية بجده');
     $response->assertSee('galleryLightboxModal');
 });
 
@@ -99,7 +99,7 @@ test('service details page renders dynamic seo tags and schema', function () {
     $service = Service::factory()->create([
         'title' => 'خدمة غسيل السجاد والموكيت',
         'slug' => 'carpet-cleaning-vip',
-        'meta_title' => 'أفضل شركة غسيل سجاد بالرياض بالبخار | سين ياء',
+        'meta_title' => 'أفضل شركة غسيل سجاد بجده بالبخار | سين ياء',
         'meta_description' => 'غسيل سجاد وموكيت احترافي بأحدث أجهزة البخار الحار وتجفيف فوري.',
         'meta_keywords' => 'غسيل سجاد, تنظيف موكيت بالبخار, سين ياء',
         'status' => true,
@@ -108,10 +108,10 @@ test('service details page renders dynamic seo tags and schema', function () {
     $response = $this->get(route('services.show', $service->slug));
 
     $response->assertOk();
-    $response->assertSee('<title>أفضل شركة غسيل سجاد بالرياض بالبخار | سين ياء</title>', false);
+    $response->assertSee('<title>أفضل شركة غسيل سجاد بجده بالبخار | سين ياء</title>', false);
     $response->assertSee('name="description" content="غسيل سجاد وموكيت احترافي بأحدث أجهزة البخار الحار وتجفيف فوري."', false);
     $response->assertSee('name="keywords" content="غسيل سجاد, تنظيف موكيت بالبخار, سين ياء"', false);
-    $response->assertSee('property="og:title" content="أفضل شركة غسيل سجاد بالرياض بالبخار | سين ياء"', false);
+    $response->assertSee('property="og:title" content="أفضل شركة غسيل سجاد بجده بالبخار | سين ياء"', false);
     $response->assertSee('"@type": "Service"', false);
     $response->assertSee('"name": "خدمة غسيل السجاد والموكيت"', false);
 });

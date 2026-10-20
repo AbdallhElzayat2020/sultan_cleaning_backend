@@ -22,7 +22,7 @@ class BookingFactory extends Factory
             'phone' => '05'.fake()->numerify('########'),
             'service_id' => null,
             'service_name' => 'تنظيف منازل وفلل',
-            'city' => 'الرياض - حي النرجس',
+            'city' => 'جدة - حي النرجس',
             'notes' => fake()->sentence(),
             'status' => 'pending',
         ];

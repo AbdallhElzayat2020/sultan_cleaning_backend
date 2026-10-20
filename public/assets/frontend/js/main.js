@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const name = fd.get("name") || "عميلنا العزيز";
             const phone = fd.get("phone") || "";
             const service = fd.get("service") || "خدمة تنظيف شامل";
-            const city = fd.get("city") || "الرياض";
+            const city = fd.get("city") || "جده";
             const notes = fd.get("notes") || "";
 
             const msg =
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const category =
                 item.getAttribute("data-gallery-cat") || "خدمة نظافة متخصصة";
             const location =
-                item.getAttribute("data-gallery-location") || "الرياض";
+                item.getAttribute("data-gallery-location") || "جده";
 
             const modalEl = document.getElementById("galleryLightboxModal");
             if (modalEl) {

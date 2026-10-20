@@ -227,7 +227,7 @@
                                         </div>
                                         <div class="text-secondary small mt-1"
                                             style="line-height: 1.4; color: #4d5156 !important;" id="seo-site-desc">
-                                            {{ $settings['meta_description'] ?? 'شركة سين ياء لخدمات النظافة والتعقيم الشامل بالرياض. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث التقنيات وأفضل الأسعار.' }}
+                                            {{ $settings['meta_description'] ?? 'شركة سين ياء لخدمات النظافة والتعقيم الشامل بجده. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث التقنيات وأفضل الأسعار.' }}
                                         </div>
                                     </div>
                                 </div>
@@ -308,7 +308,7 @@
                                             <input type="text" name="meta_keywords" id="meta_keywords"
                                                 class="form-control @error('meta_keywords') is-invalid @enderror"
                                                 value="{{ old('meta_keywords', $settings['meta_keywords'] ?? '') }}"
-                                                placeholder="شركة تنظيف بالرياض, تنظيف فلل, غسيل كنب, جلي رخام, تعقيم منازل">
+                                                placeholder="شركة تنظيف بجده, تنظيف فلل, غسيل كنب, جلي رخام, تعقيم منازل">
                                             <small class="form-text text-muted">افصل بين الكلمات بفاصلة (,).</small>
                                             @error('meta_keywords')
                                                 <div class="invalid-feedback d-block">{{ $message }}</div>
@@ -397,7 +397,7 @@
                                                     <div class="small font-weight-bold text-muted mb-1"><i class="fab fa-google text-primary mr-1"></i> شكل ظهور الصفحة في نتائج بحث Google:</div>
                                                     <div class="text-success small" style="direction: ltr; text-align: right;">{{ route('about') }}</div>
                                                     <div class="text-primary font-weight-bold" style="font-size: 1.05rem;" id="preview-seo-about-title">{{ $settings['seo_about_title'] ?? 'من نحن | سين ياء لخدمات النظافة والتعقيم الشامل' }}</div>
-                                                    <div class="text-muted small" style="line-height: 1.4;" id="preview-seo-about-desc">{{ $settings['seo_about_description'] ?? 'تعرف على شركة سين ياء لخدمات النظافة والتعقيم الشامل بالرياض. خبرة عريقة في تنظيف المنازل والفلل والمفروشات بأحدث المعدات.' }}</div>
+                                                    <div class="text-muted small" style="line-height: 1.4;" id="preview-seo-about-desc">{{ $settings['seo_about_description'] ?? 'تعرف على شركة سين ياء لخدمات النظافة والتعقيم الشامل بجده. خبرة عريقة في تنظيف المنازل والفلل والمفروشات بأحدث المعدات.' }}</div>
                                                 </div>
 
                                                 <div class="form-group">
@@ -421,7 +421,7 @@
                                                     <label for="seo_about_keywords">الكلمات المفتاحية (Meta Keywords)</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-key"></i></div></div>
-                                                        <input type="text" name="seo_about_keywords" id="seo_about_keywords" class="form-control @error('seo_about_keywords') is-invalid @enderror" value="{{ old('seo_about_keywords', $settings['seo_about_keywords'] ?? '') }}" placeholder="عن شركة سين ياء, من نحن, شركة تنظيف بالرياض, أفضل شركة نظافة بالرياض">
+                                                        <input type="text" name="seo_about_keywords" id="seo_about_keywords" class="form-control @error('seo_about_keywords') is-invalid @enderror" value="{{ old('seo_about_keywords', $settings['seo_about_keywords'] ?? '') }}" placeholder="عن شركة سين ياء, من نحن, شركة تنظيف بجده, أفضل شركة نظافة بجده">
                                                     </div>
                                                     <small class="form-text text-muted">افصل بين الكلمات بفواصل (,).</small>
                                                     @error('seo_about_keywords')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
@@ -468,7 +468,7 @@
                                                     <label for="seo_services_keywords">الكلمات المفتاحية (Meta Keywords)</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-key"></i></div></div>
-                                                        <input type="text" name="seo_services_keywords" id="seo_services_keywords" class="form-control @error('seo_services_keywords') is-invalid @enderror" value="{{ old('seo_services_keywords', $settings['seo_services_keywords'] ?? '') }}" placeholder="خدمات تنظيف بالرياض, تنظيف فلل, غسيل كنب, جلي رخام, تعقيم منازل">
+                                                        <input type="text" name="seo_services_keywords" id="seo_services_keywords" class="form-control @error('seo_services_keywords') is-invalid @enderror" value="{{ old('seo_services_keywords', $settings['seo_services_keywords'] ?? '') }}" placeholder="خدمات تنظيف بجده, تنظيف فلل, غسيل كنب, جلي رخام, تعقيم منازل">
                                                     </div>
                                                     <small class="form-text text-muted">افصل بين الكلمات بفواصل (,).</small>
                                                     @error('seo_services_keywords')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
@@ -585,7 +585,7 @@
                                                     <div class="small font-weight-bold text-muted mb-1"><i class="fab fa-google text-primary mr-1"></i> شكل ظهور الصفحة في نتائج بحث Google:</div>
                                                     <div class="text-success small" style="direction: ltr; text-align: right;">{{ route('contact') }}</div>
                                                     <div class="text-primary font-weight-bold" style="font-size: 1.05rem;" id="preview-seo-contact-title">{{ $settings['seo_contact_title'] ?? 'اتصل بنا | سين ياء حجز واستفسار فوري' }}</div>
-                                                    <div class="text-muted small" style="line-height: 1.4;" id="preview-seo-contact-desc">{{ $settings['seo_contact_description'] ?? 'تواصل مع فريق شركة سين ياء لخدمات النظافة والتعقيم الشامل بالرياض. احجز موعدك فورياً عبر الهاتف أو الواتساب على مدار 24 ساعة.' }}</div>
+                                                    <div class="text-muted small" style="line-height: 1.4;" id="preview-seo-contact-desc">{{ $settings['seo_contact_description'] ?? 'تواصل مع فريق شركة سين ياء لخدمات النظافة والتعقيم الشامل بجده. احجز موعدك فورياً عبر الهاتف أو الواتساب على مدار 24 ساعة.' }}</div>
                                                 </div>
 
                                                 <div class="form-group">
@@ -609,7 +609,7 @@
                                                     <label for="seo_contact_keywords">الكلمات المفتاحية (Meta Keywords)</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend"><div class="input-group-text"><i class="fas fa-key"></i></div></div>
-                                                        <input type="text" name="seo_contact_keywords" id="seo_contact_keywords" class="form-control @error('seo_contact_keywords') is-invalid @enderror" value="{{ old('seo_contact_keywords', $settings['seo_contact_keywords'] ?? '') }}" placeholder="اتصل بنا, حجز موعد تنظيف, رقم شركة تنظيف بالرياض, واتساب شركة نظافة, سين ياء">
+                                                        <input type="text" name="seo_contact_keywords" id="seo_contact_keywords" class="form-control @error('seo_contact_keywords') is-invalid @enderror" value="{{ old('seo_contact_keywords', $settings['seo_contact_keywords'] ?? '') }}" placeholder="اتصل بنا, حجز موعد تنظيف, رقم شركة تنظيف بجده, واتساب شركة نظافة, سين ياء">
                                                     </div>
                                                     <small class="form-text text-muted">افصل بين الكلمات بفواصل (,).</small>
                                                     @error('seo_contact_keywords')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
@@ -673,7 +673,7 @@
 
                 var previewTitle = metaTitle ? metaTitle : (siteName + ' | خدمات النظافة والتعقيم الشامل بالمملكة');
                 var previewDesc = metaDesc ? metaDesc : 'شركة ' + siteName +
-                    ' لخدمات النظافة والتعقيم الشامل بالرياض. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث التقنيات وأفضل الأسعار.';
+                    ' لخدمات النظافة والتعقيم الشامل بجده. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث التقنيات وأفضل الأسعار.';
 
                 $('#seo-site-title').text(previewTitle);
                 $('#seo-site-desc').text(previewDesc);

@@ -267,7 +267,7 @@
                                             </td>
                                             <td>
                                                 <small class="text-muted">
-                                                    <i class="fas fa-map-marker-alt text-danger mr-1"></i> {{ $booking->city ?: 'الرياض' }}
+                                                    <i class="fas fa-map-marker-alt text-danger mr-1"></i> {{ $booking?->city }}
                                                 </small>
                                             </td>
                                             <td>

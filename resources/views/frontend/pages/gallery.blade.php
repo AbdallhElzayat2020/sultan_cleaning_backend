@@ -148,7 +148,7 @@
                             data-gallery-img="{{ $item->image_url }}"
                             data-gallery-title="{{ $item->title }}"
                             data-gallery-cat="{{ $item->category }}"
-                            data-gallery-location="{{ $item->location ?? 'مدينة الرياض' }}">
+                            data-gallery-location="{{ $item->location ?? 'مدينة جده' }}">
                             <div class="photo-img-wrap">
                                 <img src="{{ $item->image_url }}" alt="{{ $item->title }}" loading="lazy">
                                 <span class="badge bg-brand-primary position-absolute top-0 end-0 m-3 px-3 py-1 rounded-pill fw-bold">
@@ -160,14 +160,14 @@
                                 <div class="photo-overlay">
                                     <h5 class="text-white fw-bold mb-1 fs-6">{{ $item->title }}</h5>
                                     <small class="text-white-50">
-                                        <i class="fa-solid fa-location-dot me-1 text-brand-secondary"></i> {{ $item->location ?? 'مدينة الرياض' }}
+                                        <i class="fa-solid fa-location-dot me-1 text-brand-secondary"></i> {{ $item->location ?? 'مدينة جده' }}
                                     </small>
                                 </div>
                             </div>
                             <div class="p-3 bg-white d-flex align-items-center justify-content-between">
                                 <div>
                                     <div class="fw-bold text-brand-primary fs-6">{{ Str::limit($item->title, 32) }}</div>
-                                    <small class="text-muted">{{ $item->location ?? 'الرياض' }}</small>
+                                    <small class="text-muted">{{ $item->location ?? 'جده' }}</small>
                                 </div>
                                 <span class="badge bg-brand-light text-brand-primary small">تكبير الصورة <i class="fa-solid fa-expand ms-1"></i></span>
                             </div>

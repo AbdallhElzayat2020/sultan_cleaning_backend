@@ -6,7 +6,7 @@ use App\Models\User;
 test('frontend home page displays active testimonials', function () {
     $activeTestimonial = Testimonial::factory()->create([
         'name' => 'خالد بن سلطان المتميز',
-        'city' => 'الرياض - حي النرجس',
+        'city' => 'جده - حي النرجس',
         'review' => 'خدمة ممتازة جداً وشغل يشهد له بالأمانة والإتقان.',
         'status' => true,
     ]);
@@ -21,7 +21,7 @@ test('frontend home page displays active testimonials', function () {
 
     $response->assertOk();
     $response->assertSee('خالد بن سلطان المتميز');
-    $response->assertSee('الرياض - حي النرجس');
+    $response->assertSee('جده - حي النرجس');
     $response->assertDontSee('عميل غير مفعل مخفي');
 });
 
@@ -58,7 +58,7 @@ test('admin can store a new testimonial', function () {
 
     $data = [
         'name' => 'محمد بن راشد',
-        'city' => 'الرياض - حي الياسمين',
+        'city' => 'جده - حي الياسمين',
         'rating' => 5,
         'review' => 'تجربة رائعة مع شركة سلطان كلين، جلي الرخام وتنظيف المجالس ممتاز جداً.',
         'status' => '1',
@@ -72,7 +72,7 @@ test('admin can store a new testimonial', function () {
 
     $this->assertDatabaseHas('testimonials', [
         'name' => 'محمد بن راشد',
-        'city' => 'الرياض - حي الياسمين',
+        'city' => 'جده - حي الياسمين',
         'rating' => 5,
         'status' => 1,
     ]);
@@ -96,7 +96,7 @@ test('admin can update a testimonial', function () {
 
     $response = $this->actingAs($user)->put(route('admin.testimonials.update', $testimonial), [
         'name' => 'الاسم الجديد المعدل للعميل',
-        'city' => 'الرياض - حي الملقا',
+        'city' => 'جده - حي الملقا',
         'rating' => 5,
         'review' => 'رأي معدل وتجربة محسنة مع خدمة تنظيف الخزانات.',
         'status' => '1',
@@ -109,7 +109,7 @@ test('admin can update a testimonial', function () {
     $this->assertDatabaseHas('testimonials', [
         'id' => $testimonial->id,
         'name' => 'الاسم الجديد المعدل للعميل',
-        'city' => 'الرياض - حي الملقا',
+        'city' => 'جده - حي الملقا',
     ]);
 });
 

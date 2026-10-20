@@ -1,23 +1,27 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'الرئيسية | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض')
-@section('meta_description',
+@section('title', 'الرئيسية | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل ')
+@section(
+    'meta_description',
     'شركة ' .
     setting('site_name', 'سين ياء') .
     ' الرائدة في خدمات النظافة والتعقيم الشامل
-    بالرياض والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.')
-@section('meta_keywords',
-    'شركة تنظيف بالرياض, تنظيف منازل بالرياض, تنظيف فلل بالرياض, غسيل كنب بالبخار, جلي رخام
-    بالرياض, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء'))
-@section('og_title', setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض')
+    ب والمملكة. تنظيف منازل، فلل، شقق، كنب ومفروشات بالبخار، جلي رخام وخزانات بأحدث المعدات وأفضل الأسعار.'
+)
+@section(
+    'meta_keywords',
+    'شركة تنظيف ب, تنظيف منازل ب, تنظيف فلل ب, غسيل كنب بالبخار, جلي رخام
+    ب, شركة تنظيف شقق, ' . setting('site_name', 'سين ياء')
+)
+@section('og_title', setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل ب')
 @section('og_description', 'أفضل خدمات التنظيف المتكاملة للفلل والمنازل والشركات بالبخار وأحدث أجهزة التعقيم مع شركة ' .
-    setting('site_name', 'سين ياء') . '.')
+setting('site_name', 'سين ياء') . '.')
 @section('og_image', asset('images/hero.jpg'))
 
 @section('content')
     {{-- <!-- ==========================================================================
-                           HERO SECTION (CLEAN & UNCLUTTERED WITH FLOATING BUBBLES)
-                           ========================================================================== --> --}}
+        HERO SECTION (CLEAN & UNCLUTTERED WITH FLOATING BUBBLES)
+        ========================================================================== --> --}}
     <section class="hero hero-wrapper py-5 position-relative overflow-hidden">
         <!-- Floating Soap Bubbles in Hero Background -->
         <div class="hero-bubbles" aria-hidden="true">
@@ -88,8 +92,8 @@
 
 
     <!-- ==========================================================================
-                    FEATURES / WHY CHOOSE US
-                    ========================================================================== -->
+    FEATURES / WHY CHOOSE US
+    ========================================================================== -->
     <section class="py-5 why-us bg-white" id="features">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -101,7 +105,8 @@
                     معايير عالية الجودة في النظافة والتعقيم
                 </h2>
                 <p class="text-secondary">
-                    نقدم خدمات النظافة والتعقيم وفق معايير عالية من الجودة والاحترافية، بالاعتماد على كوادر مدربة، ومعدات متطورة، ومواد تنظيف عالية الجودة، لنمنحك بيئة نظيفة وصحية مع الاهتمام بأدق التفاصيل.
+                    نقدم خدمات النظافة والتعقيم وفق معايير عالية من الجودة والاحترافية، بالاعتماد على كوادر مدربة، ومعدات
+                    متطورة، ومواد تنظيف عالية الجودة، لنمنحك بيئة نظيفة وصحية مع الاهتمام بأدق التفاصيل.
                 </p>
             </div>
 
@@ -128,8 +133,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                    SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
-                                                    ========================================================================== -->
+        SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
+        ========================================================================== -->
 
     @if (!empty($services) && count($services) > 0)
         <section class="services py-5" id="services">
@@ -142,10 +147,8 @@
                 <!-- Services Grid (Dynamic Cards) -->
                 <div class="row g-4">
                     @forelse($services ?? [] as $service)
-                        <div class="col-md-6 col-lg-4" data-aos="fade-up"
-                            data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
-                            <div
-                                class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
+                            <div class="service-clean-card h-100 d-flex flex-column justify-content-between position-relative">
                                 @if ($service->discount)
                                     <span
                                         class="badge bg-brand-accent position-absolute top-0 end-0 m-3 px-2 py-1 small rounded-pill shadow-sm">
@@ -184,8 +187,8 @@
     @endif
 
     <!-- ==========================================================================
-                                           INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
-                                           ========================================================================== -->
+                        INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
+                        ========================================================================== -->
     <section class="py-5 interactive-tour-section position-relative overflow-hidden" id="interactive-tour">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -197,7 +200,8 @@
                     نظافة استثنائية في أدق تفاصيل منزلك
                 </h2>
                 <p class="text-secondary">
-                    اكتشف مستوى جديدًا من العناية بمنزلك، من خلال خدمات تنظيف احترافية تعتمد على عمالة مدرّبة، ومعدات متطورة، ومنتجات تنظيف عالية الجودة، لنمنح كل زاوية الاهتمام الذي تستحقه.
+                    اكتشف مستوى جديدًا من العناية بمنزلك، من خلال خدمات تنظيف احترافية تعتمد على عمالة مدرّبة، ومعدات
+                    متطورة، ومنتجات تنظيف عالية الجودة، لنمنح كل زاوية الاهتمام الذي تستحقه.
                 </p>
                 <div class="mx-auto bg-brand-secondary rounded-pill" style="width: 50px; height: 3.5px;"></div>
             </div>
@@ -208,8 +212,7 @@
                 <!-- Media Wrapper (Holds image and dynamic hotspots with zero overlay covering the picture) -->
                 <div class="interactive-stage-media position-relative overflow-hidden">
                     <img src="{{ asset('assets/frontend/images/living-room-interactive.jpg') }}"
-                        alt="غرفة معيشة فاخرة ونظيفة - خدمات سين ياء كلين"
-                        class="w-100 h-auto d-block interactive-bg-img"
+                        alt="غرفة معيشة فاخرة ونظيفة - خدمات سين ياء كلين" class="w-100 h-auto d-block interactive-bg-img"
                         loading="lazy" />
 
                     @php
@@ -236,17 +239,15 @@
                         @foreach ($dynamicServices as $index => $srv)
                             @php
                                 $pos = $hotspotPositions[$index] ?? null;
-                                if (!$pos) break;
+                                if (!$pos)
+                                    break;
                                 $serviceIcon = !empty($srv->icon) ? $srv->icon : 'fa-solid fa-sparkles';
                                 $serviceDesc = !empty($srv->short_description) ? $srv->short_description : \Illuminate\Support\Str::limit(strip_tags($srv->description ?? ''), 130);
                             @endphp
                             <div class="room-hotspot" style="top: {{ $pos['top'] }}; left: {{ $pos['left'] }};">
-                                <button class="hotspot-trigger" type="button"
-                                    aria-label="{{ $srv->title }}"
-                                    title="{{ $srv->title }}"
-                                    data-service-title="{{ $srv->title }}"
-                                    data-service-badge="خدمة معتمدة"
-                                    data-service-desc="{{ $serviceDesc }}"
+                                <button class="hotspot-trigger" type="button" aria-label="{{ $srv->title }}"
+                                    title="{{ $srv->title }}" data-service-title="{{ $srv->title }}"
+                                    data-service-badge="خدمة معتمدة" data-service-desc="{{ $serviceDesc }}"
                                     data-service-icon="{{ $serviceIcon }}"
                                     data-service-url="{{ route('services.show', $srv->slug) }}"
                                     data-service-whatsapp="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار وحجز خدمة ' . $srv->title . ' من شركة سين ياء كلين') }}">
@@ -264,21 +265,23 @@
                 </div>
 
                 <!-- Stage Dock Bar (Below the image: completely uncovered, zero shadow on image!) -->
-                <div class="interactive-stage-dock p-3 p-md-3 bg-white d-flex align-items-center justify-content-between flex-wrap gap-3">
+                <div
+                    class="interactive-stage-dock p-3 p-md-3 bg-white d-flex align-items-center justify-content-between flex-wrap gap-3">
                     <div class="d-flex align-items-center gap-2 text-dark small fw-medium">
                         <span class="hint-pulse-dot flex-shrink-0"></span>
                         <span>اضغط على أي أيقونة تفاعلية داخل الصورة أو اختر الخدمة أدناه لحجزها مباشرة عبر واتساب</span>
                     </div>
                     <div class="d-flex align-items-center gap-2 flex-wrap">
                         @foreach ($dynamicServices->take(6) as $srv)
-                            <button type="button" class="btn btn-sm btn-light border rounded-pill px-3 py-1.5 small hotspot-chip-trigger text-brand-primary"
-                                data-service-title="{{ $srv->title }}"
-                                data-service-badge="خدمة معتمدة"
+                            <button type="button"
+                                class="btn btn-sm btn-light border rounded-pill px-3 py-1.5 small hotspot-chip-trigger text-brand-primary"
+                                data-service-title="{{ $srv->title }}" data-service-badge="خدمة معتمدة"
                                 data-service-desc="{{ !empty($srv->short_description) ? $srv->short_description : \Illuminate\Support\Str::limit(strip_tags($srv->description ?? ''), 130) }}"
                                 data-service-icon="{{ !empty($srv->icon) ? $srv->icon : 'fa-solid fa-sparkles' }}"
                                 data-service-url="{{ route('services.show', $srv->slug) }}"
                                 data-service-whatsapp="https://wa.me/{{ $cleanWhatsapp }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار وحجز خدمة ' . $srv->title . ' من شركة سين ياء كلين') }}">
-                                <i class="{{ !empty($srv->icon) ? $srv->icon : 'fa-solid fa-sparkles' }} text-brand-secondary me-1"></i>
+                                <i
+                                    class="{{ !empty($srv->icon) ? $srv->icon : 'fa-solid fa-sparkles' }} text-brand-secondary me-1"></i>
                                 {{ $srv->title }}
                             </button>
                         @endforeach
@@ -289,9 +292,10 @@
     </section>
 
     <!-- ==========================================================================
-       INTERACTIVE TOUR SERVICE POPUP MODAL
-       ========================================================================== -->
-    <div class="modal fade" id="interactiveHotspotModal" tabindex="-1" aria-labelledby="interactiveModalTitle" aria-hidden="true">
+           INTERACTIVE TOUR SERVICE POPUP MODAL
+           ========================================================================== -->
+    <div class="modal fade" id="interactiveHotspotModal" tabindex="-1" aria-labelledby="interactiveModalTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 490px;">
             <div class="modal-content border-0 rounded-4 shadow-2xl p-0 overflow-hidden" style="background: #ffffff;">
                 <!-- Top Accent Gradient Line -->
@@ -300,12 +304,14 @@
                 <!-- Header -->
                 <div class="modal-header border-0 pt-4 px-4 pb-2 align-items-start">
                     <div class="d-flex align-items-center gap-3">
-                        <div id="modalServiceIconWrapper" class="d-flex align-items-center justify-content-center text-white rounded-4 shadow-sm flex-shrink-0"
+                        <div id="modalServiceIconWrapper"
+                            class="d-flex align-items-center justify-content-center text-white rounded-4 shadow-sm flex-shrink-0"
                             style="width: 54px; height: 54px; background: linear-gradient(135deg, #0B3D91 0%, #29C6D1 100%);">
                             <i id="modalServiceIcon" class="fa-solid fa-wand-magic-sparkles fs-4"></i>
                         </div>
                         <div>
-                            <span id="modalServiceBadge" class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-1 small fw-bold mb-1">
+                            <span id="modalServiceBadge"
+                                class="badge bg-brand-light text-brand-primary border border-brand rounded-pill px-3 py-1 small fw-bold mb-1">
                                 خدمة معتمدة
                             </span>
                             <h5 class="modal-title fw-heading text-brand-primary mb-0 fs-5" id="interactiveModalTitle">
@@ -313,7 +319,8 @@
                             </h5>
                         </div>
                     </div>
-                    <button type="button" class="btn-close shadow-none p-2 border-0 rounded-circle bg-light" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                    <button type="button" class="btn-close shadow-none p-2 border-0 rounded-circle bg-light"
+                        data-bs-dismiss="modal" aria-label="إغلاق"></button>
                 </div>
 
                 <!-- Body -->
@@ -322,7 +329,8 @@
                         وصف الخدمة
                     </p>
 
-                    <div class="d-flex align-items-center justify-content-between p-2.5 px-3 rounded-3 bg-light text-muted small">
+                    <div
+                        class="d-flex align-items-center justify-content-between p-2.5 px-3 rounded-3 bg-light text-muted small">
                         <span><i class="fa-solid fa-circle-check text-brand-secondary me-1"></i> عمالة مدربة</span>
                         <span><i class="fa-solid fa-shield-halved text-brand-primary me-1"></i> مواد آمنة 100%</span>
                         <span><i class="fa-solid fa-sparkles text-warning me-1"></i> ضمان الجودة</span>
@@ -347,8 +355,8 @@
     </div>
 
     <!-- ==========================================================================
-QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
-========================================================================== -->
+    QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
+    ========================================================================== -->
     <section class="py-5 quote-section" id="quote">
         <div class="container py-4">
             <div class="row align-items-center g-5">
@@ -361,7 +369,8 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                         نظافة احترافية بمعايير جودة عالية
                     </h2>
                     <p class="text-secondary mb-4">
-                        في سين ياء كلين، نقدم حلول نظافة متكاملة تلبي مختلف الاحتياجات، من خلال فريق عمل مدرّب، ومعدات حديثة، ومنتجات تنظيف عالية الجودة، مع اهتمام دقيق بالتفاصيل لتحقيق أفضل النتائج.
+                        في سين ياء كلين، نقدم حلول نظافة متكاملة تلبي مختلف الاحتياجات، من خلال فريق عمل مدرّب، ومعدات
+                        حديثة، ومنتجات تنظيف عالية الجودة، مع اهتمام دقيق بالتفاصيل لتحقيق أفضل النتائج.
                     </p>
 
                     <div class="d-flex flex-column gap-3 mb-4">
@@ -398,7 +407,8 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                             اطلب خدمتك الآن
                         </h4>
                         <p class="text-secondary small text-center mb-3">
-                            شاركنا تفاصيل الخدمة المطلوبة، وسيتواصل معك فريقنا لتقييم احتياجاتك وتقديم عرض السعر وتنسيق الموعد المناسب.
+                            شاركنا تفاصيل الخدمة المطلوبة، وسيتواصل معك فريقنا لتقييم احتياجاتك وتقديم عرض السعر وتنسيق
+                            الموعد المناسب.
                         </p>
 
                         <form action="{{ route('booking.store') }}" method="POST" class="whatsapp-booking-form"
@@ -407,13 +417,13 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">الاسم الكريم</label>
-                                    <input type="text" name="name" class="form-control rounded-3"
-                                        placeholder="أبو فهد" required />
+                                    <input type="text" name="name" class="form-control rounded-3" placeholder="أبو فهد"
+                                        required />
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">رقم الجوال (واتساب)</label>
-                                    <input type="tel" name="phone" class="form-control rounded-3"
-                                        placeholder="05XXXXXXXX" required />
+                                    <input type="tel" name="phone" class="form-control rounded-3" placeholder="05XXXXXXXX"
+                                        required />
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">نوع الخدمة</label>
@@ -429,11 +439,12 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                                 <div class="col-md-6">
                                     <label class="form-label small fw-bold">المدينة / الحي</label>
                                     <input type="text" name="city" class="form-control rounded-3"
-                                        placeholder="الرياض - حي النرجس" required />
+                                        placeholder=" - حي النرجس" required />
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label small fw-bold">ملاحظات إضافية (اختياري)</label>
-                                    <textarea name="notes" class="form-control rounded-3" rows="2" placeholder="أي تفاصيل تود توضيحها..."></textarea>
+                                    <textarea name="notes" class="form-control rounded-3" rows="2"
+                                        placeholder="أي تفاصيل تود توضيحها..."></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary w-100 py-3 fw-bold fs-6"
@@ -450,8 +461,8 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
     </section>
 
     <!-- ==========================================================================
-    REVIEWS (TESTIMONIALS)
-    ========================================================================== -->
+        REVIEWS (TESTIMONIALS)
+        ========================================================================== -->
     <section class="py-5 bg-white reviews position-relative overflow-hidden" id="reviews">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start"
@@ -465,7 +476,8 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                         ثقة عملائنا تعكس جودة خدماتنا
                     </h2>
                     <p class="text-secondary mb-0">
-                        نؤمن بأن رضا العملاء هو المقياس الحقيقي لجودة خدماتنا، لذلك نحرص على تقديم تجربة تنظيف احترافية تجمع بين الدقة في التنفيذ، والاهتمام بالتفاصيل، والالتزام بمعايير الجودة.
+                        نؤمن بأن رضا العملاء هو المقياس الحقيقي لجودة خدماتنا، لذلك نحرص على تقديم تجربة تنظيف احترافية تجمع
+                        بين الدقة في التنفيذ، والاهتمام بالتفاصيل، والالتزام بمعايير الجودة.
                     </p>
                 </div>
                 <!-- Navigation Arrows -->
@@ -501,8 +513,7 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                                             <i class="fa-regular fa-star text-muted"></i>
                                         @endif
                                     @endfor
-                                    <span
-                                        class="text-muted small ms-1 font-weight-bold">({{ $testimonial->rating }}.0)</span>
+                                    <span class="text-muted small ms-1 font-weight-bold">({{ $testimonial->rating }}.0)</span>
                                 </div>
 
                                 <!-- Review Body -->
@@ -526,7 +537,7 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                                     <div>
                                         <h6 class="mb-0 fw-bold text-brand-primary">{{ $testimonial->name }}</h6>
                                         <small class="text-muted"><i
-                                                class="fa-solid fa-location-dot me-1 text-danger"></i>{{ $testimonial->city ?? 'الرياض' }}</small>
+                                                class="fa-solid fa-location-dot me-1 text-danger"></i>{{ $testimonial->city ?? '' }}</small>
                                     </div>
                                 </div>
                             </div>
@@ -547,8 +558,8 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
     </section>
 
     <!-- ==========================================================================
-                                                                                           FAQ SECTION (BOOTSTRAP ACCORDION)
-                                                                                           ========================================================================== -->
+                                                                                               FAQ SECTION (BOOTSTRAP ACCORDION)
+                                                                                               ========================================================================== -->
     <section class="py-5 bg-brand-light faq" id="faq">
         <div class="container py-4">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -560,7 +571,8 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                     كل ما تحتاج معرفته عن خدماتنا
                 </h2>
                 <p class="text-secondary mx-auto" style="max-width: 680px;">
-                    نجيب عن أبرز استفساراتكم حول خدمات التنظيف، وآلية الحجز، والأسعار، والمعدات المستخدمة، لنساعدكم على اختيار الخدمة المناسبة بكل وضوح وثقة.
+                    نجيب عن أبرز استفساراتكم حول خدمات التنظيف، وآلية الحجز، والأسعار، والمعدات المستخدمة، لنساعدكم على
+                    اختيار الخدمة المناسبة بكل وضوح وثقة.
                 </p>
             </div>
 
@@ -573,8 +585,7 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                                 <h2 class="accordion-header" id="heading-faq-{{ $faq->id }}">
                                     <button
                                         class="accordion-button {{ $loop->first ? '' : 'collapsed' }} fw-bold text-brand-primary"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#faq-collapse-{{ $faq->id }}"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-{{ $faq->id }}"
                                         aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
                                         aria-controls="faq-collapse-{{ $faq->id }}">
                                         {{ $faq->question }}
@@ -600,8 +611,8 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
     </section>
 
     <!-- ==========================================================================
-                                                                                           BLOG & TIPS SECTION (المدونة وأحدث المقالات)
-                                                                                           ========================================================================== -->
+                                                                                               BLOG & TIPS SECTION (المدونة وأحدث المقالات)
+                                                                                               ========================================================================== -->
     <section class="py-5 bg-white" id="blog">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3"
@@ -624,12 +635,10 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
 
             <div class="row g-4">
                 @forelse($posts as $post)
-                    <div class="col-md-6 col-lg-4" data-aos="fade-up"
-                        data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ (($loop->index % 3) + 1) * 120 }}">
                         <div class="blog-card h-100 d-flex flex-column">
                             <div class="blog-img-wrapper position-relative overflow-hidden" style="height: 220px;">
-                                <img src="{{ $post->image_url }}" alt="{{ $post->title }}"
-                                    class="w-100 h-100 object-fit-cover">
+                                <img src="{{ $post->image_url }}" alt="{{ $post->title }}" class="w-100 h-100 object-fit-cover">
                                 <span class="blog-badge bg-brand-primary text-white">
                                     <i class="{{ $post->category_icon ?? 'fa-solid fa-lightbulb' }} me-1"></i>
                                     {{ $post->category }}
@@ -661,8 +670,7 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                                         <span>اقرأ المقال كاملاً</span>
                                         <i class="fa-solid fa-arrow-left small"></i>
                                     </a>
-                                    <span
-                                        class="badge bg-brand-light text-brand-primary small">{{ $post->category }}</span>
+                                    <span class="badge bg-brand-light text-brand-primary small">{{ $post->category }}</span>
                                 </div>
                             </div>
                         </div>
@@ -741,7 +749,7 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
 
 @push('scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Initialize Testimonials Swiper Slider
             if (typeof Swiper !== 'undefined' && document.querySelector('.testimonials-slider')) {
                 const testimonialsSwiper = new Swiper('.testimonials-slider', {
@@ -782,7 +790,7 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
             // Booking Form AJAX handling
             const bookingForm = document.getElementById('bookingForm');
             if (bookingForm) {
-                bookingForm.addEventListener('submit', function(e) {
+                bookingForm.addEventListener('submit', function (e) {
                     e.preventDefault();
                     const submitBtn = document.getElementById('submitBookingBtn');
                     const originalText = submitBtn.innerHTML;
@@ -793,13 +801,13 @@ QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
                     const formData = new FormData(bookingForm);
 
                     fetch("{{ route('booking.store') }}", {
-                            method: 'POST',
-                            headers: {
-                                'X-Requested-With': 'XMLHttpRequest',
-                                'Accept': 'application/json'
-                            },
-                            body: formData
-                        })
+                        method: 'POST',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        },
+                        body: formData
+                    })
                         .then(response => response.json().then(data => ({
                             status: response.status,
                             body: data

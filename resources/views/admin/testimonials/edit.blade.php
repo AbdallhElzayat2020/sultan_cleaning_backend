@@ -43,7 +43,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="city">المدينة / الحي</label>
-                                            <input type="text" name="city" id="city" class="form-control @error('city') is-invalid @enderror" value="{{ old('city', $testimonial->city) }}" placeholder="مثال: الرياض - حي النرجس">
+                                            <input type="text" name="city" id="city" class="form-control @error('city') is-invalid @enderror" value="{{ old('city', $testimonial->city) }}" placeholder="مثال: جده - حي النرجس">
                                             @error('city')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror

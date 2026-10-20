@@ -136,7 +136,7 @@ test('admin can store and update service with seo metadata', function () {
         'icon' => 'fa-solid fa-bug',
         'short_description' => 'أفضل حلول مكافحة النمل الأبيض بضمان معتمد.',
         'description' => '<p>محتوى تفصيلي لمكافحة الآفات والحشرات بضمان 10 سنوات.</p>',
-        'meta_title' => 'أفضل شركة مكافحة نمل أبيض بالرياض | سين ياء',
+        'meta_title' => 'أفضل شركة مكافحة نمل أبيض بجده | سين ياء',
         'meta_description' => 'تخلص نهائياً من النمل الأبيض مع شركة سين ياء بأحدث مبيدات وتقنيات الحقن.',
         'meta_keywords' => 'مكافحة نمل ابيض, رش مبيدات, سين ياء',
         'status' => '1',
@@ -146,8 +146,8 @@ test('admin can store and update service with seo metadata', function () {
     $response->assertRedirect(route('admin.services.index'));
 
     $service = Service::where('slug', 'termite-control')->firstOrFail();
-    expect($service->meta_title)->toBe('أفضل شركة مكافحة نمل أبيض بالرياض | سين ياء')
-        ->and($service->seo_title)->toBe('أفضل شركة مكافحة نمل أبيض بالرياض | سين ياء')
+    expect($service->meta_title)->toBe('أفضل شركة مكافحة نمل أبيض بجده | سين ياء')
+        ->and($service->seo_title)->toBe('أفضل شركة مكافحة نمل أبيض بجده | سين ياء')
         ->and($service->seo_description)->toBe('تخلص نهائياً من النمل الأبيض مع شركة سين ياء بأحدث مبيدات وتقنيات الحقن.')
         ->and($service->seo_keywords)->toBe('مكافحة نمل ابيض, رش مبيدات, سين ياء');
 

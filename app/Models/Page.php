@@ -79,7 +79,7 @@ class Page extends Model
         $parts = array_filter([
             $this->title,
             'سين ياء',
-            'خدمات تنظيف بالرياض',
+            'خدمات تنظيف جدة',
             'شركة نظافة وتعقيم',
         ]);
 

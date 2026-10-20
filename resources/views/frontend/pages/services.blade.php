@@ -4,7 +4,7 @@
     'سين ياء')))
 @section('meta_description', setting('seo_services_description', 'استكشف باقة خدمات شركة ' . setting('site_name', 'سين
     ياء') . ' المتكاملة: تنظيف الفلل، الشقق، المفروشات، غسيل السجاد والكنب بالبخار، جلي الرخام وتلميع البلاط بأعلى جودة.'))
-@section('meta_keywords', setting('seo_services_keywords', 'خدمات تنظيف بالرياض, تنظيف فلل, غسيل كنب, جلي رخام, تنظيف
+@section('meta_keywords', setting('seo_services_keywords', 'خدمات تنظيف بجده, تنظيف فلل, غسيل كنب, جلي رخام, تنظيف
     خزانات, تعقيم منازل, شركة ' . setting('site_name', 'سين ياء')))
 @section('og_title', setting('seo_services_title', 'خدمات النظافة والتعقيم الشامل | شركة ' . setting('site_name', 'سين
     ياء')))

@@ -25,7 +25,7 @@
         ],
         'areaServed' => [
             '@type' => 'City',
-            'name' => 'الرياض',
+            'name' => 'جده',
         ],
     ];
 @endphp
@@ -160,7 +160,7 @@
                                 <label class="form-label small fw-bold">المدينة / الحي <span
                                         class="text-danger">*</span></label>
                                 <input type="text" name="city" class="form-control rounded-3 bg-white"
-                                    placeholder="الرياض - حي النرجس" required>
+                                    placeholder="جده - حي النرجس" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label small fw-bold">ملاحظات إضافية (اختياري)</label>

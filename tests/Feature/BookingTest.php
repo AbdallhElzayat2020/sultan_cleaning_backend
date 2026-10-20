@@ -13,7 +13,7 @@ test('customer can submit booking request from frontend', function () {
         'name' => 'محمد القحطاني',
         'phone' => '0555123456',
         'service_id' => $service->id,
-        'city' => 'الرياض - حي الملز',
+        'city' => 'جده - حي الملز',
         'notes' => 'يرجى الحضور في الفترة المسائية',
     ];
 
@@ -25,7 +25,7 @@ test('customer can submit booking request from frontend', function () {
         'phone' => '0555123456',
         'service_id' => $service->id,
         'service_name' => 'تنظيف منازل وفلل VIP',
-        'city' => 'الرياض - حي الملز',
+        'city' => 'جده - حي الملز',
         'status' => 'pending',
     ]);
 });
@@ -39,7 +39,7 @@ test('customer receives json and whatsapp url when submitting via ajax', functio
         'name' => 'عبدالله السبيعي',
         'phone' => '0501234567',
         'service_id' => $service->id,
-        'city' => 'الرياض - حي الياسمين',
+        'city' => 'جده - حي الياسمين',
         'notes' => 'سجاد حرير 3 قطع',
     ];
 
@@ -59,7 +59,7 @@ test('customer receives json and whatsapp url when submitting via ajax', functio
     $this->assertDatabaseHas('bookings', [
         'name' => 'عبدالله السبيعي',
         'phone' => '0501234567',
-        'city' => 'الرياض - حي الياسمين',
+        'city' => 'جده - حي الياسمين',
     ]);
 });
 
@@ -73,7 +73,7 @@ test('admin can view bookings index list', function () {
     $user = User::factory()->create();
     $booking = Booking::factory()->create([
         'name' => 'خالد الدوسري',
-        'city' => 'الرياض - الصحافة',
+        'city' => 'جده - الصحافة',
     ]);
 
     $response = $this->actingAs($user)->get(route('admin.bookings.index'));

@@ -19,7 +19,7 @@ class TestimonialFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'city' => 'الرياض - '.fake()->randomElement(['حي النرجس', 'حي الياسمين', 'حي الملقا', 'حي العقيق', 'حي الصحافة', 'حي حطين']),
+            'city' => 'جده - '.fake()->randomElement(['حي النرجس', 'حي الياسمين', 'حي الملقا', 'حي العقيق', 'حي الصحافة', 'حي حطين']),
             'rating' => fake()->numberBetween(4, 5),
             'review' => fake()->realText(120),
             'avatar' => null,

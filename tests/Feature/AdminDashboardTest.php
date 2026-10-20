@@ -17,7 +17,7 @@ test('authenticated admin can view dashboard with statistics', function () {
     Booking::create([
         'name' => 'محمد أحمد',
         'phone' => '0501234567',
-        'city' => 'الرياض',
+        'city' => 'جده',
         'status' => 'pending',
     ]);
 

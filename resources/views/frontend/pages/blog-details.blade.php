@@ -193,7 +193,7 @@
                                 <label class="form-label small fw-bold">المدينة / الحي <span
                                         class="text-danger">*</span></label>
                                 <input type="text" name="city" class="form-control rounded-3 bg-white"
-                                    placeholder="الرياض - حي النرجس" required>
+                                    placeholder="جده - حي النرجس" required>
                             </div>
                             <button type="submit" id="blogBookingSubmitBtn"
                                 class="btn btn-brand-whatsapp w-100 py-2 fw-bold">

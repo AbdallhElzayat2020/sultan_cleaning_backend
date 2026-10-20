@@ -21,7 +21,7 @@ class GalleryFactory extends Factory
             'title' => fake()->sentence(4),
             'category' => fake()->randomElement(['تنظيف الفلل', 'غسيل الكنب', 'جلي الرخام', 'غسيل السجاد', 'تعقيم الخزانات']),
             'category_icon' => 'fa-solid fa-sparkles',
-            'location' => 'حي '.fake()->city().' - الرياض',
+            'location' => 'حي '.fake()->city().' - جده',
             'image' => 'assets/frontend/images/villa.jpg',
             'description' => fake()->paragraph(),
             'status' => true,

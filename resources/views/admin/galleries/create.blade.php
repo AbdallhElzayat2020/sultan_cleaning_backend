@@ -42,7 +42,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="location">الموقع / الحي</label>
-                                            <input type="text" name="location" id="location" class="form-control @error('location') is-invalid @enderror" value="{{ old('location') }}" placeholder="مثال: حي الملقا - الرياض">
+                                            <input type="text" name="location" id="location" class="form-control @error('location') is-invalid @enderror" value="{{ old('location') }}" placeholder="مثال: حي الملقا ">
                                             @error('location')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror

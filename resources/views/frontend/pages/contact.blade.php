@@ -1,10 +1,10 @@
 @extends('frontend.layouts.master')
 
 @section('title', setting('seo_contact_title', 'اتصل بنا واحجز خدمتك الآن | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة'))
-@section('meta_description', setting('seo_contact_description', 'تواصل مع فريق شركة ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض. احجز موعدك فورياً عبر الهاتف أو الواتساب على مدار 24 ساعة.'))
-@section('meta_keywords', setting('seo_contact_keywords', 'اتصل بنا, حجز موعد تنظيف, رقم شركة تنظيف بالرياض, واتساب شركة نظافة, ' . setting('site_name', 'سين ياء')))
+@section('meta_description', setting('seo_contact_description', 'تواصل مع فريق شركة ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بجده. احجز موعدك فورياً عبر الهاتف أو الواتساب على مدار 24 ساعة.'))
+@section('meta_keywords', setting('seo_contact_keywords', 'اتصل بنا, حجز موعد تنظيف, رقم شركة تنظيف بجده, واتساب شركة نظافة, ' . setting('site_name', 'سين ياء')))
 @section('og_title', setting('seo_contact_title', 'اتصل بنا واحجز خدمتك الآن | شركة ' . setting('site_name', 'سين ياء')))
-@section('og_description', setting('seo_contact_description', 'تواصل معنا مباشرة عبر الهاتف أو الواتساب لحجز أفضل خدمات النظافة والتعقيم بالرياض.'))
+@section('og_description', setting('seo_contact_description', 'تواصل معنا مباشرة عبر الهاتف أو الواتساب لحجز أفضل خدمات النظافة والتعقيم بجده.'))
 
 @section('content')
     <!-- ==========================================================================
@@ -66,7 +66,7 @@
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <h5 class="fw-bold text-brand-primary mb-2">نطاق التغطية</h5>
-                        <p class="text-secondary small mb-3">كافة أحياء الرياض ومناطق المملكة</p>
+                        <p class="text-secondary small mb-3">كافة أحياء جده ومناطق المملكة</p>
                         <span class="badge bg-brand-light text-brand-primary py-2 px-3 rounded-pill">تغطية شاملة 24/7</span>
                     </div>
                 </div>

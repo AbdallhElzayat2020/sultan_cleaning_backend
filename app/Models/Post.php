@@ -69,7 +69,7 @@ class Post extends Model
             $this->title,
             $this->category,
             'نصائح تنظيف',
-            'تعقيم بالرياض',
+            'تعقيم جدة',
             setting('site_name', 'سين ياء'),
         ]);
 

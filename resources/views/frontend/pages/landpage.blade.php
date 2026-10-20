@@ -67,13 +67,13 @@
             'description' =>
                 'شركة ' .
                 setting('site_name', 'سين ياء') .
-                ' لخدمات التنظيف الشامل، تنظيف الفلل، الشقق، الكنب، السجاد، والمفروشات بالبخار بالرياض.',
+                ' لخدمات التنظيف الشامل، تنظيف الفلل، الشقق، الكنب، السجاد، والمفروشات بالبخار بجده.',
             'telephone' => setting('top_bar_phone', '0531109831'),
             'priceRange' => '$$',
             'address' => [
                 '@type' => 'PostalAddress',
-                'addressLocality' => 'الرياض',
-                'addressRegion' => 'منطقة الرياض',
+                'addressLocality' => 'جده',
+                'addressRegion' => 'منطقة جده',
                 'addressCountry' => 'SA',
             ],
             'geo' => [

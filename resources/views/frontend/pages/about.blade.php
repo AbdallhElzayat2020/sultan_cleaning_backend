@@ -1,8 +1,8 @@
 @extends('frontend.layouts.master')
 
 @section('title', setting('seo_about_title', 'من نحن | ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل'))
-@section('meta_description', setting('seo_about_description', 'تعرف على شركة ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بالرياض. خبرة عريقة في تنظيف المنازل والفلل والمفروشات بأحدث المعدات.'))
-@section('meta_keywords', setting('seo_about_keywords', 'عن شركة سين ياء, من نحن, شركة تنظيف بالرياض, أفضل شركة نظافة بالرياض, خدمات النظافة المتكاملة'))
+@section('meta_description', setting('seo_about_description', 'تعرف على شركة ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم الشامل بجده. خبرة عريقة في تنظيف المنازل والفلل والمفروشات بأحدث المعدات.'))
+@section('meta_keywords', setting('seo_about_keywords', 'عن شركة سين ياء, من نحن, شركة تنظيف بجده, أفضل شركة نظافة بجده, خدمات النظافة المتكاملة'))
 @section('og_title', setting('seo_about_title', 'من نحن | شركة ' . setting('site_name', 'سين ياء') . ' لخدمات النظافة والتعقيم'))
 @section('og_description', setting('seo_about_description', 'قصة نجاحنا والتزامنا بتقديم أعلى معايير النظافة والتعقيم الفندقي المعتمد بالمملكة.'))
 
@@ -131,7 +131,7 @@
                         <i class="fa-solid fa-star me-1"></i> ثقة وتجارب حقيقية
                     </span>
                     <h2 class="fw-heading display-6 text-brand-primary mb-2">ماذا يقول عملاؤنا عنا؟</h2>
-                    <p class="text-secondary max-w-700 mx-auto">نفخر بخدمة أكثر من 1500 عميل في كافة أحياء الرياض والمملكة</p>
+                    <p class="text-secondary max-w-700 mx-auto">نفخر بخدمة أكثر من 1500 عميل في كافة أحياء جده والمملكة</p>
                     <div class="mx-auto bg-brand-secondary rounded-pill" style="width: 50px; height: 3.5px;"></div>
                 </div>
 

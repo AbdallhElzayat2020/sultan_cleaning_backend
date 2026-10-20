@@ -173,7 +173,7 @@
 
                                         <div class="form-group">
                                             <label for="meta_title" class="font-weight-bold">عنوان السيو (Meta Title)</label>
-                                            <input type="text" name="meta_title" id="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ old('meta_title', $service->meta_title) }}" placeholder="مثال: أفضل شركة تنظيف منازل وفلل بالرياض | سين ياء">
+                                            <input type="text" name="meta_title" id="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ old('meta_title', $service->meta_title) }}" placeholder="مثال: أفضل شركة تنظيف منازل وفلل بجده | سين ياء">
                                             <small class="form-text text-muted">إذا تُرك فارغاً، سيتم اعتماد اسم الخدمة متبوعاً باسم الموقع تلقائياً.</small>
                                             @error('meta_title')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -191,7 +191,7 @@
 
                                         <div class="form-group mb-0">
                                             <label for="meta_keywords" class="font-weight-bold">الكلمات المفتاحية (Meta Keywords)</label>
-                                            <input type="text" name="meta_keywords" id="meta_keywords" class="form-control @error('meta_keywords') is-invalid @enderror" value="{{ old('meta_keywords', $service->meta_keywords) }}" placeholder="مثال: تنظيف فلل, غسيل كنب, تعقيم منازل, شركة تنظيف بالرياض">
+                                            <input type="text" name="meta_keywords" id="meta_keywords" class="form-control @error('meta_keywords') is-invalid @enderror" value="{{ old('meta_keywords', $service->meta_keywords) }}" placeholder="مثال: تنظيف فلل, غسيل كنب, تعقيم منازل, شركة تنظيف بجده">
                                             <small class="form-text text-muted">افصل بين كل كلمة أو جملة مفتاحية بفاصلة (,).</small>
                                             @error('meta_keywords')
                                                 <div class="invalid-feedback">{{ $message }}</div>

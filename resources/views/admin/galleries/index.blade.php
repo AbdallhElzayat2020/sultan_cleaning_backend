@@ -58,7 +58,7 @@
                                                 </td>
                                                 <td>
                                                     <span class="text-muted small">
-                                                        <i class="fas fa-map-marker-alt text-danger mr-1"></i> {{ $item->location ?? 'الرياض' }}
+                                                        <i class="fas fa-map-marker-alt text-danger mr-1"></i> {{ $item->location ?? 'جده' }}
                                                     </span>
                                                 </td>
                                                 <td>

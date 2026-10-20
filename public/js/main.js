@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = fd.get('name') || 'عميلنا العزيز';
       const phone = fd.get('phone') || '';
       const service = fd.get('service') || 'خدمة تنظيف شامل';
-      const city = fd.get('city') || 'الرياض';
+      const city = fd.get('city') || 'جدة';
       const notes = fd.get('notes') || '';
 
       const msg = `مرحباً سين ياء 🌟%0A` +
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const imgSrc = item.getAttribute('data-gallery-img');
       const title = item.getAttribute('data-gallery-title') || 'معرض أعمال سلطان كلين';
       const category = item.getAttribute('data-gallery-cat') || 'خدمة نظافة متخصصة';
-      const location = item.getAttribute('data-gallery-location') || 'الرياض';
+      const location = item.getAttribute('data-gallery-location') || 'جده';
 
       const modalEl = document.getElementById('galleryLightboxModal');
       if (modalEl) {

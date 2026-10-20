@@ -67,7 +67,7 @@ class Service extends Model
             return $this->meta_keywords;
         }
 
-        return $this->title.', تنظيف بالرياض, شركة تنظيف, تعقيم منازل, '.setting('site_name', 'سين ياء');
+        return $this->title.', تنظيف جدة, شركة تنظيف, تعقيم منازل, '.setting('site_name', 'سين ياء');
     }
 
     /**
