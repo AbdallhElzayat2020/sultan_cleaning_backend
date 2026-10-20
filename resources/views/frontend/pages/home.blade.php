@@ -77,7 +77,7 @@
                 <!-- Visual Side -->
                 <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
                     <div class="hero-img-box position-relative">
-                        <img src="{{ asset('assets/frontend/images/hero_master.jpeg') }}"
+                        <img src="{{ asset('assets/frontend/images/hero_final.png') }}"
                             alt="خدمات تنظيف احترافية في شركة سين ياء" />
                     </div>
                 </div>

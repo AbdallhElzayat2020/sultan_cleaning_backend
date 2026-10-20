@@ -797,7 +797,7 @@
         <div class="container py-lg-4 position-relative" style="z-index: 2;">
             <div class="row align-items-center g-5">
                 <!-- Text & Main CTA -->
-                <div class="col-lg-7 text-center text-lg-start" data-aos="fade-up" data-aos-duration="800">
+                <div class="col-lg-6 text-center text-lg-start" data-aos="fade-up" data-aos-duration="800">
                     <div class="d-inline-flex align-items-center gap-2 bg-white px-3 py-2 rounded-pill shadow-sm mb-3"
                         data-aos="fade-down" data-aos-delay="100">
                         <span class="badge rounded-pill px-2 py-1"
@@ -841,10 +841,10 @@
                 </div>
 
                 <!-- Hero Image & Interactive Trust Card -->
-                <div class="col-lg-5" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
                     <div class="position-relative">
                         <div class="hero-img-box position-relative">
-                            <img src="{{ asset('assets/frontend/images/hero_master.jpeg') }}"
+                            <img src="{{ asset('assets/frontend/images/hero_final.png') }}"
                                 alt="خدمات شركة سين ياء للنظافة الشاملة" class="img-fluid">
                             <div class="position-absolute bottom-0 start-0 end-0 p-3"
                                 style="background: linear-gradient(to top, rgba(23,78,107,0.92), transparent); border-radius: 0 0 24px 24px;">
