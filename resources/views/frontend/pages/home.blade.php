@@ -77,7 +77,7 @@
                 <!-- Visual Side -->
                 <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
                     <div class="hero-img-box position-relative">
-                        <img src="{{ asset('assets/frontend/images/hero_final.png') }}"
+                        <img src="{{ asset('assets/frontend/images/hero_final_2_92.png') }}"
                             alt="خدمات تنظيف احترافية في شركة سين ياء" />
                     </div>
                 </div>
@@ -86,8 +86,8 @@
     </section>
 
     <!-- ==========================================================================
-            SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
-            ========================================================================== -->
+                SERVICES SECTION (MINIMALIST CLEAN CARDS IN BRAND COLORS)
+                ========================================================================== -->
 
     @if (!empty($services) && count($services) > 0)
         <section class="services py-5" id="services">
@@ -143,8 +143,8 @@
 
 
     <!-- ==========================================================================
-        FEATURES / WHY CHOOSE US
-        ========================================================================== -->
+            FEATURES / WHY CHOOSE US
+            ========================================================================== -->
     <section class="py-5 why-us bg-white" id="features">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -185,8 +185,8 @@
 
 
     <!-- ==========================================================================
-                            INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
-                            ========================================================================== -->
+                                INTERACTIVE LIVING ROOM TOUR (HOTSPOTS SHOWCASE)
+                                ========================================================================== -->
     <section class="py-5 interactive-tour-section position-relative overflow-hidden" id="interactive-tour">
         <div class="container py-4">
             <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
@@ -297,8 +297,8 @@
     </section>
 
     <!-- ==========================================================================
-               INTERACTIVE TOUR SERVICE POPUP MODAL
-               ========================================================================== -->
+                   INTERACTIVE TOUR SERVICE POPUP MODAL
+                   ========================================================================== -->
     <div class="modal fade" id="interactiveHotspotModal" tabindex="-1" aria-labelledby="interactiveModalTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 490px;">
@@ -360,8 +360,8 @@
     </div>
 
     <!-- ==========================================================================
-        QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
-        ========================================================================== -->
+            QUOTE & BOOKING REQUEST (BOOTSTRAP FORM)
+            ========================================================================== -->
     <section class="py-5 quote-section" id="quote">
         <div class="container py-4">
             <div class="row align-items-center g-5">
@@ -465,8 +465,8 @@
     </section>
 
     <!-- ==========================================================================
-            REVIEWS (TESTIMONIALS)
-            ========================================================================== -->
+                REVIEWS (TESTIMONIALS)
+                ========================================================================== -->
     <section class="py-5 bg-white reviews position-relative overflow-hidden" id="reviews">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 text-center text-md-start"
@@ -563,8 +563,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                                                                   FAQ SECTION (BOOTSTRAP ACCORDION)
-                                                                                                   ========================================================================== -->
+                                                                                                       FAQ SECTION (BOOTSTRAP ACCORDION)
+                                                                                                       ========================================================================== -->
     <section class="py-5 bg-brand-light faq" id="faq">
         <div class="container py-4">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -617,8 +617,8 @@
     </section>
 
     <!-- ==========================================================================
-                                                                                                   BLOG & TIPS SECTION (المدونة وأحدث المقالات)
-                                                                                                   ========================================================================== -->
+                                                                                                       BLOG & TIPS SECTION (المدونة وأحدث المقالات)
+                                                                                                       ========================================================================== -->
     <section class="py-5 bg-white" id="blog">
         <div class="container py-4">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3"

@@ -112,7 +112,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}?v={{ filemtime(public_path('assets/frontend/css/style.css')) }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/frontend/css/style.css') }}?v={{ filemtime(public_path('assets/frontend/css/style.css')) }}">
 
     <style>
         :root {
@@ -684,8 +685,7 @@
                     <div class="bubble-main preloader-logo-bubble">
                         <span class="bubble-shine"></span>
                         <img src="{{ asset('assets/frontend/images/favicon_master.png') }}"
-                            alt="{{ setting('site_name', 'سين ياء كلين') }}"
-                            class="preloader-logo-img" />
+                            alt="{{ setting('site_name', 'سين ياء كلين') }}" class="preloader-logo-img" />
                     </div>
                     <div class="bubble-sat bubble-sat-1">
                         <span class="bubble-shine"></span>
@@ -723,7 +723,8 @@
             <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
                 <div class="d-flex align-items-center gap-2 mx-auto mx-md-0">
                     @if (setting('top_bar_badge'))
-                        <span class="badge rounded-pill px-3 py-1" style="background-color: var(--cta); color: #fff;">🔥
+                        <span class="badge rounded-pill px-3 py-1"
+                            style="background-color: var(--cta); color: #fff;">🔥
                             {{ setting('top_bar_badge') }}
                         </span>
                     @endif
@@ -844,7 +845,7 @@
                 <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="900">
                     <div class="position-relative">
                         <div class="hero-img-box position-relative">
-                            <img src="{{ asset('assets/frontend/images/hero_final.png') }}"
+                            <img src="{{ asset('assets/frontend/images/hero_final_2_92.png') }}"
                                 alt="خدمات شركة سين ياء للنظافة الشاملة" class="img-fluid">
                             <div class="position-absolute bottom-0 start-0 end-0 p-3"
                                 style="background: linear-gradient(to top, rgba(23,78,107,0.92), transparent); border-radius: 0 0 24px 24px;">
@@ -1264,7 +1265,8 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <!-- Custom Main JS -->
-    <script src="{{ asset('assets/frontend/js/main.js') }}?v={{ filemtime(public_path('assets/frontend/js/main.js')) }}"></script>
+    <script src="{{ asset('assets/frontend/js/main.js') }}?v={{ filemtime(public_path('assets/frontend/js/main.js')) }}">
+    </script>
 
     <script>
         // Scroll to top functionality
