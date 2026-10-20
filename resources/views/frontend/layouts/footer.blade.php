@@ -83,6 +83,34 @@
                         <i class="fa-solid fa-location-dot text-brand-secondary me-2"></i>
                         كافة أنحاء مدينة جدة ومكة
                     </div>
+
+                    {{-- Social Media --}}
+                    <div class="mt-2 pt-2 border-top border-white border-opacity-10">
+                        <p class="mb-2 text-white-50 small">تابعنا على السوشيال ميديا</p>
+                        <div class="d-flex gap-2">
+                            <a href="https://www.instagram.com/seenyaa.clean?psln=MWUycXQ3dnEwMWJxZg==" target="_blank" rel="noopener noreferrer"
+                                class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                                style="width:38px;height:38px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);transition:opacity .2s;"
+                                title="إنستجرام سين ياء" aria-label="صفحتنا على إنستجرام"
+                                onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+                                <i class="fa-brands fa-instagram" style="font-size:1.1rem;"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@seenyaa.clean?_r=1&_t=ZS-9AiTEEwbnV9" target="_blank" rel="noopener noreferrer"
+                                class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                                style="width:38px;height:38px;background:#010101;border:1px solid rgba(255,255,255,.15);transition:opacity .2s;"
+                                title="تيك توك سين ياء" aria-label="حسابنا على تيك توك"
+                                onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+                                <i class="fa-brands fa-tiktok" style="font-size:1rem;"></i>
+                            </a>
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}" target="_blank" rel="noopener noreferrer"
+                                class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                                style="width:38px;height:38px;background:#25d366;transition:opacity .2s;"
+                                title="واتساب سين ياء" aria-label="تواصل معنا على واتساب"
+                                onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+                                <i class="fa-brands fa-whatsapp" style="font-size:1.1rem;"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,6 +136,27 @@
             class="pt-3 border-top border-white border-opacity-10 d-flex justify-content-between align-items-center flex-wrap gap-2 small text-white-50">
             <div>
                 جميع الحقوق محفوظة © 2026 <strong>شركة سين ياء كلين</strong>
+            </div>
+
+            <div class="d-flex gap-2 align-items-center">
+                <a href="https://www.instagram.com/seenyaa.clean?psln=MWUycXQ3dnEwMWJxZg==" target="_blank" rel="noopener noreferrer"
+                    class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                    style="width:32px;height:32px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);transition:opacity .2s;"
+                    title="إنستجرام" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
+                    <i class="fa-brands fa-instagram" style="font-size:.9rem;"></i>
+                </a>
+                <a href="https://www.tiktok.com/@seenyaa.clean?_r=1&_t=ZS-9AiTEEwbnV9" target="_blank" rel="noopener noreferrer"
+                    class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                    style="width:32px;height:32px;background:#010101;border:1px solid rgba(255,255,255,.2);transition:opacity .2s;"
+                    title="تيك توك" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
+                    <i class="fa-brands fa-tiktok" style="font-size:.85rem;"></i>
+                </a>
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('top_bar_whatsapp', '966531109831')) }}" target="_blank" rel="noopener noreferrer"
+                    class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                    style="width:32px;height:32px;background:#25d366;transition:opacity .2s;"
+                    title="واتساب" onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
+                    <i class="fa-brands fa-whatsapp" style="font-size:.9rem;"></i>
+                </a>
             </div>
 
             <div>
