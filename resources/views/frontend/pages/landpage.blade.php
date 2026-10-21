@@ -21,8 +21,11 @@
 
 
     <!-- Primary SEO Meta Tags -->
-    <title>{{ setting('seo_landpage_title', setting('site_name', 'سين ياء') . ' | شركة خدمات النظافة والتعقيم الشامل') }}</title>
-    <meta name="title" content="{{ setting('seo_landpage_title', setting('site_name', 'سين ياء') . ' | شركة خدمات النظافة والتعقيم الشامل') }}">
+    <title>
+        {{ setting('seo_landpage_title', setting('site_name', 'سين ياء') . ' | شركة خدمات النظافة والتعقيم الشامل') }}
+    </title>
+    <meta name="title"
+        content="{{ setting('seo_landpage_title', setting('site_name', 'سين ياء') . ' | شركة خدمات النظافة والتعقيم الشامل') }}">
     <meta name="description"
         content="{{ setting('seo_landpage_description', 'شركة ' . setting('site_name', 'سين ياء') . ' - لخدمات التنظيف الشامل، تنظيف الفلل، الشقق، الكنب، السجاد، والمفروشات بالبخار بأحدث التقنيات وأعلى معايير الإتقان وبأفضل الأسعار التنافسية.') }}">
     <meta name="keywords"
@@ -47,7 +50,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url('/landpage') }}">
-    <meta name="twitter:title" content="{{ setting('seo_landpage_title', setting('site_name', 'سين ياء كلين') . ' | خدمات النظافة والصيانة الشامل') }}">
+    <meta name="twitter:title"
+        content="{{ setting('seo_landpage_title', setting('site_name', 'سين ياء كلين') . ' | خدمات النظافة والصيانة الشامل') }}">
     <meta name="twitter:description"
         content="{{ setting('seo_landpage_description', 'خدمات تنظيف في جدة ومفروشات بالبخار وجلي رخام مع شركة ' . setting('site_name', 'سين ياء كلين') . '.') }}">
     <meta name="twitter:image" content="{{ asset('assets/frontend/images/hero_final.png') }}">
@@ -719,16 +723,14 @@
 
     @if (setting('top_bar_active', '1') == '1')
         <!-- ==========================================================================
-           TOP URGENT ANNOUNCEMENT BAR (ADMIN CONTROLLED)
-           ========================================================================== -->
-        <div class="py-2 text-white text-center small fw-bold" style="background-color: var(--primary);">
-            <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-                <div class="d-flex align-items-center gap-2 mx-auto mx-md-0">
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+        <div class="bg-brand-primary py-2 text-white border-bottom border-white border-opacity-10 small">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 flex-wrap">
                     @if (setting('top_bar_badge'))
-                        <span class="badge rounded-pill px-3 py-1"
-                            style="background-color: var(--cta); color: #fff;">🔥
-                            {{ setting('top_bar_badge') }}
-                        </span>
+                        <span
+                            class="badge bg-brand-accent rounded-pill px-3 py-1 fw-bold">{{ setting('top_bar_badge') }}</span>
                     @endif
                     <span>
                         @if (setting('top_bar_discount'))
@@ -737,14 +739,24 @@
                         {{ setting('top_bar_text', 'خصم خاص على جميع خدمات التنظيف والتعقيم الشامل!') }}
                     </span>
                 </div>
-                <div class="d-none d-md-flex align-items-center gap-3">
-                    <span><i class="fa-solid fa-clock me-1" style="color: var(--secondary);"></i> متاحون 24
-                        ساعة</span>
-                    <span class="text-white-50">|</span>
-                    <a href="tel:{{ $cleanPhone }}" class="text-white text-decoration-none fw-bold">
-                        <i class="fa-solid fa-phone-volume me-1" style="color: var(--secondary);"></i>
-                        {{ $phone }}
-                    </a>
+                <div class="d-none d-md-flex align-items-center gap-4">
+                    @php
+                        $phone = setting('top_bar_phone', '0531109831');
+                        $whatsapp = setting('top_bar_whatsapp', '966531109831');
+                    @endphp
+                    @if ($phone)
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', $phone) }}"
+                            class="text-white text-decoration-none fw-semibold">
+                            <i class="fa-solid fa-phone-volume text-brand-secondary me-1"></i>
+                            {{ $phone }}
+                        </a>
+                    @endif
+                    @if ($whatsapp)
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $whatsapp) }}?text={{ urlencode('السلام عليكم، أرغب في الاستفسار عن خدمات شركة سين ياء كلين ... كيف طريقة حجز موعد معاينة؟') }}"
+                            target="_blank" class="text-white text-decoration-none fw-semibold">
+                            <i class="fa-brands fa-whatsapp text-brand-accent me-1"></i> تواصل واتساب
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
